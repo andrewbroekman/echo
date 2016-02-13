@@ -217,8 +217,8 @@ Go ahead and open your index.html file. Shock ... ... ..., there is no head tag.
 
 We will now checkout a new branch, called bodyBranch and add the body tags to the index.html file. You can repeat the same procedure as was done for the headBranch, just replaceing the word head with body. However, if you are unsure here are the commands
 \begin{lstlisting}[style=TerminalStyle]
-# git branch headBranch
-# git checkout headBranch
+# git branch bodyBranch
+# git checkout bodyBranch
 \end{lstlisting}
 
  Before you commit your code, make sure that your index.html file looks like this:
@@ -344,7 +344,7 @@ To see the changes you made, you can use the following command
 There is all the history of what we have been doing so far, as well as who committed code and at what time the code was checked in.
 
 \subsection{Social side of code sharing}
-Head on over to Github.com and create a new repository, called cos301tutorial. AFter creation you will find a similar line to this,
+Head on over to Github.com and create a new repository, called cos301tutorial. After creation you will find a similar line to this,
 
 \begin{lstlisting}[style=OutputStyle]
 git remote add origin git@github.com:andrewbroekman/cos301tutorial.git
@@ -428,6 +428,34 @@ The above command initiates the git flow tool for this repository. You can go ah
 The nice thing about gitflow, is that it merges the branches in the correct order for you, as well as clean old branches etc. Most git clients today support git flow, as it is widely used in industry.
 
 For a very good tutorial on git flow is presented by GitHub. More information is available at \url{https://guides.github.com/introduction/flow/}
+
+\subsection{Final comments on the use of GIT}
+Now that you have been introduced to most aspects of git, it is up to you to go and learn and get comfortable with git, as this is vital for your code production quality and speed. 
+A few notes before you start working in a full on project.
+Before your work do the following:
+
+Git pull on master branch to update your code:
+\begin{lstlisting}[style=TerminalStyle]
+# git pull
+\end{lstlisting}
+Now you can start working on your code (On a different branch)
+
+When you have finished with your code add it to the staging area:
+\begin{lstlisting}[style=TerminalStyle]
+# git add <file>
+# git add <file>
+\end{lstlisting}
+
+Now you commit your work to your local repository:
+\begin{lstlisting}[style=TerminalStyle]
+# git commit -m "Commit Message"
+\end{lstlisting}
+
+Finally push your work to a branch
+\begin{lstlisting}[style=TerminalStyle]
+# git push -u origin branchName
+\end{lstlisting}
+
 
 \subsection{COS301 Mini Project Assignment}
 Once you are comfortable with git, go ahead and add your details to the CONTRIBUTORS.md file, commit and push your changes to the echo repository.
