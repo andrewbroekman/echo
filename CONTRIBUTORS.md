@@ -8,3 +8,6 @@
 * **Fabio Loreggian** u14040426
   * Github: https://github.com/u14040426
   * Linkedin: https://www.linkedin.com/in/fabio-loreggian-520900b9
+
+* **Jocelyn Bondjobo** u13232852
+  * Facebook: Jocelyn BJB
