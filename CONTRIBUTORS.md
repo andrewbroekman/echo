@@ -11,3 +11,8 @@
 
 * **Jocelyn Bondjobo** u13232852
   * Facebook: Jocelyn BJB
+
+* **Emilio Singh** u14006512
+	*Github: https://github.com/u14006512
+	*Facebook: Emilio Singh
+	
