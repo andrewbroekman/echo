@@ -15,4 +15,5 @@
 * **Emilio Singh** u14006512
 	*Github: https://github.com/u14006512
 	*Facebook: Emilio Singh
-	
+ **Liz Bode** u14310156
+  * Github: https://github.com/u14310156
