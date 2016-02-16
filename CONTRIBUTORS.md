@@ -18,6 +18,6 @@
  **Gift Sefako** u12231097
   * Github: https://github.com/gift-sefako
   * Facebook: Gift G Sefako*
-	* **Liz Bode** u14310156
+	**Liz Bode** u14310156
   * Github: https://github.com/u14310156
 *
