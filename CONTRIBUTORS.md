@@ -15,4 +15,8 @@
 * **Emilio Singh** u14006512
 	*Github: https://github.com/u14006512
 	*Facebook: Emilio Singh
+
+* **Gift Sefako** u12231097
+  * Github: https://github.com/gift-sefako
+  * Facebook: Gift G Sefako
 	
