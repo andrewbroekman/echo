@@ -1,0 +1,77 @@
+COS
+
+Core System
+->Research Publications tracker
+->Historical Publications
+->Progress of Publications
+
+Users
+->Staff members only(CS Staff)
+->Have units (Units are tracking/grading meansurements for reserach gradingg)
+->Edit powers to edit any Author/Researcher contribution but not any Author/Researcher who are users themselves
+->Have a profile a page, displaying key data(no facebook style -->only relevant data)
+->All metadata regarding the person (Name, Room, Title, Email etc)
+
+Authors/Researchers
+Properties
+->Title
+->Name/ Surname
+->Initial
+->Institution
+->Position
+->Email
+->Staff Member or Not(CS Only)
+->Staff Number
+->Cell number
+
+
+Historical Structure and Powers
+1>2>3
+
+1) HOD ->can see everything(all papers)
+	->functionally serves as the admin for the program
+
+2)Research Group Leaders ->see all papers under a group
+->See all papers under the group
+->Not necessarily a Researcher	
+
+3)Author ->see his or her own papers
+
+Research 
+->Title
+->Authors(Sorted list of Authors)
+->Dates on papers
+	Possible link with Calender{
+	->Due
+	->Start date
+	->Date of Acception
+	->Date of publish 
+	}
+->Target
+->Progress %
+->Submission status
+->Review
+->Acceptance Status
+->Research Group
+->Venue(Hosted)
+->Type
+
+
+Interface
+->Web Interface
+->Android
+
+Home View
+Review of Current Papers
+
+
+->Backwards Compatilility/Historical Purposes
+-
+
+***NEVER DELETE ANY PAPER
+***PAPERS ARE NOT STORED->ONLY METADATA
+
+Creating a Paper
+->User Only
+->User Assigns Authors
+	->himself if necessary
