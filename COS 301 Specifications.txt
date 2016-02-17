@@ -55,7 +55,10 @@ Research
 ->Research Group
 ->Venue(Hosted)
 ->Type
+->Bibliography
 
+Specific User Capacity
+The User should be able to extract the Research Paper bibliography for the research paper that they are involved in. This bibliography should be comprised of the Constituent authors and will reflect a specific user level function.
 
 Interface
 ->Web Interface
