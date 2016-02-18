@@ -59,6 +59,11 @@
 \subsubsection{Performance}
 
 \subsubsection{Reliability}
+\begin{itemize}
+\item To enable offline activity and access of data from the Android app, data synched must be made differentiatable with timestamps.
+\item The system must resolve synchronization conflicts using timestamps.
+\item Hot swapping of system modules should not affect system service reliability.
+\end{itemize}
 
 \subsubsection{Scalability}
 
@@ -70,6 +75,12 @@
 \end{itemize}
 
 \subsubsection{Flexibility}
+\begin{itemize}
+\item The system should allow unregistered users to use existing third party web service login credentials to register or login to the service.
+\item The system should be decoupled from the database technology it uses, and allow the client to select and change the database it uses in future.
+\item Authentication mechanisms used should be decoupled from the system, allowing them to be interchangable.
+\item Modules should be decoupled from one another, allowing the system to be extensible without a break in service, by integrating new modules and swapping out existing ones. 
+\end{itemize}
 
 \subsubsection{Maintainability}
 \begin{itemize}
@@ -85,13 +96,25 @@
 \item It should always be possible to see which user created which objects at what time.
 \item It should always be possible to see which user last changed objects and at what time.
 \item An immutable log of user actions should be kept and should only be accessable by administrative staff.
+\item Logging of stack traces and crash analytics should be implented in the mobile client, to ensure the developers can ensure client reliability.
 \end{itemize}
 
 \subsubsection{Integrability}
+\begin{itemize}
+\item The system should allow technology neutral importing and exporting of data.
+\item The backend system should integrate with a desktop web client and Android mobile app clients.
+\item The system should integrate with different backend authentication services.
+\end{itemize}
 
 \subsubsection{Cost}
 
 \subsubsection{Usability}
+\begin{itemize}
+\item Each view in the desktop and mobile clients should be related to a single topic only.
+\item The web client should render properly and be fully functional in modern web browsers.
+\item Mobile devices running Android 4.2 and upwards should be fully supported.
+\item Material design UI guidelines prescribed by Google must be used, to ensure that the clients feel modern and familiar. 
+\end{itemize}
 
 \subsection{Integration requirements}
 
