@@ -13,7 +13,7 @@
        Software Requirements Specification \\ 
        and \\
        Technology Neutral Process Design \\
-       Research Paper Managment System \\
+       Research Paper Management System \\
        \vspace{0.5cm}
        University of Pretoria \\
        \vspace{1.0cm}
@@ -60,7 +60,7 @@
 
 \subsubsection{Reliability}
 \begin{itemize}
-\item To enable offline activity and access of data from the Android app, data synched must be made differentiatable with timestamps.
+\item To enable offline activity and access of data from the Android app, data synched must be made differentiable with timestamps.
 \item The system must resolve synchronization conflicts using timestamps.
 \item Hot swapping of system modules should not affect system service reliability.
 \end{itemize}
@@ -78,15 +78,15 @@
 \begin{itemize}
 \item The system should allow unregistered users to use existing third party web service login credentials to register or login to the service.
 \item The system should be decoupled from the database technology it uses, and allow the client to select and change the database it uses in future.
-\item Authentication mechanisms used should be decoupled from the system, allowing them to be interchangable.
+\item Authentication mechanisms used should be decoupled from the system, allowing them to be interchangeablee.
 \item Modules should be decoupled from one another, allowing the system to be extensible without a break in service, by integrating new modules and swapping out existing ones. 
 \end{itemize}
 
 \subsubsection{Maintainability}
 \begin{itemize}
-\item All code should be documented in the applicable langauge documentation framework, such as JavaDocs for a Java based system, DOxygen for a C/C++ based system, etc.
+\item All code should be documented in the applicable language documentation framework, such as JavaDocs for a Java based system, DOxygen for a C/C++ based system, etc.
 \item A coding style guide/manual should be setup and associated with the project, such that all developers use similar coding styles and conventions.
-\item System should be seperated in distinct, consice and independant modules to allow for easier maintenance.
+\item System should be separated in distinct, concise and independent modules to allow for easier maintenance.
 \end{itemize}
 
 \subsubsection{Auditability/Monitorability}
@@ -95,8 +95,8 @@
 \item No data should ever be deleted.
 \item It should always be possible to see which user created which objects at what time.
 \item It should always be possible to see which user last changed objects and at what time.
-\item An immutable log of user actions should be kept and should only be accessable by administrative staff.
-\item Logging of stack traces and crash analytics should be implented in the mobile client, to ensure the developers can ensure client reliability.
+\item An immutable log of user actions should be kept and should only be accessible by administrative staff.
+\item Logging of stack traces and crash analytics should be implemented in the mobile client, to ensure the developers can see to client reliability.
 \end{itemize}
 
 \subsubsection{Integrability}
