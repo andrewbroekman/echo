@@ -23,3 +23,6 @@
 * **Liz Bode** u14310156
   * Github: https://github.com/u14310156
 
+* **Gerome Schutte** u12031519
+  * Github: https://github.com/GeromeSchutte
+  * Linkedin: https://za.linkedin.com/in/geromeschutte
