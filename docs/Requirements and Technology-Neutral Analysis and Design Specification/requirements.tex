@@ -57,6 +57,12 @@
 
 \subsection{Quality requirements}
 \subsubsection{Performance}
+\begin{itemize}
+\item Benchmark and monitor network requests. Provide aggregate statistics about network requests.
+\item Timing and benchmarking function calls.
+\item Use precompiled SQL statements.
+\item Network responses should be cached on server side to lighten load on database as well as decrease round trip time of request - response.
+\end{itemize}
 
 \subsubsection{Reliability}
 \begin{itemize}
@@ -66,12 +72,19 @@
 \end{itemize}
 
 \subsubsection{Scalability}
+\begin{itemize}
+\item System should be able to handle 10 research groups with each research group containing 100 members.
+\item System should be able to handle 50 concurrent user sessions at any time.
+\end{itemize}
 
 \subsubsection{Security}
 \begin{itemize}
 \item System should be resistant against SQL injections.
 \item A user group hierarchy system should be used to manage user rights.
 \item User credentials, i.e. username and password should not be stored on Android user device. A token based approach should be utilized so that only tokens are stored on end user device, allowing for the easy revocation of device access if a device is lost, such as an OAuth based security system could be utilized.
+\item Password hosting with a unique salt per user should be used.
+\item Bcrypt should be used with passwords.
+\item After N invalid attempts, account should be locked for M min, where N and M would be agreed upon customer and developer based on current best practices.
 \end{itemize}
 
 \subsubsection{Flexibility}
@@ -107,6 +120,10 @@
 \end{itemize}
 
 \subsubsection{Cost}
+\begin{itemize}
+\item System should be cheap in monetary and time to operate, maintain and extended.
+\item As far as possible, open source compatible, mature technologies should be used. The requirement for mature technologies is to ensure system is as stable as possible.
+\end{itemize}
 
 \subsubsection{Usability}
 \begin{itemize}
@@ -114,6 +131,9 @@
 \item The web client should render properly and be fully functional in modern web browsers.
 \item Mobile devices running Android 4.2 and upwards should be fully supported.
 \item Material design UI guidelines prescribed by Google must be used, to ensure that the clients feel modern and familiar. 
+\item Android and web interface should support full back end API specifications.
+\item Allow user to elect if they would like their data to be available offline.
+\item User should be able to select if data should be downloaded using WI-FI or 3G. 
 \end{itemize}
 
 \subsection{Integration requirements}
