@@ -6,9 +6,14 @@
 \usepackage[all]{hypcap}
 \usepackage{tabu}
 \usepackage[title,titletoc,toc]{appendix}
+\usepackage[english]{babel}
 \usepackage{fontspec}
-\usepackage{microtype}
+\usepackage[style=authoryear,backend=biber,sorting=nyt,dashed=false,urldate=long,abbreviate=false]{biblatex}
 \usepackage{fancyhdr}
+\usepackage{microtype}
+
+\addbibresource{references.bib}
+
 \setlength{\headheight}{15.2pt}
 \pagestyle{fancy}
 \lhead{}
@@ -16,7 +21,7 @@
 \rhead{\bfseries Software Requirements Specification}
 \lfoot{Team Echo}
 \cfoot{COS301 Software Engineering}
-\rfoot{\thepage}
+\rfoot{Page \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
 
@@ -51,7 +56,17 @@
 		\hline
 	\end{tabu}}
 
-\renewcommand*\contentsname{Table of Contents}
+\DefineBibliographyStrings{english}{%
+urlseen = {\mbox{Accessed} on},
+urlfrom = {[Online]},
+in = {In},
+}
+\DeclareFieldFormat{url}{\bibstring{urlfrom}\space\url{#1}}
+\DeclareFieldFormat{urldate}{\addcomma\space[\bibstring{urlseen}\space#1]}
+\addto\captionsenglish{
+  \renewcommand{\contentsname}
+    {Table of Contents}
+}
 
 \begin{document}
 \maketitle
@@ -108,7 +123,7 @@ The Android application will be made available in the Android App Store to allow
 
 \subsubsection{System Access Channels}
 All system access will be made over a uniform interface, which will assist in faster development time, ease of maintenance and hence lower overall cost associated with the system. The common interface which will be used, will be a RESTful API based on the the dissertation Architectural Styles and
-the Design of Network-based Software Architectures of Fielding (2000).  All client side interaction will be done via the web interface or Android application which will in turn use the RESTful API set of the system to accomplish the given task.
+the Design of Network-based Software Architectures of \textcite{fielding}.  All client side interaction will be done via the web interface or Android application which will in turn use the RESTful API set of the system to accomplish the given task.
 
 \subsection{Quality requirements}
 \subsubsection{Performance}
@@ -368,7 +383,7 @@ This repository contains:
 \begin{tabu} to \textwidth { | X[l] | X[l] | }
 	\hline
 		\textbf{Term}		& \textbf{Definition}	\\ \hline \hline
-		Android			& A Linux based operating system developed by Google Inc. and the Open Handset Alliance for smart phones, tablets, and other mobile computing devices. Android applications are developed in Java. \\ \hline
+		Android			&  A Linux based operating system developed by Google Inc. and the Open Handset Alliance for smart phones, tablets, and other mobile computing devices. Android applications are developed in Java. \\ \hline
 		HTTP			& HyperText Transfer Protocol, standarised by RFCs 7230-7237 \\ \hline
 		ISO				& International Organization for Standardization \\ \hline
 		MVC				& Model-View-Controller \\ \hline
@@ -380,6 +395,11 @@ This repository contains:
 \end{tabu}
 
 \end{appendices}
+
+\newpage
+\clearpage
+\addcontentsline{toc}{section}{References}
+\printbibliography
 
 
 \end{document}
