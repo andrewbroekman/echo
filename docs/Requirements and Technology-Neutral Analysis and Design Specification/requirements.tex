@@ -225,9 +225,12 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 
 \subsection{Architecture constraints}
 \subsubsection{Architectural Patterns}
-\begin{itemize}
-\item
-\end{itemize}
+	\begin{itemize}
+		\item Layered Architectural Pattern
+		\item REpresentational State Transfer (REST) Architectural Pattern
+		\item Services Orientated Architecture/ Microservices Architecture
+		\item Client-Server Architectural Pattern
+	\end{itemize}
 
 \section{Functional requirements and application design}
 \subsection{Use case prioritization}
@@ -250,10 +253,50 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 \end{itemize}
 
 \subsection{Use case/Services contracts}
+\subsubsection{User Login - User holds no tokens}
+	\begin{itemize}
+		\item Description
+		This use case will be used by the REST clients, specifically the web and Android mobile client to initiate user login via the backend service. 
+		\item Pre-conditions
+			\begin{enumerate}
+				\item The user is already registered with the backend service.
+				\item User account is not locked.
+				\item User currently does not have required tokens.
+			\end{enumerate}
+		\item Post-conditions
+			\begin{enumerate}
+				\item The user will be logged in.
+				\item The user will be issued with an access and refresh token.			
+			\end{enumerate}
+		\item Use Case
+		\item Service Contract
+		\item Process Specification
+	\end{itemize}
+	
+\subsubsection{User Login - User holds access and refresh tokens}
+	\begin{itemize}
+		\item Description
+		This use case will be used by the REST clients, specifically the Android mobile client to achieve safe long term login without storing user credentials on device. 
+		\item Pre-conditions
+			\begin{enumerate}
+				\item The user is already registered with the backend service.
+				\item User account is not locked.
+				\item User currently has access and refresh tokens.
+			\end{enumerate}
+		\item Post-conditions
+			\begin{enumerate}
+				\item The user will be logged in.
+				\item The user access token will be updated using the refresh token.
+			\end{enumerate}
+		\item Use Case
+		\item Service Contract
+		\item Process Specification
+	\end{itemize}
+	
 \begin{tabu} to \textwidth { | X[l] | X[l] | X[l] | X[l] | }
 	\hline
 		Use Case		& Pre-Condition		& Post-Condition		& Description	\\ \hline \hline
-		item 11		& item 12			& item13				& item 14  \\ \hline
+		Login		& item 12			& item13				& item 14  \\ \hline
 		item 21		& item 22			& item23				& item 24  \\ \hline
 		item 31		& item 32			& item33				& item 34  \\
 	\hline
