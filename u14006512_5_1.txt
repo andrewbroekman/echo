@@ -1,0 +1,23 @@
+Critical 
+1)Create Paper(s)
+2)View Paper(s)
+3)Edit Paper(s)
+4)Create User Profile(s)
+5)Edit User Profile(s)
+
+Important
+1) Historical Paper Import
+2) Create Bibliography
+3) Assign Research Paper Units
+4) Retrieve Research Paper Units
+
+Nice-To-Have
+1) Track Paper Progress
+
+Actors
+1) CS_STAFF(USER)
+	->Research Lead is an additional responsibility tacked onto a USER
+2)HOD(SUPER USER<-USER)
+
+Systems
+Home Page
