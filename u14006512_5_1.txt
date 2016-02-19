@@ -14,6 +14,7 @@ Important
 Nice-To-Have
 1) Track Paper Progress
 
+2) Sync with Calender
 Actors
 1) CS_STAFF(USER)
 	->Research Lead is an additional responsibility tacked onto a USER
