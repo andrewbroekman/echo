@@ -283,6 +283,14 @@ The Android application will be built to work on all Android version 4.2 and upw
 The RESTful API will be implemented using the HTTP protocol as a high level protocol. The reason that HTTP is chosen is that it is a widely supported and deployed protocol, allowing a lot of flexibility. Furthermore, most JavaScript libraries, and the Android platform itself, have excellent support for RESTful APIs over HTTP.
 
 \subsection{Architecture constraints}
+\begin{itemize}
+\item Representational State Transfer (REST) will be used, it depends on cacheable, client server and on stateless communications protocol. And, in most of it cases it uses the HTTP protocol. It is an architectural style used to design networked applications. All the four CRUD operations are used in REST. 
+\item Service Oriented Architecture (SOA). SOA makes it easier for software components on computers that are connected on a network to work together with no need to make changes to the underlying program itself. The concept of service is what SOA is based on.
+\item Spring will be used, it is a technology that is associated with developing website very secure and also working with databases in conjunction with something called hibernate. So spring is just an API, the idea is that you represent your java objects by spring beans.
+\item Dependency injections (DI) will be used because of the possibility to test software and the re-usability is increased by a design based on independent classes/ component.
+\ietm Unit Testing to automates the following tasks: compilation of java source code, running test cases, generating project documentation.
+\end{itemize}
+
 \subsubsection{Architectural Patterns}
 	\begin{itemize}
 		\item Layered Architectural Pattern
