@@ -14,7 +14,7 @@
        Software Requirements Specification \\ 
        and \\
        Technology Neutral Process Design \\
-       Research Paper Managment System \\
+       Research Paper Management System \\
        \vspace{0.5cm}
        University of Pretoria \\
        \vspace{1.0cm}
@@ -83,6 +83,12 @@ Application performance can be defined as the amount of work which can be accomp
 	Our aim for this system, is to increase the throughput and decrease the latency. As we have no control over the network medium used, we are aiming for a minimal request and response payload as to decrease the data transmission time.
 \item \textbf{Justification}
 \item \textbf{Requirements}
+	\begin{itemize}
+		\item Network requests must be benchmarked and monitored, and aggregate statistics about network requests must be made available.
+		\item Function calls must be timed and benchmarked, and this data should be logged.
+		\item Precompiled SQL must be used statements.
+		\item Network responses should be cached on server side to lighten load on database as well as decreasing the round trip time of request - response.
+		\end{itemize}
 \end{enumerate}
 
 \subsubsection{Reliability}
@@ -91,6 +97,11 @@ Application performance can be defined as the amount of work which can be accomp
 The design of this system is largely based on the fact that the current system used by the client is not reliable and suffers from data crashes and data loss, The newly designed system needs to be accessable from both inside the University of Pretoria campus as well as from other networks, espesically other campuses on the TENET network. The system should be reliable in both accessability and the data that the system will be used to calculate contributor perfomance metrics. 
 \item \textbf{Justification}
 \item \textbf{Requirements}
+	\begin{itemize}
+		\item To enable offline activity and access of data from the Android app, data synced must be made differentiable with timestamps.
+		\item The system must resolve synchronization conflicts using timestamps.
+		\item Hot swapping of system modules should not affect system service reliability.
+	\end{itemize}
 \end{enumerate}
 
 \subsubsection{Scalability}
@@ -99,6 +110,10 @@ The design of this system is largely based on the fact that the current system u
 Scalability refers to the application in question's ability to handle an above normal workload for extended time periods and the mechanisms employed to faciliate this.  The client has provided minimum specifications under which the system has to function. However the client has indicated that due to the business requirements, the system will expierence higher loads during the end of the month.
 \item \textbf{Justification}
 \item \textbf{Requirements}
+	\begin{itemize}
+		\item System should be able to handle 10 research groups with each research group containing 100 members.
+		\item System should be able to facilitate 50 concurrent user sessions at any time.
+	\end{itemize}
 \end{enumerate}
 
 \subsubsection{Security}
@@ -108,9 +123,12 @@ Security in application software refers to authentication, authorization, and ac
 \item \textbf{Justification}
 \item \textbf{Requirements}
 	\begin{itemize}
-	\item System should be resistant against SQL injections.
-	\item A user group hierarchy system should be used to manage user rights.
-	\item User credentials, i.e. username and password should not be stored on Android user device. A token based approach should be utilized so that only tokens are stored on end user device, allowing for the easy revocation of device access if a device is lost, such as an OAuth based security system could be utilized.
+		\item System should be resistant against SQL injections.
+		\item A user group hierarchy system should be used to manage user access rights.
+		\item Authentication credentials, i.e. username and password should not be stored on Android user device. A token based authentication approach should be utilized so that only tokens are stored on end user device, allowing for the easy revocation of device access if a device is lost. Available technologies, such as OAuth, should be utilized.
+		\item Password hosting with a unique salt for each user should be used.
+		\item A key derivation function should be used with passwords. 
+		\item After N invalid attempts, account should be locked for M min, where N and M would be agreed upon customer and developer based on current best practices.
 	\end{itemize}
 \end{enumerate}
 
@@ -120,6 +138,12 @@ Flexibility refers to the ability of the system to be changed dynamically either
 \item \textbf{Description}
 \item \textbf{Justification}
 \item \textbf{Requirements}
+	\begin{itemize}
+	\item The system should allow unregistered users to use existing third party web service login credentials to register or login to the service.
+	\item The system should be decoupled from the database technology it uses, and allow the client to select and change the database it uses in future.
+	\item Authentication mechanisms used should be decoupled from the system, allowing them to be interchangeable.
+	\item Modules should be decoupled from one another, allowing the system to be extensible without a break in service, by integrating new modules and swapping out existing ones. 
+	\end{itemize}
 \end{enumerate}
 
 \subsubsection{Maintainability}
@@ -129,9 +153,9 @@ The system is to be designed in such a way, that it is easily updated, modified 
 \item \textbf{Justification}
 \item \textbf{Requirements}
 	\begin{itemize}
-	\item All code should be documented in the applicable langauge documentation framework, such as JavaDocs for a Java based system, DOxygen for a C/C++ based system, etc.
-	\item A coding style guide/manual should be setup and associated with the project, such that all developers use similar coding styles and conventions.
-	\item System should be seperated in distinct, consice and independant modules to allow for easier maintenance.
+		\item All code should be documented in the applicable language documentation framework, such as JavaDocs for a Java based system, DOxygen for a C/C++ based system, etc.
+		\item A coding style guide/manual should be set up and associated with the project, such that all developers use similar coding styles and conventions, to allow for more readable code that is easier to maintain.
+		\item System should be separated in distinct, concise and independent modules relating to separate concerns, to allow for easier maintenance.
 	\end{itemize}
 \end{enumerate}
 
@@ -141,11 +165,12 @@ The system is to be designed in such a way, that it is easily updated, modified 
 \item \textbf{Justification}
 \item \textbf{Requirements}
 	\begin{itemize}
-	\item Data in database should be always be consistent. This implies that all data should fulfill, constraints placed on the data by the data model, such as regex patterns, minimum and maximum length, not nullable fields, etc.
-	\item No data should ever be deleted.
-	\item It should always be possible to see which user created which objects at what time.
-	\item It should always be possible to see which user last changed objects and at what time.
-	\item An immutable log of user actions should be kept and should only be accessable by administrative staff.
+		\item Data in database should be always be consistent. This implies that all data should adhere to constraints placed on the data by the data model, such as regex patterns, minimum and maximum length, non nullable fields, etc.
+		\item No data should ever be deleted.
+		\item It should always be possible to see which user created which objects at what time.
+		\item It should always be possible to see which user last changed objects and at what time.
+		\item An immutable log of user actions should be kept and should only be accessible by administrative staff.
+		\item Logging of stack traces and crash analytics should be implemented in the mobile client, to ensure the developers can see to client reliability.
 	\end{itemize}
 \end{enumerate}
 
@@ -155,6 +180,11 @@ The system is to be designed in such a way, that it is easily updated, modified 
 The system is should allow for future external integration into other platforms, such as security authentication providers, other external research meta-data databases etc.
 \item \textbf{Justification}
 \item \textbf{Requirements}
+	\begin{itemize}
+		\item The system should allow technology neutral importing and exporting of data.
+		\item The backend system should integrate with a desktop web client and Android mobile app clients.
+		\item The system should be able to integrate with different backend authentication services.
+	\end{itemize}
 \end{enumerate}
 
 \subsubsection{Cost}
@@ -163,6 +193,10 @@ The system is should allow for future external integration into other platforms,
 The cost of the system entails any initial aswell as ongoing expenses which the client may incur. Such expenses arise from software licenese, external computing resources required, as well as future maintance of the system, in terms of time.
 \item \textbf{Justification}
 \item \textbf{Requirements}
+	\begin{itemize}
+		\item System should be cheap to operate, maintain and extend. If the quality and maturity of technologies available allow it, technologies used must be freely available/usable.
+		\item As far as possible, open source compatible, mature technologies should be used, to ensure system stability as far as possible.
+	\end{itemize}
 \end{enumerate}
 
 \subsubsection{Usability}
@@ -171,6 +205,15 @@ The cost of the system entails any initial aswell as ongoing expenses which the 
 Usability refers to ease human and servers interact with the system in question. Usablility can be measured in various ways, using quantifable scientific measures to more sibjective measures, such as does the API follow convetions, etc.
 \item \textbf{Justification}
 \item \textbf{Requirements}
+	\begin{itemize}
+		\item Each view in the desktop and mobile clients should be related to a single topic only.
+		\item The web client should render properly and be fully functional in modern web browsers.
+		\item Mobile devices running Android 4.2 and upwards should be fully supported.
+		\item Material design UI guidelines prescribed by Google must be used, to ensure that the clients feel modern and familiar. 
+		\item Android and web interface should support the full backend API specifications.
+		\item Allow user to elect whether they would like their data to be available offline.
+		\item Mobile client users should be able choose between downloading data over Wi-Fi or 3G. 
+	\end{itemize}
 \end{enumerate}
 
 \subsection{Integration requirements}
