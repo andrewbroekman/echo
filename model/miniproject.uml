@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?><xmi:XMI xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:LocalProfile="http:///schemas/LocalProfile/_KRpQINcaEeWCWOJsQcFwhg/0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.omg.org/spec/UML/20110701" xmi:version="2.1" xsi:schemaLocation="http://www.eclipse.org/uml2/3.0.0/UML http://schema.omg.org/spec/UML/20110701 http:///schemas/LocalProfile/_KRpQINcaEeWCWOJsQcFwhg/0 LocalProfile.profile.uml#_KSoup9caEeWCWOJsQcFwhg">
+  <uml:Model xmi:id="_KRjwkNcaEeWCWOJsQcFwhg" name="miniproject">
+    <eAnnotations xmi:id="_KRjwkdcaEeWCWOJsQcFwhg" source="Objing">
+      <contents xmi:type="uml:Property" xmi:id="_KRjwktcaEeWCWOJsQcFwhg" name="exporterVersion">
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_KRjwk9caEeWCWOJsQcFwhg" value="3.0.0"/>
+      </contents>
+    </eAnnotations>
+    <packagedElement xmi:type="uml:Class" xmi:id="_KRjwlNcaEeWCWOJsQcFwhg" name="User">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KRjwldcaEeWCWOJsQcFwhg" name="authorities" visibility="public" type="_KRjwrNcaEeWCWOJsQcFwhg" aggregation="shared" association="_KRjwptcaEeWCWOJsQcFwhg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_KRjwltcaEeWCWOJsQcFwhg" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KRjwl9caEeWCWOJsQcFwhg" name="approvedClients" visibility="public" type="_KRkXq9caEeWCWOJsQcFwhg" aggregation="composite" association="_KRjwqNcaEeWCWOJsQcFwhg">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_KRjwmNcaEeWCWOJsQcFwhg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KRjwmdcaEeWCWOJsQcFwhg" name="reminder" visibility="public" type="_KRkXpNcaEeWCWOJsQcFwhg" aggregation="composite" association="_KRjwqtcaEeWCWOJsQcFwhg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_KRjwmtcaEeWCWOJsQcFwhg" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_KRjwm9caEeWCWOJsQcFwhg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KRjwnNcaEeWCWOJsQcFwhg" name="id" visibility="public" type="_KRkX3tcaEeWCWOJsQcFwhg" isUnique="false"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KRjwndcaEeWCWOJsQcFwhg" name="login" visibility="public" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KRjwntcaEeWCWOJsQcFwhg" name="password" visibility="public" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KRjwn9caEeWCWOJsQcFwhg" name="firstName" visibility="public" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KRjwoNcaEeWCWOJsQcFwhg" name="lastName" visibility="public" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KRjwodcaEeWCWOJsQcFwhg" name="email" visibility="public" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KRjwotcaEeWCWOJsQcFwhg" name="activated" visibility="public" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Boolean"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KRjwo9caEeWCWOJsQcFwhg" name="activationKey" visibility="public" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KRjwpNcaEeWCWOJsQcFwhg" name="resetKey" visibility="public" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KRjwpdcaEeWCWOJsQcFwhg" name="resetDate" visibility="public" type="_KRkX39caEeWCWOJsQcFwhg" isUnique="false"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_KRjwptcaEeWCWOJsQcFwhg" memberEnd="_KRjwldcaEeWCWOJsQcFwhg _KRjwp9caEeWCWOJsQcFwhg">
+      <ownedEnd xmi:type="uml:Property" xmi:id="_KRjwp9caEeWCWOJsQcFwhg" visibility="public" type="_KRjwlNcaEeWCWOJsQcFwhg" association="_KRjwptcaEeWCWOJsQcFwhg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_KRjwqNcaEeWCWOJsQcFwhg" memberEnd="_KRjwl9caEeWCWOJsQcFwhg _KRjwqdcaEeWCWOJsQcFwhg">
+      <ownedEnd xmi:type="uml:Property" xmi:id="_KRjwqdcaEeWCWOJsQcFwhg" visibility="public" type="_KRjwlNcaEeWCWOJsQcFwhg" association="_KRjwqNcaEeWCWOJsQcFwhg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_KRjwqtcaEeWCWOJsQcFwhg" memberEnd="_KRjwmdcaEeWCWOJsQcFwhg _KRjwq9caEeWCWOJsQcFwhg">
+      <ownedEnd xmi:type="uml:Property" xmi:id="_KRjwq9caEeWCWOJsQcFwhg" visibility="public" type="_KRjwlNcaEeWCWOJsQcFwhg" association="_KRjwqtcaEeWCWOJsQcFwhg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_KRjwrNcaEeWCWOJsQcFwhg" name="Authority">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KRjwrdcaEeWCWOJsQcFwhg" name="name" visibility="public" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_KRjwrtcaEeWCWOJsQcFwhg" name="ResearchPaper">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KRjwr9caEeWCWOJsQcFwhg" name="conference" visibility="public" type="_KRjwv9caEeWCWOJsQcFwhg" aggregation="shared" association="_KRjwutcaEeWCWOJsQcFwhg"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KRjwsNcaEeWCWOJsQcFwhg" name="user" visibility="public" type="_KRjwlNcaEeWCWOJsQcFwhg" aggregation="shared" association="_KRjwvNcaEeWCWOJsQcFwhg">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_KRjwsdcaEeWCWOJsQcFwhg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KRjwstcaEeWCWOJsQcFwhg" name="id" visibility="public" type="_KRkX3tcaEeWCWOJsQcFwhg" isUnique="false"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KRjws9caEeWCWOJsQcFwhg" name="title" visibility="public" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KRjwtNcaEeWCWOJsQcFwhg" name="abstract" visibility="public" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KRjwtdcaEeWCWOJsQcFwhg" name="isbn" visibility="public" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KRjwttcaEeWCWOJsQcFwhg" name="inspecNumber" visibility="public" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KRjwt9caEeWCWOJsQcFwhg" name="doiNumber" visibility="public" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KRjwuNcaEeWCWOJsQcFwhg" name="publisher" visibility="public" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KRjwudcaEeWCWOJsQcFwhg" name="progress" visibility="public" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Integer"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_KRjwutcaEeWCWOJsQcFwhg" memberEnd="_KRjwr9caEeWCWOJsQcFwhg _KRjwu9caEeWCWOJsQcFwhg">
+      <ownedEnd xmi:type="uml:Property" xmi:id="_KRjwu9caEeWCWOJsQcFwhg" visibility="public" type="_KRjwrtcaEeWCWOJsQcFwhg" association="_KRjwutcaEeWCWOJsQcFwhg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_KRjwvNcaEeWCWOJsQcFwhg" memberEnd="_KRjwsNcaEeWCWOJsQcFwhg _KRjwvdcaEeWCWOJsQcFwhg">
+      <ownedEnd xmi:type="uml:Property" xmi:id="_KRjwvdcaEeWCWOJsQcFwhg" visibility="public" type="_KRjwrtcaEeWCWOJsQcFwhg" association="_KRjwvNcaEeWCWOJsQcFwhg">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_KRjwvtcaEeWCWOJsQcFwhg"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_KRjwv9caEeWCWOJsQcFwhg" name="Conference">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KRjwwNcaEeWCWOJsQcFwhg" name="id" visibility="public" type="_KRkX3tcaEeWCWOJsQcFwhg" isUnique="false"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KRjwwdcaEeWCWOJsQcFwhg" name="name" visibility="public" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KRkXoNcaEeWCWOJsQcFwhg" name="decription" visibility="public" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KRkXodcaEeWCWOJsQcFwhg" name="date" visibility="public" type="_KRkX39caEeWCWOJsQcFwhg" isUnique="false"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KRkXotcaEeWCWOJsQcFwhg" name="location" visibility="public" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KRkXo9caEeWCWOJsQcFwhg" name="website" visibility="public" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_KRkXpNcaEeWCWOJsQcFwhg" name="Reminder">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KRkXpdcaEeWCWOJsQcFwhg" name="id" visibility="public" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KRkXptcaEeWCWOJsQcFwhg" name="title" visibility="public" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KRkXp9caEeWCWOJsQcFwhg" name="description" visibility="public" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KRkXqNcaEeWCWOJsQcFwhg" name="date" visibility="public" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KRkXqdcaEeWCWOJsQcFwhg" name="unread" visibility="public" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Boolean"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KRkXqtcaEeWCWOJsQcFwhg" name="deleted" visibility="public" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Boolean"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_KRkXq9caEeWCWOJsQcFwhg" name="ApprovedClient">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KRkXrNcaEeWCWOJsQcFwhg" name="clientDetails" visibility="public" type="_KRkXtdcaEeWCWOJsQcFwhg" aggregation="composite" association="_KRkXs9caEeWCWOJsQcFwhg"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KRkXrdcaEeWCWOJsQcFwhg" name="scope" visibility="public" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KRkXrtcaEeWCWOJsQcFwhg" name="status" visibility="public" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KRkXr9caEeWCWOJsQcFwhg" name="expiresAt" visibility="public" type="_KRkX39caEeWCWOJsQcFwhg" isUnique="false"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KRkXsNcaEeWCWOJsQcFwhg" name="lastModifiedAt" visibility="public" type="_KRkX39caEeWCWOJsQcFwhg" isUnique="false"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KRkXsdcaEeWCWOJsQcFwhg" name="accessToken" visibility="public" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KRkXstcaEeWCWOJsQcFwhg" name="refreshToken" visibility="public" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_KRkXs9caEeWCWOJsQcFwhg" memberEnd="_KRkXrNcaEeWCWOJsQcFwhg _KRkXtNcaEeWCWOJsQcFwhg">
+      <ownedEnd xmi:type="uml:Property" xmi:id="_KRkXtNcaEeWCWOJsQcFwhg" visibility="public" type="_KRkXq9caEeWCWOJsQcFwhg" association="_KRkXs9caEeWCWOJsQcFwhg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_KRkXtdcaEeWCWOJsQcFwhg" name="ClientDetails">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KRkXttcaEeWCWOJsQcFwhg" name="id" visibility="public" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KRkXt9caEeWCWOJsQcFwhg" name="clientSecret" visibility="public" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KRkXuNcaEeWCWOJsQcFwhg" name="scope" visibility="public" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KRkXudcaEeWCWOJsQcFwhg" name="authorizedGrantTypes" visibility="public" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KRkXutcaEeWCWOJsQcFwhg" name="accessTokenValidity" visibility="public" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Integer"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KRkXu9caEeWCWOJsQcFwhg" name="refreshTokenValidity" visibility="public" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Integer"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Actor" xmi:id="_KRkXvNcaEeWCWOJsQcFwhg" name="Actor"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_KRkXvdcaEeWCWOJsQcFwhg" memberEnd="_KRkXvtcaEeWCWOJsQcFwhg _KRkXwNcaEeWCWOJsQcFwhg" navigableOwnedEnd="_KRkXvtcaEeWCWOJsQcFwhg">
+      <ownedEnd xmi:type="uml:Property" xmi:id="_KRkXvtcaEeWCWOJsQcFwhg" visibility="public" type="_KRkXwtcaEeWCWOJsQcFwhg" association="_KRkXvdcaEeWCWOJsQcFwhg">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_KRkXv9caEeWCWOJsQcFwhg"/>
+      </ownedEnd>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_KRkXwNcaEeWCWOJsQcFwhg" visibility="public" type="_KRkXvNcaEeWCWOJsQcFwhg" association="_KRkXvdcaEeWCWOJsQcFwhg">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_KRkXwdcaEeWCWOJsQcFwhg"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_KRkXwtcaEeWCWOJsQcFwhg" name="Login">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_KRkXw9caEeWCWOJsQcFwhg">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:type="uml:Comment" xmi:id="_KRkXxNcaEeWCWOJsQcFwhg">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:type="uml:Comment" xmi:id="_KRkXxdcaEeWCWOJsQcFwhg">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:type="uml:Comment" xmi:id="_KRkXxtcaEeWCWOJsQcFwhg">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:type="uml:Comment" xmi:id="_KRkXx9caEeWCWOJsQcFwhg">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:type="uml:Comment" xmi:id="_KRkXyNcaEeWCWOJsQcFwhg">
+        <body>...</body>
+      </ownedComment>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_KRkXydcaEeWCWOJsQcFwhg"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_KRkXytcaEeWCWOJsQcFwhg" name="ResearchGroup">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KRkXy9caEeWCWOJsQcFwhg" name="user" visibility="public" type="_KRjwlNcaEeWCWOJsQcFwhg" aggregation="shared" association="_KRkX1NcaEeWCWOJsQcFwhg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_KRkXzNcaEeWCWOJsQcFwhg" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_KRkXzdcaEeWCWOJsQcFwhg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KRkXztcaEeWCWOJsQcFwhg" name="administrators" visibility="public" type="_KRjwlNcaEeWCWOJsQcFwhg" aggregation="composite" association="_KRkX1tcaEeWCWOJsQcFwhg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_KRkXz9caEeWCWOJsQcFwhg" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KRkX0NcaEeWCWOJsQcFwhg" name="id" visibility="public" type="_KRkX3tcaEeWCWOJsQcFwhg" isUnique="false"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KRkX0dcaEeWCWOJsQcFwhg" name="name" visibility="public" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KRkX0tcaEeWCWOJsQcFwhg" name="description" visibility="public" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KRkX09caEeWCWOJsQcFwhg" name="website" visibility="public" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_KRkX1NcaEeWCWOJsQcFwhg" memberEnd="_KRkXy9caEeWCWOJsQcFwhg _KRkX1dcaEeWCWOJsQcFwhg">
+      <ownedEnd xmi:type="uml:Property" xmi:id="_KRkX1dcaEeWCWOJsQcFwhg" visibility="public" type="_KRkXytcaEeWCWOJsQcFwhg" association="_KRkX1NcaEeWCWOJsQcFwhg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_KRkX1tcaEeWCWOJsQcFwhg" memberEnd="_KRkXztcaEeWCWOJsQcFwhg _KRkX19caEeWCWOJsQcFwhg">
+      <ownedEnd xmi:type="uml:Property" xmi:id="_KRkX19caEeWCWOJsQcFwhg" visibility="public" type="_KRkXytcaEeWCWOJsQcFwhg" association="_KRkX1tcaEeWCWOJsQcFwhg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Activity" xmi:id="_KRkX2NcaEeWCWOJsQcFwhg" name="Activity">
+      <nestedClassifier xmi:type="uml:Collaboration" xmi:id="_KRkX2dcaEeWCWOJsQcFwhg" name="locals"/>
+      <node xmi:type="uml:InitialNode" xmi:id="_KRkX2tcaEeWCWOJsQcFwhg" name="Initial Node"/>
+      <node xmi:type="uml:StructuredActivityNode" xmi:id="_KRkX29caEeWCWOJsQcFwhg" name="Structured Node"/>
+      <node xmi:type="uml:ConditionalNode" xmi:id="_KRkX3NcaEeWCWOJsQcFwhg" name="Conditional Node"/>
+      <node xmi:type="uml:CallOperationAction" xmi:id="_KRkX3dcaEeWCWOJsQcFwhg" name="Call Operation"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_KRkX3tcaEeWCWOJsQcFwhg" name="long"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_KRkX39caEeWCWOJsQcFwhg" name="date"/>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:applyingPackage="_KRjwkNcaEeWCWOJsQcFwhg" xmi:id="_KVLFQNcaEeWCWOJsQcFwhg">
+      <eAnnotations xmi:id="_KVM6cNcaEeWCWOJsQcFwhg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="LocalProfile.profile.uml#_KSoup9caEeWCWOJsQcFwhg"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" xmi:applyingPackage="_KVLFQNcaEeWCWOJsQcFwhg" href="LocalProfile.profile.uml#_KSouoNcaEeWCWOJsQcFwhg"/>
+    </profileApplication>
+  </uml:Model>
+  <LocalProfile:User xmi:id="_KVQk0NcaEeWCWOJsQcFwhg" base_Package="_KRjwkNcaEeWCWOJsQcFwhg"/>
+</xmi:XMI>
