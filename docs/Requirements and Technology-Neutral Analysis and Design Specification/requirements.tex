@@ -6,9 +6,24 @@
 \usepackage[all]{hypcap}
 \usepackage{tabu}
 \usepackage[title,titletoc,toc]{appendix}
+\usepackage{fontspec}
+\usepackage{microtype}
+\usepackage{fancyhdr}
+\setlength{\headheight}{15.2pt}
+\pagestyle{fancy}
+\lhead{}
+\chead{}
+\rhead{\bfseries Software Requirements Specification}
+\lfoot{Team Echo}
+\cfoot{COS301 Software Engineering}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+
+\frenchspacing
 
 \title{\includegraphics[width=12cm]{Eeufeeslogo.jpg} \\
        Software Requirements Specification \\ 
@@ -36,22 +51,51 @@
 		\hline
 	\end{tabu}}
 
+\renewcommand*\contentsname{Table of Contents}
+
 \begin{document}
-\clearpage
 \maketitle
 \thispagestyle{empty}
+\clearpage
 
 \newpage
 \pagenumbering{roman}
-
+\thispagestyle{empty}
 \tableofcontents
+\clearpage
 
 \newpage
 \pagenumbering{arabic}
 
 \section{Vision}
+The client, Vreda Pieterse from the University of Pretoria, has requested a system to keep track of research publications in the Department of Computer Science at the University of Pretoria. The scope of the system is manage the administration around the tracking of research publications within the department, however colloboration on research papers is outside of the scope, as currently a version control system is used. The system is required to keep track of all publications and the associated meta data around the publications.
+
+The department currently consists of various research groups, with various contributors, all producing research publications which should be tracked. As the University of Pretoria is rewarded for research produced, it is important for both the heads of the research groups and the Head of the Department to monitor the progress of current publications, as well as gather other metrics to assist in other departamental planning.
+
+The most important requirements as set out by the client are:
+\begin{enumerate}
+\item Monitoring of the research output by the department through metrics by the Head of the Department and heads of research groups
+\item Tracking of the status of research publications
+\item Be able to produces customized reports based on user defined values
+\end{enumerate}
 
 \section{Background}
+This project was commissioned based on the following three problems faced by the client
+\begin{itemize}
+\item Limitations of current system: \\
+	\begin{itemize}
+	\item The current system used by the client is to use one common Microsoft Excel spreadsheet document to keep track of the status of current research publications. A problem with this solution is that the current solution data integrity issues due to the fact that the current system is not scalable.
+	\end{itemize}
+\item Increased productivity and transparency
+	\begin{itemize}
+	\item  A common issue faced by researchers in the Computer Science department, is that an increased workload at due dates lead to the fact the spreadsheet becomes unstable and crashing. This leads to increased downtime, as data recovery is required on the spreadsheet, whcih means that productivity is decreased due to the fact that data entry has to be done multiple times.  This finally leads to the most important issue of any software system, an increase in user frustration.
+	\end{itemize}
+
+\item Monitoring and management of funding
+	\begin{itemize}
+	\item The department receives funding based on research produced. The funding model and hence amount is based on various factors of the research publications, such as whether it is published, presented at a conferance, etc. This makes it thus very important for strategic departamental planning to be able to project the amount as well as type of publications that will be produced in the coming years, as well as to monitor history performance of research groups as whole and even individual researchers.
+	\end{itemize}
+\end{itemize}
 
 \section{Architecture requirements}
 \subsection{Access channel requirements}
@@ -315,7 +359,7 @@ Team Echo Repository: \url{https://github.com/andrewbroekman/echo}
 This repository contains:
 \begin{enumerate}
 \item All work done by team members.
-\item CONTRIBUTORS.md file outlining which members where involved in which phases of the project.
+\item \href{https://github.com/andrewbroekman/echo/blob/master/CONTRIBUTORS.md}{CONTRIBUTORS.md} file outlining which members where involved in which phases of the project.
 \end{enumerate}
 
 \begin{appendices}
