@@ -83,14 +83,14 @@ in = {In},
 \pagenumbering{arabic}
 
 \section{Vision}
-The client, Vreda Pieterse, from the University of Pretoria has requested a system to keep track of research publications in the Department of Computer Science at the University of Pretoria. The scope of the system is manage the administration around the tracking of research publications within the department. However collaboration on research papers is outside of the scope as a version control system is in use currently. The system is required to keep track of all publications and the associated meta data around the publications.
+The client, Vreda Pieterse, from the University of Pretoria has requested a system to keep track of research publications in the Department of Computer Science at the University of Pretoria. The scope of the system is managing the administration involved in tracking of research publications within the department. However collaboration on research papers is outside of the scope as a version control system is in use currently. The system is required to keep track of all publications and the associated meta data around the publications.
 
-The department currently consists of various research groups, with various contributors, all producing research publications which should be tracked. As the University of Pretoria is rewarded for research produced, it is important for both the heads of the research groups and the Head of the Department to monitor the progress of current publications, as well as gather other metrics to assist in other departmental planning.
+The department currently consists of various research groups, with various contributors, all producing research publications which should be tracked. As the University of Pretoria is rewarded for research produced, it is important for both the heads of research groups and the Head of Department to monitor the progress of current publications, and to gather other metrics to assist in other departmental planning.
 
 The most important requirements as set out by the client are:
 \begin{enumerate}
-\item Monitoring of the research output by the department through metrics by the Head of the Department and heads of the research groups
-\item Tracking of the status of research publications
+\item Monitoring the research output by the department through metrics by the Head of Department and heads of the research groups
+\item Tracking the status of research publications
 \item Being able to produce customized reports based on user defined values
 \end{enumerate}
 
@@ -99,37 +99,37 @@ This project was commissioned based on the following three problems faced by the
 \begin{itemize}
 \item Limitations of current system: \\
 	\begin{itemize}
-	\item The current system used by the client is to use one common Microsoft Excel spreadsheet document to keep track of the status of current research publications. A problem with this solution is that the current solution data integrity issues due to the fact that the current system is not scalable.
+	\item The current system used by the client involves utilizing one common Microsoft Excel spreadsheet document to keep track of the status of current research publications. A problem with this solution is that it causes data integrity problems due to the fact that it is not scalable.
 	\end{itemize}
 \item Increased productivity and transparency
 	\begin{itemize}
-	\item  A common issue faced by researchers in the Computer Science department is that an increased workload at due dates leads to the spreadsheet becoming unstable and subsequently crashing. This leads to increased downtime as data recovery is required on the spreadsheet which means that productivity is decreased due to the fact that data entry has to be done multiple times.  This finally leads to the most important issue of any software system: an increase in user frustration.
+	\item  A common issue faced by researchers in the Computer Science department is that an increased workload at due dates leads to the spreadsheet becoming unstable and subsequently crashing. Necessary data recovery on the spreadsheet leads to increased downtime, which, while also necessitating repeated data entry, decreases user productivity. Clearly, not a user friendly system, causing many a frustrated user.
 	\end{itemize}
 
 \item Monitoring and management of funding
 	\begin{itemize}
-	\item Currently the department receives funding based on research produced. The funding model, and hence the amount, is based on various factors pertaining to the research publications, such as whether it is published, presented at a conference and so on. This makes it, therefore, very important for strategic departmental planning to be able to project the amount as well as type of publications that will be produced in the coming years, as well as to monitor history performance of research groups as whole and even individual researchers.
+	\item Currently the department receives funding based on research produced. The funding model, and hence the amount, is based on various factors pertaining to the research publications, such as whether it is published, presented at a conference and so on. Therefore, having access to projections of the number and type of publications that are to be produced in coming years is very important to strategic departmental planning, as is monitoring historical performance of research groups and individual researchers.
 	\end{itemize}
 \end{itemize}
 
 \section{Architecture requirements}
 \subsection{Access channel requirements}
 \subsubsection{Human Access Channels}
-The human access component must allow for both a web interface and Android application allowing the user to manage their meta data associated with research papers they are involved in. 
+The human access component must allow for both a desktop web client and an Android mobile client allowing the user to manage the meta data associated with research papers they are involved in. 
 
-The web interface will be the primary contact point for users of the system as most research papers are created, edited and maintained on personal computers that either owned by the contributor in question or the University of Pretoria. The web application will be based on an MVC based SPA architectural pattern. 
+The web client will be the primary contact point for users of the system as most research papers are created, edited and maintained on personal computers that either owned by the contributor in question or the University of Pretoria. The web client will be based on an MVC based SPA architectural pattern. 
 
-The Android application will be made available in the Android App Store to allow contributors from outside the University of Pretoria to easily gain access to the system. The Android application should be accessible by all Android device Android version 4.2 and upwards.
+The Android application will be made available in the Android App Store to allow contributors from outside the University of Pretoria to easily gain access to the system. The Android application should be accessible by all mobile devices running Android version 4.2 and upwards.
 
 \subsubsection{System Access Channels}
-All system access will be made over a uniform interface which will assist in faster development time, ease of maintenance and lower overall cost associated with the system. The common interface that will be used, will be a RESTful API based on the the dissertation Architectural Styles and
-the Design of Network-based Software Architectures of \textcite{fielding}.  All client side interaction will be done via the web interface or Android application which will in turn use the RESTful API set of the system to accomplish the given task.
+All system access will be made over a uniform interface which will assist in faster development time, ease of maintenance and lower overall cost associated with the system. The common interface that will be used, will be a RESTful API based on the dissertation Architectural Styles and
+the Design of Network-based Software Architectures of \textcite{fielding}.  All client side interaction will be done via the web client or Android application which will in turn use the RESTful API set of the system to accomplish the given task.
 
 \subsection{Quality requirements}
 \subsubsection{Performance}
 \begin{enumerate}
 \item \textbf{Description}
-Application performance can be defined as the amount of work that can be accomplished by an application in question in a measured time interval. The time interval is normally measured in seconds, where the amount of work is defined can be defined as the throughput, latency or data transmission time.
+Application performance can be defined as the amount of work that can be accomplished by an application in question in a measured time interval. The time interval is normally measured in seconds, where the amount of work can be defined as the throughput, latency or data transmission time.
 	\begin{itemize}
 		\item \textbf{Throughput} \\
 		The number of requests and responses which can be processed by the system in a given time interval.
@@ -139,7 +139,7 @@ Application performance can be defined as the amount of work that can be accompl
 		The time it takes to transmit a request to the server from a client or a response from the server to the client. This is heavily influenced by the size of the request, as well as the quality of the network medium.
 	\end{itemize}
 	
-	Our aim for this system, is to increase the throughput and decrease the latency. As we have no control over the network medium used, we are aiming for a minimal request and response payload as to decrease the data transmission time.
+	The aim for this system, is to increase the throughput and decrease the latency. As the developer has no control over the network medium used, he/she must aim for a minimal request and response payload as to decrease the data transmission time.
 \item \textbf{Justification}
 \item \textbf{Requirements}
 	\begin{itemize}
@@ -153,7 +153,7 @@ Application performance can be defined as the amount of work that can be accompl
 \subsubsection{Reliability}
 \begin{enumerate}
 \item \textbf{Description}
-The design of this system is largely based on the fact that the current system used by the client is not reliable and suffers from data crashes and data loss. The newly designed system needs to be accessible from both inside the University of Pretoria campus as well as from other networks, especially on other campuses on the TENET network. The system should be reliable in both its accessibility and in the data that the system will use to calculate contributor  metrics. 
+The design of this system is largely based on the fact that the current system used by the client is not reliable and suffers from system crashes and data loss. The newly designed system needs to be accessible from both inside University of Pretoria campuses as well as from other networks, especially on other campuses on the TENET network. The system should be reliable in both its accessibility and in the data that the system will use to calculate contributor metrics. 
 \item \textbf{Justification}
 \item \textbf{Requirements}
 	\begin{itemize}
@@ -166,7 +166,7 @@ The design of this system is largely based on the fact that the current system u
 \subsubsection{Scalability}
 \begin{enumerate}
 \item \textbf{Description}
-Scalability refers to the application in question's ability to handle an above normal workload for extended time periods and the mechanisms employed to faciliate this.  The client has provided minimum specifications under which the system has to function. However the client has indicated that due to the business requirements, the system will expierence higher loads during the end of the month.
+Scalability refers to the application in question's ability to handle an above normal workload for extended time periods and the mechanisms employed to facilitate this. The client has specified minimum conditions under which the system needs to function. However the client has indicated that due to the business requirements, the system will experience higher workloads during the end of the month.
 \item \textbf{Justification}
 \item \textbf{Requirements}
 	\begin{itemize}
@@ -178,7 +178,7 @@ Scalability refers to the application in question's ability to handle an above n
 \subsubsection{Security}
 \begin{enumerate}
 \item \textbf{Description}
-Security in application software refers to authentication, authorization and accounting. Authentication refers to the systems' ability to provide a way of identifying a user, normally with a combination of a user name and password, or by using access tokens. Authorization refers to the systems' ability to determine whether the user in question has the required authority to execute certain commands or tasks. Finally if the user has been authenticated and has the required authorization then accounting needs to be done to be able to determine how the users action has changed the system.  
+Security in application software refers to authentication, authorization, data security and accounting. Authentication refers to the systems' ability to provide a way of identifying a user, normally with a combination of a user name and password, or by using access tokens. Authorization refers to the systems' ability to determine whether the user in question has the required authority to execute certain commands or tasks. Data security refers to data only being accessible through authorised channels. Finally if the user has been authenticated and has the required authorization then accounting needs to be done to be able to determine how the users action has changed the system.  
 \item \textbf{Justification}
 \item \textbf{Requirements}
 	\begin{itemize}
@@ -188,6 +188,7 @@ Security in application software refers to authentication, authorization and acc
 		\item Password hosting with a unique salt for each user should be used.
 		\item A key derivation function should be used with passwords. 
 		\item After N invalid attempts, account should be locked for M min, where N and M would be agreed upon customer and developer based on current best practices.
+		\item Database access must require authentication.
 	\end{itemize}
 \end{enumerate}
 
@@ -236,7 +237,7 @@ The system is to be designed in such a way that it is easily updated, modified o
 \subsubsection{Integrability}
 \begin{enumerate}
 \item \textbf{Description}
-The system is should allow for future external integration onto other platforms such as security authentication providers, other external research meta-data databases etc.
+The system should allow for future external integration with other platforms such as security authentication providers, other external research meta-data databases etc.
 \item \textbf{Justification}
 \item \textbf{Requirements}
 	\begin{itemize}
@@ -249,7 +250,7 @@ The system is should allow for future external integration onto other platforms 
 \subsubsection{Cost}
 \begin{enumerate}
 \item \textbf{Description}
-The cost of the system entails any initial expenses as well as ongoing any expenses which the client may incur at some point. Such expenses arise from software licenses, external computing resources required as well as future maintenance of the system in terms of time.
+The cost of the system entails any initial expenses as well as any ongoing expenses which the client may incur at some point. Such expenses arise from software licenses, external computing resources required as well as future maintenance of the system in terms of time.
 \item \textbf{Justification}
 \item \textbf{Requirements}
 	\begin{itemize}
@@ -261,7 +262,7 @@ The cost of the system entails any initial expenses as well as ongoing any expen
 \subsubsection{Usability}
 \begin{enumerate}
 \item \textbf{Description}
-Usability refers to ease with which human and servers interact with the system in question. Usability can be measured in various ways such as using quantifiable scientific measures or more subjective measures with a key question point being if the API follows conventions and so on.
+Usability refers to ease with which humans, and to a lesser extent, servers, interact with the system in question. Usability can be measured in various ways such as using quantifiable scientific measures or more subjective measures with a key question point being if the API follows conventions and so on.
 \item \textbf{Justification}
 \item \textbf{Requirements}
 	\begin{itemize}
@@ -269,8 +270,8 @@ Usability refers to ease with which human and servers interact with the system i
 		\item The web client should render properly and be fully functional in modern web browsers.
 		\item Mobile devices running Android 4.2 and upwards should be fully supported.
 		\item Material design UI guidelines prescribed by Google must be used, to ensure that the clients feel modern and familiar. 
-		\item Android and web interface should support the full back-end API specifications.
-		\item Allow user to elect whether they would like their data to be available offline.
+		\item Android app and web client should support the full back-end API specifications.
+		\item The user must be allowed to elect whether they would like their data to be available offline.
 		\item Mobile client users should be able choose between downloading data over Wi-Fi or 3G. 
 	\end{itemize}
 \end{enumerate}
@@ -284,11 +285,11 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 
 \subsection{Architecture constraints}
 \begin{itemize}
-\item Representational State Transfer (REST) will be used, it depends on cacheable, client server and on stateless communications protocol. And, in most of it cases it uses the HTTP protocol. It is an architectural style used to design networked applications. All the four CRUD operations are used in REST. 
+\item Representational State Transfer (REST) will be used, it depends on cacheable, client server and on stateless communications protocol, and uses the HTTP protocol in most cases. It is an architectural style used to design networked applications. All the four CRUD operations are used in REST. 
 \item Service Oriented Architecture (SOA). SOA makes it easier for software components on computers that are connected on a network to work together with no need to make changes to the underlying program itself. The concept of service is what SOA is based on.
-\item Spring will be used, it is a technology that is associated with developing website very secure and also working with databases in conjunction with something called hibernate. So spring is just an API, the idea is that you represent your java objects by spring beans.
-\item Dependency injections (DI) will be used because of the possibility to test software and the re-usability is increased by a design based on independent classes/ component.
-\ietm Unit Testing to automates the following tasks: compilation of java source code, running test cases, generating project documentation.
+\item Spring will be used. It is a technology that is associated with developing secure websites and interacting with databases in conjunction with Hibernate. Spring is simply a usable API, with the idea being for the developer to represent Java objects with Spring Beans.
+\item Dependency Injection (DI) will be used because it eases software testing and re-usability of software by using a design based on independent classes/components.
+\item Unit Testing to automate the following tasks: compilation of Java source code, running test cases and generating project documentation.
 \end{itemize}
 
 \subsubsection{Architectural Patterns}
@@ -323,7 +324,7 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 \subsubsection{User Login - User holds no tokens}
 	\begin{itemize}
 		\item Description
-		This use case will be used by the REST clients, specifically the web and Android mobile client to initiate user login via the back-end service. 
+		This use case will be used by the REST clients, specifically the web client and Android app, to initiate user login via the back-end service. 
 		\item Pre-Conditions
 			\begin{enumerate}
 				\item The user is already registered with the back-end service.
@@ -343,7 +344,7 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 \subsubsection{User Login - User holds access and refresh tokens}
 	\begin{itemize}
 		\item Description
-		This use case will be used by the REST clients, specifically the Android mobile client to achieve safe long term login without storing user credentials on device. 
+		This use case will be used by the REST clients, specifically the Android app, to achieve safe long term login without storing user credentials on device. 
 		\item Pre-Conditions
 			\begin{enumerate}
 				\item The user is already registered with the backend service.
