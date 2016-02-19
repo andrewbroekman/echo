@@ -5,6 +5,7 @@
 \usepackage{hyperref}
 \usepackage[all]{hypcap}
 \usepackage{tabu}
+\usepackage[title,titletoc,toc]{appendix}
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
@@ -54,48 +55,136 @@
 
 \section{Architecture requirements}
 \subsection{Access channel requirements}
+\subsubsection{Human Access Channels}
+The human access component must allow for both a web interface and Android application allowing the user to manage their meta data associated with research papers they are involved in. 
+
+The web interface will be the primary contact point for users of the system, as most research papers are created, edited and maintained on personal computers, either owned by the contributor in question or the University of Pretoria. The web application will be based on an MVC based SPA architectural pattern. 
+
+The Android application will be made available in the Android App Store to allow contributors from outside the University of Pretoria, to easily gain access to the system. The Android application should be accessable by all Android device Android version 4.2 and upwards.
+
+\subsubsection{System Access Channels}
+All system access will be made over a uniform interface, which will assist in faster development time, ease of maintenance and hence lower overall cost associated with the system. The common interface which will be used, will be a RESTful API based on the the dissertation Architectural Styles and
+the Design of Network-based Software Architectures of Fielding (2000).  All client side interaction will be done via the web interface or Android application which will in turn use the RESTful API set of the system to accomplish the given task.
 
 \subsection{Quality requirements}
 \subsubsection{Performance}
+\begin{enumerate}
+\item \textbf{Description}
+Application performance can be defined as the amount of work which can be accomplished by an application in question in a measured time interval. The time interval is normally measured in seconds, where the amount of work is defined can be defined as the throughput, latency or data transmission time.
+	\begin{itemize}
+		\item \textbf{Throughput} \\
+		The number of requests and responses which can be processed by the system in a given time interval.
+		\item \textbf{Latency} \\
+		A time interval measured as the time it takes to service a request. 
+		\item \textbf{Data transmission time} \\
+		The time it takes to transmit a request to the server from a client or a response from the server to the client. This is heavily influenced by the size of the request, as well as the quality of the network medium.
+	\end{itemize}
+	
+	Our aim for this system, is to increase the throughput and decrease the latency. As we have no control over the network medium used, we are aiming for a minimal request and response payload as to decrease the data transmission time.
+\item \textbf{Justification}
+\item \textbf{Requirements}
+\end{enumerate}
 
 \subsubsection{Reliability}
+\begin{enumerate}
+\item \textbf{Description}
+The design of this system is largely based on the fact that the current system used by the client is not reliable and suffers from data crashes and data loss, The newly designed system needs to be accessable from both inside the University of Pretoria campus as well as from other networks, espesically other campuses on the TENET network. The system should be reliable in both accessability and the data that the system will be used to calculate contributor perfomance metrics. 
+\item \textbf{Justification}
+\item \textbf{Requirements}
+\end{enumerate}
 
 \subsubsection{Scalability}
+\begin{enumerate}
+\item \textbf{Description}
+Scalability refers to the application in question's ability to handle an above normal workload for extended time periods and the mechanisms employed to faciliate this.  The client has provided minimum specifications under which the system has to function. However the client has indicated that due to the business requirements, the system will expierence higher loads during the end of the month.
+\item \textbf{Justification}
+\item \textbf{Requirements}
+\end{enumerate}
 
 \subsubsection{Security}
-\begin{itemize}
-\item System should be resistant against SQL injections.
-\item A user group hierarchy system should be used to manage user rights.
-\item User credentials, i.e. username and password should not be stored on Android user device. A token based approach should be utilized so that only tokens are stored on end user device, allowing for the easy revocation of device access if a device is lost, such as an OAuth based security system could be utilized.
-\end{itemize}
+\begin{enumerate}
+\item \textbf{Description}
+Security in application software refers to authentication, authorization, and accounting. Authentication refers to the systems ability to provide a way of identifying a user, normally with a compbination of a username and password combination, or access tokens. Authorization refers to the systems ability to determine whether the user in question has the required authority to execute certain commands or tasks. Finally if the user has been authenticated and has the required authorization, then accounting needs to be done as to be able to determine how the users action has changed the system.  
+\item \textbf{Justification}
+\item \textbf{Requirements}
+	\begin{itemize}
+	\item System should be resistant against SQL injections.
+	\item A user group hierarchy system should be used to manage user rights.
+	\item User credentials, i.e. username and password should not be stored on Android user device. A token based approach should be utilized so that only tokens are stored on end user device, allowing for the easy revocation of device access if a device is lost, such as an OAuth based security system could be utilized.
+	\end{itemize}
+\end{enumerate}
 
 \subsubsection{Flexibility}
+Flexibility refers to the ability of the system to be changed dynamically either by hot swapping certain components in a live system, or extending the system with some kind of plugin. 
+\begin{enumerate}
+\item \textbf{Description}
+\item \textbf{Justification}
+\item \textbf{Requirements}
+\end{enumerate}
 
 \subsubsection{Maintainability}
-\begin{itemize}
-\item All code should be documented in the applicable langauge documentation framework, such as JavaDocs for a Java based system, DOxygen for a C/C++ based system, etc.
-\item A coding style guide/manual should be setup and associated with the project, such that all developers use similar coding styles and conventions.
-\item System should be seperated in distinct, consice and independant modules to allow for easier maintenance.
-\end{itemize}
+The system is to be designed in such a way, that it is easily updated, modified or extable by the client in the future. In order to achieve these requirements, design patterns and best practices such as coding style guides are normally used to ensure uniformaity and modularity across the system.
+\begin{enumerate}
+\item \textbf{Description}
+\item \textbf{Justification}
+\item \textbf{Requirements}
+	\begin{itemize}
+	\item All code should be documented in the applicable langauge documentation framework, such as JavaDocs for a Java based system, DOxygen for a C/C++ based system, etc.
+	\item A coding style guide/manual should be setup and associated with the project, such that all developers use similar coding styles and conventions.
+	\item System should be seperated in distinct, consice and independant modules to allow for easier maintenance.
+	\end{itemize}
+\end{enumerate}
 
 \subsubsection{Auditability/Monitorability}
-\begin{itemize}
-\item Data in database should be always be consistent. This implies that all data should fulfill, constraints placed on the data by the data model, such as regex patterns, minimum and maximum length, not nullable fields, etc.
-\item No data should ever be deleted.
-\item It should always be possible to see which user created which objects at what time.
-\item It should always be possible to see which user last changed objects and at what time.
-\item An immutable log of user actions should be kept and should only be accessable by administrative staff.
-\end{itemize}
+\begin{enumerate}
+\item \textbf{Description}
+\item \textbf{Justification}
+\item \textbf{Requirements}
+	\begin{itemize}
+	\item Data in database should be always be consistent. This implies that all data should fulfill, constraints placed on the data by the data model, such as regex patterns, minimum and maximum length, not nullable fields, etc.
+	\item No data should ever be deleted.
+	\item It should always be possible to see which user created which objects at what time.
+	\item It should always be possible to see which user last changed objects and at what time.
+	\item An immutable log of user actions should be kept and should only be accessable by administrative staff.
+	\end{itemize}
+\end{enumerate}
 
 \subsubsection{Integrability}
+\begin{enumerate}
+\item \textbf{Description}
+The system is should allow for future external integration into other platforms, such as security authentication providers, other external research meta-data databases etc.
+\item \textbf{Justification}
+\item \textbf{Requirements}
+\end{enumerate}
 
 \subsubsection{Cost}
+\begin{enumerate}
+\item \textbf{Description}
+The cost of the system entails any initial aswell as ongoing expenses which the client may incur. Such expenses arise from software licenese, external computing resources required, as well as future maintance of the system, in terms of time.
+\item \textbf{Justification}
+\item \textbf{Requirements}
+\end{enumerate}
 
 \subsubsection{Usability}
+\begin{enumerate}
+\item \textbf{Description}
+Usability refers to ease human and servers interact with the system in question. Usablility can be measured in various ways, using quantifable scientific measures to more sibjective measures, such as does the API follow convetions, etc.
+\item \textbf{Justification}
+\item \textbf{Requirements}
+\end{enumerate}
 
 \subsection{Integration requirements}
+The web interface should be accessable by most modern PC's with a modern browser. The website will be making use of an SPA MVC based design which will query a RESTful API, resulting in a very light, mobile and responsive web interface which will it to work accross various devices.
+
+The Android application will be built to work on all Android version 4.2 and upward devices. The mobile application on the Android device should be sensitive to the amount of data that is trasmitted over the network due to the high cost of mobile internet in South Africa. To allow for minimal communcation but maximum functionality and MVC based deisgn will be followed in the Android application design.  Further the use of accessing RESTful API's will allow objects to be transmitted on the wire in a very minimal representation, thereby saving on client bandwidth costs.
+
+The RESTful API will be implemented using the HTTP protocol as a high level protocol. The reason that HTTP is chosen, is that it is a widely supported and deployed protocol, allowing a lot of flexibility. Furmore, most JavaScripts libraries and the Android platform itself has excelleant support for RESTful API's over HTTP.
 
 \subsection{Architecture constraints}
+\subsubsection{Architectural Patterns}
+\begin{itemize}
+\item
+\end{itemize}
 
 \section{Functional requirements and application design}
 \subsection{Use case prioritization}
@@ -142,4 +231,25 @@ This repository contains:
 \item All work done by team members.
 \item CONTRIBUTORS.md file outlining which members where involved in which phases of the project.
 \end{enumerate}
+
+\begin{appendices}
+\newpage
+\section{Data Dictionary}
+\begin{tabu} to \textwidth { | X[l] | X[l] | }
+	\hline
+		\textbf{Term}		& \textbf{Definition}	\\ \hline \hline
+		Android			& A Linux based operating system developed by Google Inc. and the Open Handset Alliance for smart phones, tablets, and other mobile computing devices. Android applications are developed in Java. \\ \hline
+		HTTP			& HyperText Transfer Protocol, standarised by RFCs 7230-7237 \\ \hline
+		ISO				& International Organization for Standardization \\ \hline
+		MVC				& Model-View-Controller \\ \hline
+		OAuth			& An open standard for authorization, using an access token approach, allowing resource owners to authorize third-party clients to access protected user resources on a resource server, without the client providing their credentials to the third-party in question. \\ \hline
+		RDBMS			& Relational DataBase Management System \\ \hline
+		SPA				& Single Page Application \\ \hline
+		SQL				& Structured Query Language is a programming language, standardised by ISO for managing data in RDBMS. Actions allow for the creation, reading/retrieving, updating and deletion of data in the management system. \\ \hline
+	\hline
+\end{tabu}
+
+\end{appendices}
+
+
 \end{document}
