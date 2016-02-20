@@ -8,6 +8,8 @@ Critical:
 	* View/Edit Paper
 	* Web Interface (maybe?)
 	* Adding/Editting Authors/Researchers to Paper
+	* Adding/Editting/Viewing Research Groups
+	* Adding/Removing Users to Research Groups
 
 Important:
 	* Import Historical Paper [Linked with Create Paper]
