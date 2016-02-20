@@ -170,6 +170,7 @@ The current system is largely unreliable in that it crashes under large workload
 \item \textbf{Description} \\
 Scalability refers to the application in question's ability to handle an above normal workload for extended time periods and the mechanisms employed to facilitate this. The client has specified minimum conditions under which the system needs to function. However the client has indicated that due to the business requirements, the system will experience higher workloads during the end of the month.
 \item \textbf{Justification}
+The system needs Scalability because it needs to support 10 research groups, with 100 members each working with 50 concurrent users. But these requirements may increase in future and hence the system should be able to handle additional loads.
 \item \textbf{Requirements}
 	\begin{itemize}
 		\item The system should be able to handle 10 research groups with each research group containing 100 members.
@@ -221,6 +222,7 @@ Flexibility is important for any system. A non-flexible system is restricted to 
 \item \textbf{Description} \\
 The system is to be designed in such a way that it is easily updated, modified or exitable by the client in the future. In order to achieve these requirements, design patterns and best practices such as coding style guides are normally used to ensure uniformity and modularity across the system.
 \item \textbf{Justification}
+Many systems require regular changes, not because they were poorly designed or implemented, but because of changes in external factors. For example we might need to update informations to meet the Computer Science laws and regulations.
 \item \textbf{Requirements}
 	\begin{itemize}
 		\item All code should be documented in the applicable language documentation framework, such as JavaDocs for a Java based system, DOxygen for a C/C++ based system, etc.
@@ -234,6 +236,7 @@ The system is to be designed in such a way that it is easily updated, modified o
 \item \textbf{Description}
 The system is to be designed to be verbose and transparent in its workings, and to ensure maximum data security, to allow role players to have insights into how the system is used and how it may be improved. These requirements are achieved by making the maximum amount of relevant data available to authorized users, logging performance critical information, and by enforcing strict constraints on the data that is stored. 
 \item \textbf{Justification}
+This is an important process in Software Engineering, where all the informations must be correct so requiring all the developers to see who made changes and when so that consistency must be kept in order to keep the database accurate and reliable.
 \item \textbf{Requirements}
 	\begin{itemize}
 		\item Data in database should be always be consistent. This implies that all data should adhere to constraints placed on the data by the data model, such as regex patterns, minimum and maximum length, non nullable fields, etc.
@@ -264,6 +267,7 @@ The system necessitates integrability to allow for maximum usability, as the int
 \item \textbf{Description} \\
 The cost of the system entails any initial expenses as well as any ongoing expenses which the client may incur at some point. Such expenses arise from software licenses, external computing resources required as well as future maintenance of the system in terms of time.
 \item \textbf{Justification}
+The expenses made and sotware licenses cost must be taken into account in order to set the price of the software.
 \item \textbf{Requirements}
 	\begin{itemize}
 		\item System should be cheap to operate, maintain and extend. If the quality and maturity of technologies available allow it, technologies used must be freely available/usable.
