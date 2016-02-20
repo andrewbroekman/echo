@@ -156,6 +156,7 @@ The current system suffers from performance issues, and hence it is important fo
 \item \textbf{Description} \\
 The design of this system is largely based on the fact that the current system used by the client is not reliable and suffers from system crashes and data loss. The newly designed system needs to be accessible from both inside University of Pretoria campuses as well as from other networks, especially on other campuses on the TENET network. The system should be reliable in both its accessibility and in the data that the system will use to calculate contributor metrics. 
 \item \textbf{Justification}
+The current system is largely unreliable in that it crashes under large workloads, and in that, because only one user can work on it at a time, many users get denied service during work critical times when workloads are high. This causes a detriment in user productivity. To ensure that the system can be used confidently as a tool to increase productivity and ease the work process, the development aim must be for the system to be as reliable and accessible as possible.
 \item \textbf{Requirements}
 	\begin{itemize}
 		\item To enable offline activity and access of data from the Android app, data synced must be made differentiable with timestamps.
@@ -205,6 +206,7 @@ Finally, as this system is used to measure performance, it is important that non
 \item \textbf{Description} \\
 Flexibility refers to the ability of the system to be changed dynamically either by hot swapping certain components in a live system or by extending the system with some kind of plugin. 
 \item \textbf{Justification}
+Flexibility is important for any system. A non-flexible system is restricted to using technologies that were hard coded into it, and this necessitates, at best, large scale refactoring every time an upgrade is available since new technologies need to be reintegrated, makes adding new features tedious, and risks the system becoming archaic. A flexible system requires minimum effort to upgrade and expand, allowing for the system to easily grow in usefulness and function beyond the original vision, and is directly in line with the requirement for the system to be cheap to maintain and upgrade, not just financially but also in labour. 
 \item \textbf{Requirements}
 	\begin{itemize}
 	\item The system should allow unregistered users to use existing third party web service login credentials to register or log in to the service.
@@ -230,6 +232,7 @@ The system is to be designed in such a way that it is easily updated, modified o
 \subsubsection{Auditability/Monitorability}
 \begin{enumerate}
 \item \textbf{Description}
+The system is to be designed to be verbose and transparent in its workings, and to ensure maximum data security, to allow role players to have insights into how the system is used and how it may be improved. These requirements are achieved by making the maximum amount of relevant data available to authorized users, logging performance critical information, and by enforcing strict constraints on the data that is stored. 
 \item \textbf{Justification}
 \item \textbf{Requirements}
 	\begin{itemize}
@@ -247,6 +250,7 @@ The system is to be designed in such a way that it is easily updated, modified o
 \item \textbf{Description} \\
 The system should allow for future external integration with other platforms such as security authentication providers, other external research meta-data databases etc.
 \item \textbf{Justification}
+The system necessitates integrability to allow for maximum usability, as the integrability of the system is directly related to how usable it is. To be usable, the system must allow for easy migration, not just from previous systems, but also to future systems and future data storage mediums. The usability is also largely determined by how well the back-end system integrates with front end clients, and which clients are supported.
 \item \textbf{Requirements}
 	\begin{itemize}
 		\item The system should allow technology neutral importing and exporting of data.
