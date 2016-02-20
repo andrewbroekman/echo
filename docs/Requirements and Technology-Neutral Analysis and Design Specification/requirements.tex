@@ -128,7 +128,7 @@ the Design of Network-based Software Architectures of \textcite{fielding}.  All 
 \subsection{Quality requirements}
 \subsubsection{Performance}
 \begin{enumerate}
-\item \textbf{Description}
+\item \textbf{Description} \\
 Application performance can be defined as the amount of work that can be accomplished by an application in question in a measured time interval. The time interval is normally measured in seconds, where the amount of work can be defined as the throughput, latency or data transmission time.
 	\begin{itemize}
 		\item \textbf{Throughput} \\
@@ -140,7 +140,8 @@ Application performance can be defined as the amount of work that can be accompl
 	\end{itemize}
 	
 	The aim for this system, is to increase the throughput and decrease the latency. As the developer has no control over the network medium used, he/she must aim for a minimal request and response payload as to decrease the data transmission time.
-\item \textbf{Justification}
+\item \textbf{Justification} \\
+The current system suffers from performance issues, and hence it is important for this new system to address these issues adequately. Our aim for this system is to increase throughput, decrease latency and data transimission time. This will ensure we have a system that is responsive at all times, including peak times and delivers an excellant user expierence.
 \item \textbf{Requirements}
 	\begin{itemize}
 		\item Network requests must be benchmarked, monitored and aggregate statistics about network requests must be made available.
@@ -152,7 +153,7 @@ Application performance can be defined as the amount of work that can be accompl
 
 \subsubsection{Reliability}
 \begin{enumerate}
-\item \textbf{Description}
+\item \textbf{Description} \\
 The design of this system is largely based on the fact that the current system used by the client is not reliable and suffers from system crashes and data loss. The newly designed system needs to be accessible from both inside University of Pretoria campuses as well as from other networks, especially on other campuses on the TENET network. The system should be reliable in both its accessibility and in the data that the system will use to calculate contributor metrics. 
 \item \textbf{Justification}
 \item \textbf{Requirements}
@@ -165,7 +166,7 @@ The design of this system is largely based on the fact that the current system u
 
 \subsubsection{Scalability}
 \begin{enumerate}
-\item \textbf{Description}
+\item \textbf{Description} \\
 Scalability refers to the application in question's ability to handle an above normal workload for extended time periods and the mechanisms employed to facilitate this. The client has specified minimum conditions under which the system needs to function. However the client has indicated that due to the business requirements, the system will experience higher workloads during the end of the month.
 \item \textbf{Justification}
 \item \textbf{Requirements}
@@ -177,9 +178,16 @@ Scalability refers to the application in question's ability to handle an above n
 
 \subsubsection{Security}
 \begin{enumerate}
-\item \textbf{Description}
+\item \textbf{Description} \\
 Security in application software refers to authentication, authorization, data security and accounting. Authentication refers to the systems' ability to provide a way of identifying a user, normally with a combination of a user name and password, or by using access tokens. Authorization refers to the systems' ability to determine whether the user in question has the required authority to execute certain commands or tasks. Data security refers to data only being accessible through authorised channels. Finally if the user has been authenticated and has the required authorization then accounting needs to be done to be able to determine how the users action has changed the system.  
-\item \textbf{Justification}
+\item \textbf{Justification} \\
+Security is a important aspect of any software product. In terms of information security, we are concerned about integrity, availability, confidentiality and non-repudiation in that order. 
+
+The reason we are most concerned about data integrity is that this data will be used to monitor and determine performance of researchers as well as assist in departmental strategic planning, which implies that the system must be available at all times to the heads of the research groups and the head of the department. 
+
+Following this, is the aspect of data confidentiality, as we want to ensure passwords of the users stay secure as well as the meta data of research papers. The storing of meta data and subsequent leaking of this meta data can lead to other researchers publishing and patenting ideas first.
+
+Finally, as this system is used to measure performance, it is important that non-repudiation of information is available, as researchers must be accountable for any information changes they make.
 \item \textbf{Requirements}
 	\begin{itemize}
 		\item System should be resistant to SQL injections.
@@ -193,9 +201,9 @@ Security in application software refers to authentication, authorization, data s
 \end{enumerate}
 
 \subsubsection{Flexibility}
-Flexibility refers to the ability of the system to be changed dynamically either by hot swapping certain components in a live system or by extending the system with some kind of plugin. 
 \begin{enumerate}
-\item \textbf{Description}
+\item \textbf{Description} \\
+Flexibility refers to the ability of the system to be changed dynamically either by hot swapping certain components in a live system or by extending the system with some kind of plugin. 
 \item \textbf{Justification}
 \item \textbf{Requirements}
 	\begin{itemize}
@@ -207,9 +215,9 @@ Flexibility refers to the ability of the system to be changed dynamically either
 \end{enumerate}
 
 \subsubsection{Maintainability}
-The system is to be designed in such a way that it is easily updated, modified or exitable by the client in the future. In order to achieve these requirements, design patterns and best practices such as coding style guides are normally used to ensure uniformity and modularity across the system.
 \begin{enumerate}
-\item \textbf{Description}
+\item \textbf{Description} \\
+The system is to be designed in such a way that it is easily updated, modified or exitable by the client in the future. In order to achieve these requirements, design patterns and best practices such as coding style guides are normally used to ensure uniformity and modularity across the system.
 \item \textbf{Justification}
 \item \textbf{Requirements}
 	\begin{itemize}
@@ -236,7 +244,7 @@ The system is to be designed in such a way that it is easily updated, modified o
 
 \subsubsection{Integrability}
 \begin{enumerate}
-\item \textbf{Description}
+\item \textbf{Description} \\
 The system should allow for future external integration with other platforms such as security authentication providers, other external research meta-data databases etc.
 \item \textbf{Justification}
 \item \textbf{Requirements}
@@ -249,7 +257,7 @@ The system should allow for future external integration with other platforms suc
 
 \subsubsection{Cost}
 \begin{enumerate}
-\item \textbf{Description}
+\item \textbf{Description} \\
 The cost of the system entails any initial expenses as well as any ongoing expenses which the client may incur at some point. Such expenses arise from software licenses, external computing resources required as well as future maintenance of the system in terms of time.
 \item \textbf{Justification}
 \item \textbf{Requirements}
@@ -261,9 +269,10 @@ The cost of the system entails any initial expenses as well as any ongoing expen
 
 \subsubsection{Usability}
 \begin{enumerate}
-\item \textbf{Description}
+\item \textbf{Description} \\
 Usability refers to ease with which humans, and to a lesser extent, servers, interact with the system in question. Usability can be measured in various ways such as using quantifiable scientific measures or more subjective measures with a key question point being if the API follows conventions and so on.
-\item \textbf{Justification}
+\item \textbf{Justification} \\
+It is important that the new system is usable as it is a user-centric system. Ensuring that the system is usable will ensure that users capture accurate and correct information into the system which will for better performance and departmental strategic planning. As this system will also be used by parties outside of the Department of Computer Science of the University of Pretoria, it is important that the system conveys a professional image, as this will reflect on the image of the University of Pretoria. 
 \item \textbf{Requirements}
 	\begin{itemize}
 		\item Each view in the desktop and mobile clients should be related to a single topic only.
