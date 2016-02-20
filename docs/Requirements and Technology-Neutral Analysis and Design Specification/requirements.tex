@@ -303,27 +303,44 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 \section{Functional requirements and application design}
 \subsection{Use case prioritization}
 \subsubsection{Critical}
-\begin{itemize}
-\item Item1
-\item Item2
-\end{itemize}
+	\begin{itemize}
+	  	\item Create User
+		\item View/Edit User
+		\item User Authentication[Login/Logout/Permissions]
+		\item Create Paper
+		\item View/Edit Paper
+		\item Web Interface
+		\item Create Authors/Researchers
+		\item View/Edit Authors/Researchers
+		\item Add/Remove Authors/Researchers to Paper
+		\item Create Research Groups
+		\item View/Edit Research Groups
+		\item Add/Remove Users to Research Groups
+	\end{itemize}
 
 \subsubsection{Important}
-\begin{itemize}
-\item Item1
-\item Item2
-\end{itemize}
+	\begin{itemize}
+	  	\item Import Historical Paper [Linked with Create Paper]
+		\item Create Bibliography
+		\item View/Edit Bibliography
+		\item Research Paper Units
+		\item User Units [Earnings]
+	\end{itemize}
+
 
 \subsubsection{Nice to have}
-\begin{itemize}
-\item Item1
-\item Item2
-\end{itemize}
+	\begin{itemize}
+		\item Dates for paper linking to Google Calender
+		\item Android Interface
+		\item Paper Progress Tracking
+		\item User Hierachy
+		\item Home View
+	\end{itemize}
 
 \subsection{Use case/Services contracts}
 \subsubsection{User Login - User holds no tokens}
 	\begin{itemize}
-		\item Description
+		\item Description\\
 		This use case will be used by the REST clients, specifically the web client and Android app, to initiate user login via the back-end service. 
 		\item Pre-Conditions
 			\begin{enumerate}
@@ -343,7 +360,7 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 	
 \subsubsection{User Login - User holds access and refresh tokens}
 	\begin{itemize}
-		\item Description
+		\item Description\\
 		This use case will be used by the REST clients, specifically the Android app, to achieve safe long term login without storing user credentials on device. 
 		\item Pre-Conditions
 			\begin{enumerate}
@@ -360,15 +377,267 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 		\item Service Contract
 		\item Process Specification
 	\end{itemize}
-	
-\begin{tabu} to \textwidth { | X[l] | X[l] | X[l] | X[l] | }
-	\hline
-		Use Case		& Pre-Condition		& Post-Condition		& Description	\\ \hline \hline
-		Login		& item 12			& item13				& item 14  \\ \hline
-		item 21		& item 22			& item23				& item 24  \\ \hline
-		item 31		& item 32			& item33				& item 34  \\
-	\hline
-\end{tabu}
+
+\subsubsection{Create User}
+	\begin{itemize}
+		\item Description\\
+			This use case will be used by the REST clients, specifically the web client and Android app, to Create a user of the system
+		\item Pre-Conditions
+			\begin{enumerate}
+				\item The user does not exist in the system
+				\item All required details have been provided
+				\item All details are valid
+			\end{enumerate}
+		\item Post-Conditions
+			\begin{enumerate}
+				\item The user will be created in the database
+						
+			\end{enumerate}
+		\item Use Case
+		\item Service Contract
+		\item Process Specification
+	\end{itemize}
+
+
+\subsubsection{View/Edit User}
+	\begin{itemize}
+		\item Description\\
+			This use case will be used by the REST clients, specifically the web client and Android app, to View and Edit the currently logged in User
+		\item Pre-Conditions
+			\begin{enumerate}
+				\item The user is succesfully logged in to the system
+				\item Editted details are valid
+			\end{enumerate}
+		\item Post-Conditions
+			\begin{enumerate}
+				\item The user details will be editted
+				\item User page will be displayed
+						
+			\end{enumerate}
+		\item Use Case
+		\item Service Contract
+		\item Process Specification
+	\end{itemize}
+
+\subsubsection{Create Paper}
+	\begin{itemize}
+		\item Description\\
+			This use case will be used by the REST clients, specifically the web client and Android app, to Create a Research Paper
+		\item Pre-Conditions
+			\begin{enumerate}
+				\item The user is succesfully logged in to the system
+				\item Paper details are filled in and valid
+			\end{enumerate}
+		\item Post-Conditions
+			\begin{enumerate}
+				\item Paper succesfully created
+						
+			\end{enumerate}
+		\item Use Case
+		\item Service Contract
+		\item Process Specification
+	\end{itemize}
+
+\subsubsection{View/Edit Paper}
+	\begin{itemize}
+		\item Description\\
+			This use case will be used by the REST clients, specifically the web client and Android app, to View and Edit a Research Paper
+		\item Pre-Conditions
+			\begin{enumerate}
+				\item The user is succesfully logged in to the system
+				\item The user is an Author of the Paper
+				\item The user is an HOD or a Research Group Leader for the Group of the Paper
+				\item The new details are valid
+			\end{enumerate}
+		\item Post-Conditions
+			\begin{enumerate}
+				\item The papers details will be editted
+				\item The paper details will be displayed
+						
+			\end{enumerate}
+		\item Use Case
+		\item Service Contract
+		\item Process Specification
+	\end{itemize}
+
+\subsubsection{Create Author}
+	\begin{itemize}
+		\item Description\\
+			This use case will be used by the REST clients, specifically the web client and Android app, to Create Authors
+		\item Pre-Conditions
+			\begin{enumerate}
+				\item The user is succesfully logged in to the system
+				\item The details for the Author are valid
+			\end{enumerate}
+		\item Post-Conditions
+			\begin{enumerate}
+				\item The Author is succesfully created
+						
+			\end{enumerate}
+		\item Use Case
+		\item Service Contract
+		\item Process Specification
+	\end{itemize}
+
+\subsubsection{View/Edit Author}
+	\begin{itemize}
+		\item Description\\
+			This use case will be used by the REST clients, specifically the web client and Android app, to View and Edit an Author
+		\item Pre-Conditions
+			\begin{enumerate}
+				\item The user is succesfully logged in to the system
+				\item The new details are valid
+			\end{enumerate}
+		\item Post-Conditions
+			\begin{enumerate}
+				\item The Authors details will be editted
+				\item The Authors details will be displayed
+						
+			\end{enumerate}
+		\item Use Case
+		\item Service Contract
+		\item Process Specification
+	\end{itemize}
+
+
+\subsubsection{Add/Remove Author to Research Paper}
+	\begin{itemize}
+		\item Description\\
+			This use case will be used by the REST clients, specifically the web client and Android app, to Add and Remove Authors of a Research Paper
+		\item Pre-Conditions
+			\begin{enumerate}
+				\item The user is succesfully logged in to the system
+				\item The user is an Author of the Paper
+				\item The user is an HOD or a Research Group Leader for the Group of the Paper
+				\item The new details are valid
+			\end{enumerate}
+		\item Post-Conditions
+			\begin{enumerate}
+				\item The Papers Authors have changed sucessfully
+						
+			\end{enumerate}
+		\item Use Case
+		\item Service Contract
+		\item Process Specification
+	\end{itemize}
+
+\subsubsection{Create Research Group}
+	\begin{itemize}
+		\item Description\\
+			This use case will be used by the REST clients, specifically the web client and Android app, to Create a Research Group
+		\item Pre-Conditions
+			\begin{enumerate}
+				\item The user is succesfully logged in to the system
+				\item The user is an HOD or a Research Group Leader for the Group of the Paper
+			\end{enumerate}
+		\item Post-Conditions
+			\begin{enumerate}
+				\item The Research Group is sucessfully added
+						
+			\end{enumerate}
+		\item Use Case
+		\item Service Contract
+		\item Process Specification
+	\end{itemize}
+
+\subsubsection{View/Edit Research Groups}
+	\begin{itemize}
+		\item Description\\
+			This use case will be used by the REST clients, specifically the web client and Android app, to View/Edit a Research Group
+		\item Pre-Conditions
+			\begin{enumerate}
+				\item The user is succesfully logged in to the system
+				\item The user is an HOD or a Research Group Leader for the Group of the Paper
+				\item The new details are valid
+			\end{enumerate}
+		\item Post-Conditions
+			\begin{enumerate}
+				\item The Research Group have changed sucessfully
+						
+			\end{enumerate}
+		\item Use Case
+		\item Service Contract
+		\item Process Specification
+	\end{itemize}
+
+\subsubsection{Add/Remove Users to Research Groups}
+	\begin{itemize}
+		\item Description\\
+			This use case will be used by the REST clients, specifically the web client and Android app, to Add/Remove Users to a  Research Group
+		\item Pre-Conditions
+			\begin{enumerate}
+				\item The user is succesfully logged in to the system
+				\item The user is an HOD or a Research Group Leader for the Group of the Paper
+				\item The user is valid
+			\end{enumerate}
+		\item Post-Conditions
+			\begin{enumerate}
+				\item The User is sucessfully added to a Research Group
+						
+			\end{enumerate}
+		\item Use Case
+		\item Service Contract
+		\item Process Specification
+	\end{itemize}
+
+\subsubsection{Import Historical Paper}
+	\begin{itemize}
+		\item Description\\
+			This use case will be used by the REST clients, specifically the web client and Android app, to Import a Historical Paper
+		\item Pre-Conditions
+			\begin{enumerate}
+				\item The user is succesfully logged in to the system
+				\item The paper details are correct
+			\end{enumerate}
+		\item Post-Conditions
+			\begin{enumerate}
+				\item The Historical Paper is sucessfully added
+						
+			\end{enumerate}
+		\item Use Case
+		\item Service Contract
+		\item Process Specification
+	\end{itemize}
+
+\subsubsection{Create Bibliography}
+	\begin{itemize}
+		\item Description\\
+			This use case will be used by the REST clients, specifically the web client and Android app, to Create a Bibliography for a Paper
+		\item Pre-Conditions
+			\begin{enumerate}
+				\item The user is succesfully logged in to the system
+				\item The user is an auhtor of the paper
+			\end{enumerate}
+		\item Post-Conditions
+			\begin{enumerate}
+				\item The Bibliography is succesfully added to the paper
+						
+			\end{enumerate}
+		\item Use Case
+		\item Service Contract
+		\item Process Specification
+	\end{itemize}
+
+\subsubsection{View/Edit Bibliography}
+	\begin{itemize}
+		\item Description\\
+			This use case will be used by the REST clients, specifically the web client and Android app, to View/Edit a Bibliography for a Paper
+		\item Pre-Conditions
+			\begin{enumerate}
+				\item The user is succesfully logged in to the system
+				\item The user is an auhtor of the paper
+				\item The new details are valid
+			\end{enumerate}
+		\item Post-Conditions
+			\begin{enumerate}
+				\item The Bibliography is succesfully ediited
+						
+			\end{enumerate}
+		\item Use Case
+		\item Service Contract
+		\item Process Specification
+	\end{itemize}
+
 
 \subsection{Required functionality}
 
