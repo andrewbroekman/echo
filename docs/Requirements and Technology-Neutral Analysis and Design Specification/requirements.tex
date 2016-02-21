@@ -334,7 +334,7 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 		Not to be confused with an API, this architectural pattern provides an aggregated collection of services which implement the use cases of the system. The user or developer themselves can choose which of these available services to call on. This architectural pattern was chosen because it is built around the principles of decoupling modules. Service objects must be decoupled from one another and can be distributed on different machines and implemented using different technologies, but implement a single interface, and communicate with one another using well defined interfaces, either locally or over a network. This also lends itself well to system reliability and scalability. More than one system provider may be used, enabling the system to switch to another service provider should one fail, or instantiating more service providers if system load increases.
 		\item \textbf{Client-Server Architectural Pattern:}\\
 	\end{itemize}
-
+\clearpage
 \section{Functional requirements and application design}
 \subsection{Use case prioritization}
 \subsubsection{Critical}
@@ -419,6 +419,9 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 			\end{figure}
 	\end{itemize}
 
+
+
+
 \subsubsection{Log Out User}
 	\begin{itemize}
 		\item Description\\
@@ -456,14 +459,11 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 						
 			\end{enumerate}
 		\item Service Contract
-		\begin{figure}[h]
+			\begin{figure}[h]
 				\includegraphics[scale=0.5]{Register_User}
 				\caption{Register a User in the System}
 			\end{figure}
 	\end{itemize}
-
-
-	
 \subsubsection{View/Edit User}
 	\begin{itemize}
 		\item Description\\
