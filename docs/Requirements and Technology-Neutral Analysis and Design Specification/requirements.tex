@@ -411,7 +411,28 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 		\item Service Contract
 	\end{itemize}
 
-\subsubsection{Create User}
+\subsubsection{Log Out User}
+	\begin{itemize}
+		\item Description\\
+			This use case will be used by the REST clients, specifically the web client and Android app, to log a user out of the system
+		\item Pre-Conditions
+			\begin{enumerate}
+				\item The user is currently logged into the system
+			\end{enumerate}
+		\item Post-Conditions
+			\begin{enumerate}
+				\item The user will be logged out of the system
+						
+			\end{enumerate}
+		\item Service Contract
+		
+					\begin{figure}[h]
+				\includegraphics[scale=0.5]{Log_Out}
+				\caption{Log the User out of the System}
+			\end{figure}
+	\end{itemize}
+
+\subsubsection{Register User}
 	\begin{itemize}
 		\item Description\\
 			This use case will be used by the REST clients, specifically the web client and Android app, to Create a user of the system
@@ -427,9 +448,14 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 						
 			\end{enumerate}
 		\item Service Contract
+		\begin{figure}[h]
+				\includegraphics[scale=0.5]{Register_User}
+				\caption{Register a User in the System}
+			\end{figure}
 	\end{itemize}
 
 
+	
 \subsubsection{View/Edit User}
 	\begin{itemize}
 		\item Description\\
@@ -447,6 +473,10 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 						
 			\end{enumerate}
 		\item Service Contract
+				\begin{figure}[h]
+				\includegraphics[scale=0.5]{Edit_User}
+				\caption{Edit a User Profile in the System}	
+				\end{figure}
 	\end{itemize}
 
 \subsubsection{Create Paper}
@@ -474,14 +504,14 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 			This use case will be used by the REST clients, specifically the web client and Android app, to Edit a Research Paper
 		\item Pre-Conditions
 			\begin{enumerate}
-				\item The user is succesfully logged in to the system
+				\item The user is successfully logged in to the system
 				\item The user is an Author of the Paper
 				\item The user is an HOD or a Research Group Leader for the Group of the Paper
 				\item The new details are valid
 			\end{enumerate}
 		\item Post-Conditions
 			\begin{enumerate}
-				\item The papers details will be editted
+				\item The papers details will be edited
 				\item The paper details will be displayed
 						
 			\end{enumerate}
@@ -494,7 +524,7 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 			This use case will be used by the REST clients, specifically the web client and Android app, to View a Research Paper
 		\item Pre-Conditions
 			\begin{enumerate}
-				\item The user is succesfully logged in to the system
+				\item The user is successfully logged in to the system
 				\item The user is an Author of the Paper
 				\item The user is an HOD or a Research Group Leader for the Group of the Paper
 			\end{enumerate}
@@ -517,13 +547,13 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 			This use case will be used by the REST clients, specifically the web client and Android app, to Create Authors
 		\item Pre-Conditions
 			\begin{enumerate}
-				\item The user is succesfully logged in to the system
+				\item The user is successfully logged in to the system
 				\item The details for the Author are valid
 				\item The author must not previously exist in the system 
 			\end{enumerate}
 		\item Post-Conditions
 			\begin{enumerate}
-				\item The Author is succesfully created
+				\item The Author is successfully created
 						
 			\end{enumerate}
 		\item Service Contract
@@ -535,12 +565,12 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 			This use case will be used by the REST clients, specifically the web client and Android app, to View and Edit an Author
 		\item Pre-Conditions
 			\begin{enumerate}
-				\item The user is succesfully logged in to the system
+				\item The user is successfully logged in to the system
 				\item The new details are valid
 			\end{enumerate}
 		\item Post-Conditions
 			\begin{enumerate}
-				\item The Authors details will be editted
+				\item The Authors details will be edited
 				\item The Authors details will be displayed
 						
 			\end{enumerate}
@@ -554,14 +584,14 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 			This use case will be used by the REST clients, specifically the web client and Android app, to Add and Remove Authors of a Research Paper
 		\item Pre-Conditions
 			\begin{enumerate}
-				\item The user is succesfully logged in to the system
+				\item The user is successfully logged in to the system
 				\item The user is an Author of the Paper
 				\item The user is an HOD or a Research Group Leader for the Group of the Paper
 				\item The new details are valid
 			\end{enumerate}
 		\item Post-Conditions
 			\begin{enumerate}
-				\item The Papers Authors have changed sucessfully
+				\item The Papers Authors have changed successfully
 						
 			\end{enumerate}
 		\item Service Contract
@@ -573,12 +603,12 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 			This use case will be used by the REST clients, specifically the web client and Android app, to Create a Research Group
 		\item Pre-Conditions
 			\begin{enumerate}
-				\item The user is succesfully logged in to the system
+				\item The user is successfully logged in to the system
 				\item The user is an HOD or a Research Group Leader for the Group of the Paper
 			\end{enumerate}
 		\item Post-Conditions
 			\begin{enumerate}
-				\item The Research Group is sucessfully added
+				\item The Research Group is successfully added
 						
 			\end{enumerate}
 		\item Service Contract
@@ -594,16 +624,20 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 			This use case will be used by the REST clients, specifically the web client and Android app, to View/Edit a Research Group
 		\item Pre-Conditions
 			\begin{enumerate}
-				\item The user is succesfully logged in to the system
+				\item The user is successfully logged in to the system
 				\item The user is an HOD or a Research Group Leader for the Group of the Paper
 				\item The new details are valid
 			\end{enumerate}
 		\item Post-Conditions
 			\begin{enumerate}
-				\item The Research Group have changed sucessfully
+				\item The Research Group have changed successfully
 						
 			\end{enumerate}
 		\item Service Contract
+			\begin{figure}[h]
+				\includegraphics[scale=0.5]{Edit_Research_Group.jpg}
+				\caption{Edit a Research Group's data in the System}
+			\end{figure}
 	\end{itemize}
 
 \subsubsection{Add/Remove Users to Research Groups}
@@ -612,13 +646,13 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 			This use case will be used by the REST clients, specifically the web client and Android app, to Add/Remove Users to a  Research Group
 		\item Pre-Conditions
 			\begin{enumerate}
-				\item The user is succesfully logged in to the system
+				\item The user is successfully logged in to the system
 				\item The user is an HOD or a Research Group Leader for the Group of the Paper
 				\item The user is valid
 			\end{enumerate}
 		\item Post-Conditions
 			\begin{enumerate}
-				\item The User is sucessfully added to a Research Group
+				\item The User is successfully added to a Research Group
 						
 			\end{enumerate}
 		\item Service Contract
