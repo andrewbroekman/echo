@@ -97,7 +97,7 @@ The most important requirements as set out by the client are:
 \section{Background}
 This project was commissioned based on the following three problems faced by the client
 \begin{itemize}
-\item Limitations of current system: \\
+\item Limitations of current system:
 	\begin{itemize}
 	\item The current system used by the client involves utilizing one common Microsoft Excel spreadsheet document to keep track of the status of current research publications. A problem with this solution is that it causes data integrity problems due to the fact that it is not scalable.
 	\end{itemize}
@@ -128,7 +128,7 @@ the Design of Network-based Software Architectures of \textcite{fielding}.  All 
 \subsection{Quality requirements}
 \subsubsection{Performance}
 \begin{enumerate}
-\item \textbf{Description}
+\item \textbf{Description} \\
 Application performance can be defined as the amount of work that can be accomplished by an application in question in a measured time interval. The time interval is normally measured in seconds, where the amount of work can be defined as the throughput, latency or data transmission time.
 	\begin{itemize}
 		\item \textbf{Throughput} \\
@@ -140,7 +140,8 @@ Application performance can be defined as the amount of work that can be accompl
 	\end{itemize}
 	
 	The aim for this system, is to increase the throughput and decrease the latency. As the developer has no control over the network medium used, he/she must aim for a minimal request and response payload as to decrease the data transmission time.
-\item \textbf{Justification}
+\item \textbf{Justification} \\
+The current system suffers from performance issues, and hence it is important for this new system to address these issues adequately. Our aim for this system is to increase throughput, decrease latency and data transmission time. This will ensure we have a system that is responsive at all times, including peak times and delivers an excellent user experiencee.
 \item \textbf{Requirements}
 	\begin{itemize}
 		\item Network requests must be benchmarked, monitored and aggregate statistics about network requests must be made available.
@@ -152,9 +153,10 @@ Application performance can be defined as the amount of work that can be accompl
 
 \subsubsection{Reliability}
 \begin{enumerate}
-\item \textbf{Description}
+\item \textbf{Description} \\
 The design of this system is largely based on the fact that the current system used by the client is not reliable and suffers from system crashes and data loss. The newly designed system needs to be accessible from both inside University of Pretoria campuses as well as from other networks, especially on other campuses on the TENET network. The system should be reliable in both its accessibility and in the data that the system will use to calculate contributor metrics. 
-\item \textbf{Justification}
+\item \textbf{Justification} \\ 
+The current system is largely unreliable in that it crashes under large workloads, and in that, because only one user can work on it at a time, many users get denied service during work critical times when workloads are high. This causes a detriment in user productivity. To ensure that the system can be used confidently as a tool to increase productivity and ease the work process, the development aim must be for the system to be as reliable and accessible as possible.
 \item \textbf{Requirements}
 	\begin{itemize}
 		\item To enable offline activity and access of data from the Android app, data synced must be made differentiable with timestamps.
@@ -165,9 +167,10 @@ The design of this system is largely based on the fact that the current system u
 
 \subsubsection{Scalability}
 \begin{enumerate}
-\item \textbf{Description}
+\item \textbf{Description} \\
 Scalability refers to the application in question's ability to handle an above normal workload for extended time periods and the mechanisms employed to facilitate this. The client has specified minimum conditions under which the system needs to function. However the client has indicated that due to the business requirements, the system will experience higher workloads during the end of the month.
 \item \textbf{Justification}
+The system needs Scalability because it needs to support 10 research groups, with 100 members each working with 50 concurrent users. But these requirements may increase in future and hence the system should be able to handle additional loads.
 \item \textbf{Requirements}
 	\begin{itemize}
 		\item The system should be able to handle 10 research groups with each research group containing 100 members.
@@ -177,9 +180,16 @@ Scalability refers to the application in question's ability to handle an above n
 
 \subsubsection{Security}
 \begin{enumerate}
-\item \textbf{Description}
+\item \textbf{Description} \\
 Security in application software refers to authentication, authorization, data security and accounting. Authentication refers to the systems' ability to provide a way of identifying a user, normally with a combination of a user name and password, or by using access tokens. Authorization refers to the systems' ability to determine whether the user in question has the required authority to execute certain commands or tasks. Data security refers to data only being accessible through authorised channels. Finally if the user has been authenticated and has the required authorization then accounting needs to be done to be able to determine how the users action has changed the system.  
-\item \textbf{Justification}
+\item \textbf{Justification} \\
+Security is a important aspect of any software product. In terms of information security, we are concerned about integrity, availability, confidentiality and non-repudiation in that order. 
+
+The reason we are most concerned about data integrity is that this data will be used to monitor and determine performance of researchers as well as assist in departmental strategic planning, which implies that the system must be available at all times to the heads of the research groups and the head of the department. 
+
+Following this, is the aspect of data confidentiality, as we want to ensure passwords of the users stay secure as well as the meta data of research papers. The storing of meta data and subsequent leaking of this meta data can lead to other researchers publishing and patenting ideas first.
+
+Finally, as this system is used to measure performance, it is important that non-repudiation of information is available, as researchers must be accountable for any information changes they make.
 \item \textbf{Requirements}
 	\begin{itemize}
 		\item System should be resistant to SQL injections.
@@ -193,10 +203,11 @@ Security in application software refers to authentication, authorization, data s
 \end{enumerate}
 
 \subsubsection{Flexibility}
-Flexibility refers to the ability of the system to be changed dynamically either by hot swapping certain components in a live system or by extending the system with some kind of plugin. 
 \begin{enumerate}
-\item \textbf{Description}
-\item \textbf{Justification}
+\item \textbf{Description} \\
+Flexibility refers to the ability of the system to be changed dynamically either by hot swapping certain components in a live system or by extending the system with some kind of plugin. 
+\item \textbf{Justification} \\
+Flexibility is important for any system. A non-flexible system is restricted to using technologies that were hard coded into it, and this necessitates, at best, large scale refactoring every time an upgrade is available since new technologies need to be reintegrated, makes adding new features tedious, and risks the system becoming archaic. A flexible system requires minimum effort to upgrade and expand, allowing for the system to easily grow in usefulness and function beyond the original vision, and is directly in line with the requirement for the system to be cheap to maintain and upgrade, not just financially but also in labour. 
 \item \textbf{Requirements}
 	\begin{itemize}
 	\item The system should allow unregistered users to use existing third party web service login credentials to register or log in to the service.
@@ -207,10 +218,11 @@ Flexibility refers to the ability of the system to be changed dynamically either
 \end{enumerate}
 
 \subsubsection{Maintainability}
-The system is to be designed in such a way that it is easily updated, modified or exitable by the client in the future. In order to achieve these requirements, design patterns and best practices such as coding style guides are normally used to ensure uniformity and modularity across the system.
 \begin{enumerate}
-\item \textbf{Description}
+\item \textbf{Description} \\
+The system is to be designed in such a way that it is easily updated, modified or exitable by the client in the future. In order to achieve these requirements, design patterns and best practices such as coding style guides are normally used to ensure uniformity and modularity across the system.
 \item \textbf{Justification}
+Many systems require regular changes, not because they were poorly designed or implemented, but because of changes in external factors. For example we might need to update informations to meet the Computer Science laws and regulations.
 \item \textbf{Requirements}
 	\begin{itemize}
 		\item All code should be documented in the applicable language documentation framework, such as JavaDocs for a Java based system, DOxygen for a C/C++ based system, etc.
@@ -221,8 +233,10 @@ The system is to be designed in such a way that it is easily updated, modified o
 
 \subsubsection{Auditability/Monitorability}
 \begin{enumerate}
-\item \textbf{Description}
+\item \textbf{Description} \\
+The system is to be designed to be verbose and transparent in its workings, and to ensure maximum data security, to allow role players to have insights into how the system is used and how it may be improved. These requirements are achieved by making the maximum amount of relevant data available to authorized users, logging performance critical information, and by enforcing strict constraints on the data that is stored. 
 \item \textbf{Justification}
+This is an important process in Software Engineering, where all the informations must be correct so requiring all the developers to see who made changes and when so that consistency must be kept in order to keep the database accurate and reliable.
 \item \textbf{Requirements}
 	\begin{itemize}
 		\item Data in database should be always be consistent. This implies that all data should adhere to constraints placed on the data by the data model, such as regex patterns, minimum and maximum length, non nullable fields, etc.
@@ -236,9 +250,10 @@ The system is to be designed in such a way that it is easily updated, modified o
 
 \subsubsection{Integrability}
 \begin{enumerate}
-\item \textbf{Description}
+\item \textbf{Description} \\
 The system should allow for future external integration with other platforms such as security authentication providers, other external research meta-data databases etc.
-\item \textbf{Justification}
+\item \textbf{Justification} \\
+The system necessitates integrability to allow for maximum usability, as the integrability of the system is directly related to how usable it is. To be usable, the system must allow for easy migration, not just from previous systems, but also to future systems and future data storage mediums. The usability is also largely determined by how well the back-end system integrates with front end clients, and which clients are supported.
 \item \textbf{Requirements}
 	\begin{itemize}
 		\item The system should allow technology neutral importing and exporting of data.
@@ -249,9 +264,10 @@ The system should allow for future external integration with other platforms suc
 
 \subsubsection{Cost}
 \begin{enumerate}
-\item \textbf{Description}
+\item \textbf{Description} \\
 The cost of the system entails any initial expenses as well as any ongoing expenses which the client may incur at some point. Such expenses arise from software licenses, external computing resources required as well as future maintenance of the system in terms of time.
 \item \textbf{Justification}
+The expenses made and sotware licenses cost must be taken into account in order to set the price of the software.
 \item \textbf{Requirements}
 	\begin{itemize}
 		\item System should be cheap to operate, maintain and extend. If the quality and maturity of technologies available allow it, technologies used must be freely available/usable.
@@ -261,9 +277,10 @@ The cost of the system entails any initial expenses as well as any ongoing expen
 
 \subsubsection{Usability}
 \begin{enumerate}
-\item \textbf{Description}
+\item \textbf{Description} \\
 Usability refers to ease with which humans, and to a lesser extent, servers, interact with the system in question. Usability can be measured in various ways such as using quantifiable scientific measures or more subjective measures with a key question point being if the API follows conventions and so on.
-\item \textbf{Justification}
+\item \textbf{Justification} \\
+It is important that the new system is usable as it is a user-centric system. Ensuring that the system is usable will ensure that users capture accurate and correct information into the system which will for better performance and departmental strategic planning. As this system will also be used by parties outside of the Department of Computer Science of the University of Pretoria, it is important that the system conveys a professional image, as this will reflect on the image of the University of Pretoria. 
 \item \textbf{Requirements}
 	\begin{itemize}
 		\item Each view in the desktop and mobile clients should be related to a single topic only.
@@ -285,7 +302,7 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 
 \subsection{Architecture constraints}
 \begin{itemize}
-\item Representational State Transfer (REST) will be used, it depends on cacheable, client server and on stateless communications protocol, and uses the HTTP protocol in most cases. It is an architectural style used to design networked applications. All the four CRUD operations are used in REST. 
+\item Representational State Transfer (REST) will be used, it depends on cacheable and stateless client server- and communications protocols, and uses the HTTP protocol in most cases. It is an architectural style used to design networked applications. All the four CRUD operations are used in REST. 
 \item Service Oriented Architecture (SOA). SOA makes it easier for software components on computers that are connected on a network to work together with no need to make changes to the underlying program itself. The concept of service is what SOA is based on.
 \item Spring will be used. It is a technology that is associated with developing secure websites and interacting with databases in conjunction with Hibernate. Spring is simply a usable API, with the idea being for the developer to represent Java objects with Spring Beans.
 \item Dependency Injection (DI) will be used because it eases software testing and re-usability of software by using a design based on independent classes/components.
@@ -294,10 +311,28 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 
 \subsubsection{Architectural Patterns}
 	\begin{itemize}
-		\item Layered Architectural Pattern
-		\item Representational State Transfer (REST) Architectural Pattern
-		\item Services Orientated Architecture/ Microservices Architecture
-		\item Client-Server Architectural Pattern
+		\item \textbf{Layered Architectural Pattern:}\\
+		A design pattern in which software is divided up into individual layers by functionality. The layers interact with one another via requests and responses, and there are typically four of these layers:
+		\begin{enumerate}
+			\item Presentation/view: The user interface that the user interacts with, such as a desktop client.
+			\item Application/controller: The service API that the presentation layer interacts with in order to perform system functions.
+			\item Business logic: The functions that get called by the service API, to interact with system data.
+			\item Data access: The layer that provides data access to the business logic layer 
+		\end{enumerate}
+		
+		This pattern is used because it lends itself well to decoupling software modules from one another, and allows for separation of concerns. At the very least, the view layer is decoupled from the business logic, and the controller layer is decoupled from the data access. Furthermore, when each layer object realises a contract, all layers are completely decoupled from one another, and allows for layer objects of the same layer type to be interchanged without any hassle. 
+		\item \textbf{Representational State Transfer (REST) Architectural Pattern:}\\
+		\item \textbf{Services Orientated Architecture/ Microservices Architecture:}\\
+		An architectural pattern in software design in which system use cases are divided into one or more service operations, and these service operations are then implemented, either individually or combined with other service operations, by a reusable SOA service. The SOA architecture itself comprises five layers:
+		\begin{enumerate}
+			\item Consumer interface: the GUI for end users accessing application services
+			\item Business process: the representation of system use cases
+			\item Services: The consolidated inventory of all available services.
+			\item Service components: The reusable components used to build the services, such as functional libraries.
+			\item Operational system: Contains data repository, technological platforms, etc.
+		\end{enumerate}
+		Not to be confused with an API, this architectural pattern provides an aggregated collection of services which implement the use cases of the system. The user or developer themselves can choose which of these available services to call on. This architectural pattern was chosen because it is built around the principles of decoupling modules. Service objects must be decoupled from one another and can be distributed on different machines and implemented using different technologies, but implement a single interface, and communicate with one another using well defined interfaces, either locally or over a network. This also lends itself well to system reliability and scalability. More than one system provider may be used, enabling the system to switch to another service provider should one fail, or instantiating more service providers if system load increases.
+		\item \textbf{Client-Server Architectural Pattern:}\\
 	\end{itemize}
 
 \section{Functional requirements and application design}
@@ -365,7 +400,7 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 		This use case will be used by the REST clients, specifically the Android app, to achieve safe long term login without storing user credentials on device. 
 		\item Pre-Conditions
 			\begin{enumerate}
-				\item The user is already registered with the backend service.
+				\item The user is already registered with the back-end service.
 				\item User account is not locked.
 				\item User currently has access and refresh tokens.
 			\end{enumerate}
@@ -698,11 +733,11 @@ This repository contains:
 	\hline
 		\textbf{Term}		& \textbf{Definition}	\\ \hline \hline
 		Android			&  A Linux based operating system developed by Google Inc. and the Open Handset Alliance for smart phones, tablets, and other mobile computing devices. Android applications are developed in Java. \\ \hline
-		HTTP			& HyperText Transfer Protocol, standarised by RFCs 7230-7237 \\ \hline
+		HTTP			& HyperText Transfer Protocol, standardised by RFCs 7230-7237 \\ \hline
 		ISO				& International Organization for Standardization \\ \hline
 		MVC				& Model-View-Controller \\ \hline
 		OAuth			& An open standard for authorization, using an access token approach, allowing resource owners to authorize third-party clients to access protected user resources on a resource server, without the client providing their credentials to the third-party in question. \\ \hline
-		RDBMS			& Relational DataBase Management System \\ \hline
+		RDBMS			& Relational Database Management System \\ \hline
 		SPA				& Single Page Application \\ \hline
 		SQL				& Structured Query Language is a programming language, standardised by ISO for managing data in RDBMS. Actions allow for the creation, reading/retrieving, updating and deletion of data in the management system. \\ \hline
 	\hline
