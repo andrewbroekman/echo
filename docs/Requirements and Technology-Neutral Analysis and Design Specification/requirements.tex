@@ -97,7 +97,7 @@ The most important requirements as set out by the client are:
 \section{Background}
 This project was commissioned based on the following three problems faced by the client
 \begin{itemize}
-\item Limitations of current system: \\
+\item Limitations of current system:
 	\begin{itemize}
 	\item The current system used by the client involves utilizing one common Microsoft Excel spreadsheet document to keep track of the status of current research publications. A problem with this solution is that it causes data integrity problems due to the fact that it is not scalable.
 	\end{itemize}
@@ -155,7 +155,7 @@ The current system suffers from performance issues, and hence it is important fo
 \begin{enumerate}
 \item \textbf{Description} \\
 The design of this system is largely based on the fact that the current system used by the client is not reliable and suffers from system crashes and data loss. The newly designed system needs to be accessible from both inside University of Pretoria campuses as well as from other networks, especially on other campuses on the TENET network. The system should be reliable in both its accessibility and in the data that the system will use to calculate contributor metrics. 
-\item \textbf{Justification}
+\item \textbf{Justification} \\ 
 The current system is largely unreliable in that it crashes under large workloads, and in that, because only one user can work on it at a time, many users get denied service during work critical times when workloads are high. This causes a detriment in user productivity. To ensure that the system can be used confidently as a tool to increase productivity and ease the work process, the development aim must be for the system to be as reliable and accessible as possible.
 \item \textbf{Requirements}
 	\begin{itemize}
@@ -206,7 +206,7 @@ Finally, as this system is used to measure performance, it is important that non
 \begin{enumerate}
 \item \textbf{Description} \\
 Flexibility refers to the ability of the system to be changed dynamically either by hot swapping certain components in a live system or by extending the system with some kind of plugin. 
-\item \textbf{Justification}
+\item \textbf{Justification} \\
 Flexibility is important for any system. A non-flexible system is restricted to using technologies that were hard coded into it, and this necessitates, at best, large scale refactoring every time an upgrade is available since new technologies need to be reintegrated, makes adding new features tedious, and risks the system becoming archaic. A flexible system requires minimum effort to upgrade and expand, allowing for the system to easily grow in usefulness and function beyond the original vision, and is directly in line with the requirement for the system to be cheap to maintain and upgrade, not just financially but also in labour. 
 \item \textbf{Requirements}
 	\begin{itemize}
@@ -233,7 +233,7 @@ Many systems require regular changes, not because they were poorly designed or i
 
 \subsubsection{Auditability/Monitorability}
 \begin{enumerate}
-\item \textbf{Description}
+\item \textbf{Description} \\
 The system is to be designed to be verbose and transparent in its workings, and to ensure maximum data security, to allow role players to have insights into how the system is used and how it may be improved. These requirements are achieved by making the maximum amount of relevant data available to authorized users, logging performance critical information, and by enforcing strict constraints on the data that is stored. 
 \item \textbf{Justification}
 This is an important process in Software Engineering, where all the informations must be correct so requiring all the developers to see who made changes and when so that consistency must be kept in order to keep the database accurate and reliable.
@@ -252,7 +252,7 @@ This is an important process in Software Engineering, where all the informations
 \begin{enumerate}
 \item \textbf{Description} \\
 The system should allow for future external integration with other platforms such as security authentication providers, other external research meta-data databases etc.
-\item \textbf{Justification}
+\item \textbf{Justification} \\
 The system necessitates integrability to allow for maximum usability, as the integrability of the system is directly related to how usable it is. To be usable, the system must allow for easy migration, not just from previous systems, but also to future systems and future data storage mediums. The usability is also largely determined by how well the back-end system integrates with front end clients, and which clients are supported.
 \item \textbf{Requirements}
 	\begin{itemize}
@@ -311,10 +311,28 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 
 \subsubsection{Architectural Patterns}
 	\begin{itemize}
-		\item Layered Architectural Pattern
-		\item Representational State Transfer (REST) Architectural Pattern
-		\item Services Orientated Architecture/ Microservices Architecture
-		\item Client-Server Architectural Pattern
+		\item \textbf{Layered Architectural Pattern:}\\
+		A design pattern in which software is divided up into individual layers by functionality. The layers interact with one another via requests and responses, and there are typically four of these layers:
+		\begin{enumerate}
+			\item Presentation/view: The user interface that the user interacts with, such as a desktop client.
+			\item Application/controller: The service API that the presentation layer interacts with in order to perform system functions.
+			\item Business logic: The functions that get called by the service API, to interact with system data.
+			\item Data access: The layer that provides data access to the business logic layer 
+		\end{enumerate}
+		
+		This pattern is used because it lends itself well to decoupling software modules from one another, and allows for separation of concerns. At the very least, the view layer is decoupled from the business logic, and the controller layer is decoupled from the data access. Furthermore, when each layer object realises a contract, all layers are completely decoupled from one another, and allows for layer objects of the same layer type to be interchanged without any hassle. 
+		\item \textbf{Representational State Transfer (REST) Architectural Pattern:}\\
+		\item \textbf{Services Orientated Architecture/ Microservices Architecture:}\\
+		An architectural pattern in software design in which system use cases are divided into one or more service operations, and these service operations are then implemented, either individually or combined with other service operations, by a reusable SOA service. The SOA architecture itself comprises five layers:
+		\begin{enumerate}
+			\item Consumer interface: the GUI for end users accessing application services
+			\item Business process: the representation of system use cases
+			\item Services: The consolidated inventory of all available services.
+			\item Service components: The reusable components used to build the services, such as functional libraries.
+			\item Operational system: Contains data repository, technological platforms, etc.
+		\end{enumerate}
+		Not to be confused with an API, this architectural pattern provides an aggregated collection of services which implement the use cases of the system. The user or developer themselves can choose which of these available services to call on. This architectural pattern was chosen because it is built around the principles of decoupling modules. Service objects must be decoupled from one another and can be distributed on different machines and implemented using different technologies, but implement a single interface, and communicate with one another using well defined interfaces, either locally or over a network. This also lends itself well to system reliability and scalability. More than one system provider may be used, enabling the system to switch to another service provider should one fail, or instantiating more service providers if system load increases.
+		\item \textbf{Client-Server Architectural Pattern:}\\
 	\end{itemize}
 
 \section{Functional requirements and application design}
