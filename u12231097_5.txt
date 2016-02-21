@@ -1,0 +1,151 @@
+Done by : Gift Sefako u12231097 for Team : Echo
+Publication
+1. Add Publication
+a. Category : Critical
+b. Pre-Conditions 
+i. Must be added by a user (staff member – Head of Department or User).
+ii. Must have a Title and Primary Author
+iii. Must belong to a research group(s).
+iv. Information required
+1. Primary Author
+2. Research Group(s)
+3. Sorted list of co-authors 
+4. Dates (due date, date started, date completed, date published)
+5. Target Venue 
+6. Units Awarded (According to the type of Publication)
+7. Status(rejected, accepted, published, discontinued)
+8. Current completing percentage
+9. Type of publication (journal, article, book, paper, technical/laboratory notes, etc.)
+10. Any other relevant comments. 
+c. Post-Conditions
+i. The publication must be added to the Publications database
+ii. The publication must automatically appear on authors and co-authors personal list of publications. 
+iii. Information about the publication must now be accessible from the system.
+
+2. Change status/percentage of Publication 
+a. Category : Critical 
+b. Pre-Conditions
+i. Only the User, Admin or Super User can change the status or percentage of a publication. 
+ii. The publication must have already been added to the system. 
+c. Post-Conditions 
+i. Once the status or percentage is updated, the update must be automatically recognized throughout the entire system for all relevant users and authors. 
+
+
+
+
+
+
+
+
+Users
+1. Add Author 
+a. Category : Critical 
+b. Pre-Conditions 
+i. Author can only be added by User(Member of Staff or Super User)
+ii. If the author was previously added to the system, allow the user to be selected from the list. 
+iii. Author must be part of a publication which was previously added to the system. 
+iv. Information required 
+1. Title
+2. Name and Surname
+3. Contact Details (Cell number, e-mail address)
+4. Institution the author belongs to 
+5. Title of paper the author is co-authoring 
+c. Post-Conditions 
+i. The author must be added to the list co-authors for the relevant publication.
+ii. The author must be added to the database of authors. 
+iii. The author must start receiving any correspondence regarding the relevant publication. 
+
+3. Remove Author (from a specific publication)
+a. Category : Critical 
+b. Pre-Conditions 
+i. The author must exist in the system in the database of authors. 
+ii. Author can only be added by User(Member of Staff or Super User)
+iii. Information required 
+1. Name of author 
+2. Title of publication 
+
+c. Post-Conditions
+i. The author must be removed from the list of authors for the publication. 
+ii. The author must still exist in the database of authors. 
+
+4. Update Information 
+a. Category : Important 
+b. Pre-Conditions 
+i. Only Users, Admin and Super User can update information on the system. 
+ii. Any information to be updated must be of a record which already exists in the system. 
+iii. Information required
+1. Information to be updated
+c. Post-Conditions 
+i. The updated information must reflect throughout the whole system automatically. 
+
+5. View Publication(s) | NB !! This functionality also applies for Authors of the relevant publication.
+a. Category : Critical 
+b. Pre-Conditions 
+i. Users are only allowed to view publications that they are a part of. 
+ii. Admin and Super User are allowed view all the publications on the system.
+iii. Information required 
+1. Title of publication 
+c. Post-Conditions 
+i. User should be able to see record(s) of the publication(s) of which they are involved. 
+6. Add Publication 
+a. Category : Critical 
+b. Pre-Condition 
+i. The user must exist in the database of Users. 
+ii. Information Required 
+* The information listed in the first part of the Publications section. 
+c. Post-Conditions 
+i. The publication must be added to the system. 
+
+Admin/Super User
+1. Add User
+a. Category : Critical 
+b. Pre-Conditions 
+i. Only the Admin or Super User can add new users. 
+ii. Information required 
+1. Title
+2. Name and Surname
+3. Contact Details (Cell number, e-mail address)
+4. Institution the author belongs to 
+5. Title of paper the author is co-authoring 
+c. Post-Conditions
+i. The user must be added to the system in the Users database 
+ii. Notify user that they have been added to the system
+2. Remove User
+a. Category : Critical 
+b. Pre-Conditions 
+i. The user to be removed must already exist in the system
+ii. Only the Admin or Super User can remove users.
+iii. Information Required 
+1. User Name/Staff Number
+c. Post-Conditions
+i. The user is removed from the database/system.
+
+Other functionality by the system
+1. Send email notifications for due dates
+a. Category : Important 
+b. Pre-Conditions
+i. Only the system, Admin and Super User can send notifications
+ii. Information required 
+1. E-mail addresses of recipients
+2. Due date of publication
+3. Other relevant information about the publication such as Target Venue. 
+c. Post-Conditions
+i. Recipients receive email notification 
+
+2. Log System Information 
+a. Category : Important 
+b. Pre-Conditions
+i. Some activity must have occurred on the system
+ii. Logging happens automatically after some activity occurs on the system.
+iii. Information Required 
+1. 
+c. Post-Conditions 
+i. Logged information gets stored externally. 
+
+
+Notes about the Domain Model 
+- From what I understand we’ll be working on this part on Sunday
+- I think if we can all start thinking of how we would implement the system in code – keeping in mind the different types of relationships and dependencies between objects that would be required it would help when we have to put it as UML. 
+- As an example, we could have a User object, which ‘contains’ class local fields and encapsulates a Contact object which stores information like the users email and phone number.
+o Then the System class could maintain a linked list or tree (for more comprehensive and efficient searching) of users currently added to the system. 
+- NB, that is just an example.  

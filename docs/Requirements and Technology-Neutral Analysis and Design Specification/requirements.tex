@@ -327,6 +327,7 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 		\item View/Edit Bibliography
 		\item Research Paper Units
 		\item User Units [Earnings]
+		\item System Logging 
 	\end{itemize}
 
 
@@ -407,6 +408,7 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 		\item Post-Conditions
 			\begin{enumerate}
 				\item The user details will be editted
+				\item All papers that the user is an author of should be displayed 
 				\item User page will be displayed
 						
 			\end{enumerate}
@@ -421,19 +423,21 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 			\begin{enumerate}
 				\item The user is succesfully logged in to the system
 				\item Paper details are filled in and valid
+				\item The user must belong to a research group
 			\end{enumerate}
 		\item Post-Conditions
 			\begin{enumerate}
 				\item Paper succesfully created
+
 						
 			\end{enumerate}
 		\item Service Contract
 	\end{itemize}
 
-\subsubsection{View/Edit Paper}
+\subsubsection{Edit Paper}
 	\begin{itemize}
 		\item Description\\
-			This use case will be used by the REST clients, specifically the web client and Android app, to View and Edit a Research Paper
+			This use case will be used by the REST clients, specifically the web client and Android app, to Edit a Research Paper
 		\item Pre-Conditions
 			\begin{enumerate}
 				\item The user is succesfully logged in to the system
@@ -450,6 +454,29 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 		\item Service Contract
 	\end{itemize}
 
+\subsubsection{View Paper}
+	\begin{itemize}
+		\item Description\\
+			This use case will be used by the REST clients, specifically the web client and Android app, to View a Research Paper
+		\item Pre-Conditions
+			\begin{enumerate}
+				\item The user is succesfully logged in to the system
+				\item The user is an Author of the Paper
+				\item The user is an HOD or a Research Group Leader for the Group of the Paper
+			\end{enumerate}
+		\item Post-Conditions
+			\begin{enumerate}
+				\item The paper details will be displayed
+						
+			\end{enumerate}
+		\item Service Contract
+	\end{itemize}
+
+
+
+
+
+
 \subsubsection{Create Author}
 	\begin{itemize}
 		\item Description\\
@@ -458,6 +485,7 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 			\begin{enumerate}
 				\item The user is succesfully logged in to the system
 				\item The details for the Author are valid
+				\item The author must not previously exist in the system 
 			\end{enumerate}
 		\item Post-Conditions
 			\begin{enumerate}
@@ -643,6 +671,26 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 			\end{enumerate}
 		\item Service Contract
 	\end{itemize}
+
+
+\subsubsection{View Log}
+	\begin{itemize}
+		\item Description\\
+			This use case will be used by the REST clients, specifically the web client and Android app, to view a system log
+		\item Pre-Conditions
+			\begin{enumerate}
+				\item The user is succesfully logged in to the system
+				\item The user must be a Super User
+			\end{enumerate}
+		\item Post-Conditions
+			\begin{enumerate}
+				\item The system log will be displayed
+				
+						
+			\end{enumerate}
+		\item Service Contract
+	\end{itemize}
+
 
 
 \subsection{Required functionality}
