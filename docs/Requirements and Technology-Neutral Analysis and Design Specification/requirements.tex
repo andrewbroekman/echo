@@ -580,22 +580,46 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 		\item Service Contract
 	\end{itemize}
 
-\subsubsection{View/Edit Author}
+\subsubsection{View Author}
 	\begin{itemize}
 		\item Description\\
-			This use case will be used by the REST clients, specifically the web client and Android app, to View and Edit an Author
+			This use case will be used by the REST clients, specifically the web client and Android app, to View an Author
 		\item Pre-Conditions
 			\begin{enumerate}
 				\item The user is successfully logged in to the system
-				\item The new details are valid
 			\end{enumerate}
 		\item Post-Conditions
 			\begin{enumerate}
-				\item The Authors details will be edited
 				\item The Authors details will be displayed
 						
 			\end{enumerate}
 		\item Service Contract
+		\begin{figure}[H]
+			\includegraphics[scale=0.5]{ViewAuthorServiceContract}
+			\caption{View author service contract}
+		\end{figure}
+	\end{itemize}
+	
+\subsubsection{Edit Author}
+	\begin{itemize}
+		\item Description\\
+		This use case will be used by the REST clients, specifically the web client and Android app, to Edit an Author
+		\item Pre-Conditions
+		\begin{enumerate}
+			\item The user is successfully logged in to the system
+			\item The new details are valid
+		\end{enumerate}
+		\item Post-Conditions
+		\begin{enumerate}
+			\item The Authors details will be edited
+			\item The Authors details will be displayed
+			
+		\end{enumerate}
+		\item Service Contract
+		\begin{figure}[H]
+			\includegraphics[scale=0.5]{EditAuthorServiceContract}
+			\caption{Edit author service contract}
+		\end{figure}
 	\end{itemize}
 
 
@@ -645,11 +669,32 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 				\caption{Create Research Group Service Contract}
 			\end{figure}
 	\end{itemize}
-
-\subsubsection{View/Edit Research Groups}
+	
+	\subsubsection{View Research Groups}
 	\begin{itemize}
 		\item Description\\
-			This use case will be used by the REST clients, specifically the web client and Android app, to View/Edit a Research Group
+		This use case will be used by the REST clients, specifically the web client and Android app, to View a Research Group
+		\item Pre-Conditions
+		\begin{enumerate}
+			\item The user is successfully logged in to the system
+			\item The user is an HOD or a Research Group Leader for the Group of the Paper
+		\end{enumerate}
+		\item Post-Conditions
+		\begin{enumerate}
+			\item The Research Group has been displayed
+			
+		\end{enumerate}
+		\item Service Contract
+		\begin{figure}[H]
+			\includegraphics[scale=0.5]{ViewResearchGroupServiceContract}
+			\caption{View research group service contract}
+		\end{figure}
+	\end{itemize}
+
+\subsubsection{Edit Research Groups}
+	\begin{itemize}
+		\item Description\\
+			This use case will be used by the REST clients, specifically the web client and Android app, to Edit a Research Group
 		\item Pre-Conditions
 			\begin{enumerate}
 				\item The user is successfully logged in to the system
@@ -658,7 +703,7 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 			\end{enumerate}
 		\item Post-Conditions
 			\begin{enumerate}
-				\item The Research Group have changed successfully
+				\item The Research Group has been changed successfully
 						
 			\end{enumerate}
 		\item Service Contract
@@ -701,6 +746,10 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 						
 			\end{enumerate}
 		\item Service Contract
+		\begin{figure}[H]
+			\includegraphics[scale=0.5]{ImportHistoricalPaperServiceContract}
+			\caption{Import historical paper service contract}
+		\end{figure}
 	\end{itemize}
 
 \subsubsection{Generate Bibliography}
