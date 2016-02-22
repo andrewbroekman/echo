@@ -311,6 +311,23 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 
 \subsubsection{Architectural Patterns}
 	\begin{itemize}
+		\item \textbf{Authentication Enforcer Pattern} \\
+		The authentication enforcer pattern is focused to provide a centralized managed authentication mechanism, to verify the identity of users and encapsulating the details of authentication. This patterns assist in removing security checks from business logic code, thereby providing cleaner, more robust and easier to maintain code.
+		
+		Further, since authentication is centralized, this pattern further allows changes to be easily implemented in terms of the authentication procedure, such as using a different authentication flow, or even mechanism, such as authenticating the user against an external provider.
+	
+		\item \textbf{Authorization Enforcer} \\
+		Similar to the authentication enforcer pattern, this pattern provides a centralized managed authorization mechanism, thereby abstracting authorization code away from application code.  With this pattern, it assists the system in authorizing users, i.e. to determine whether the current user has the required roles or privileges to perform a certain action. All of the benefits referred to in the authentication enforcer pattern are also applicable here.
+	
+		\item \textbf{Client-Server Architectural Pattern:}\\
+			A network technology in which each computer connected on the network is either a server or client is called a client server architecture.
+			\begin{enumerate}
+				\item Servers: are powerful computers which are used to process the client requests.
+				\item Client: is simply a computer connected on the network which is used to send request for some resources to the server.
+			\end{enumerate}
+			Requirement of client server: it models work in a networked environment therefore the processing of an application distributed between the client and the server.
+			Function of client server: An interface/form is provided by the client to allow a user to request services of the user and to display the results the server returns.
+	
 		\item \textbf{Layered Architectural Pattern:}\\
 		A design pattern in which software is divided up into individual layers by functionality. The layers interact with one another via requests and responses, and there are typically four of these layers:
 		\begin{enumerate}
@@ -321,16 +338,26 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 		\end{enumerate}
 		
 		This pattern is used because it lends itself well to decoupling software modules from one another, and allows for separation of concerns. At the very least, the view layer is decoupled from the business logic, and the controller layer is decoupled from the data access. Furthermore, when each layer object realises a contract, all layers are completely decoupled from one another, and allows for layer objects of the same layer type to be interchanged without any hassle. 
+		
 		\item \textbf{Representational State Transfer (REST) Architectural Pattern:}\\
 		REST is an architecture pattern for designing networked applications. The idea is instead of using complex mechanisms such as SOAP, CORBA or RPC to connect between machines or to make calls between machines, simple HTTP is used.
-		\begin{enumerate}
-			The Uniform interfaces which is combined of resource names and HTTP, GET, DELETE, POST, PUT.
+		
+		The Uniform interfaces which is combined of resource names and HTTP, GET, DELETE, POST, PUT.
 			A REST service is:
-			\item Language-independent (C# can communicate to Java, etc.),
+		\begin{enumerate}
+			\item Language-independent (C\# can communicate to Java, etc.),
 			\item Can be used with firewalls,
-			\ietm Platform-independent (MAC, Windows, UNIX) and,
+			\item Platform-independent (MAC, Windows, UNIX) and,
 			\item Standards-based (runs on top of HTTP)
 		\end{enumerate}
+		
+		\item \textbf{Secure Data Logger Pattern} \\
+		A requirement stated by the client is that the proposed system should contain a full audit trail functionality, which would allow administrators to view any action that executed by users, as well as the modification that execution had on the data.
+		
+		For this requirement the Secure Data Logger Security Pattern can be utilized. This pattern aims to log application system log to a secure tamper-proof log system, which would prevent users from modifying the audit trail. This pattern also goes further by ensuring the integrity of the log message, which can be achieved by various means, such as cryptographically signing the message, or encrypting the message before it is sent to the store.
+		
+		This pattern provides two important security features, depending on how the logging system, as well as the message are secured in the system.  The first protection, is that should a malicious user gain access to the logging system, they will be unable to use the data to plan further attacks on the system.  The second protection provided by this pattern, is that any modification of the log data will be detectable by administrators.
+		
 		\item \textbf{Services Orientated Architecture/ Microservices Architecture:}\\
 		An architectural pattern in software design in which system use cases are divided into one or more service operations, and these service operations are then implemented, either individually or combined with other service operations, by a reusable SOA service. The SOA architecture itself comprises five layers:
 		\begin{enumerate}
@@ -341,15 +368,6 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 			\item Operational system: Contains data repository, technological platforms, etc.
 		\end{enumerate}
 		Not to be confused with an API, this architectural pattern provides an aggregated collection of services which implement the use cases of the system. The user or developer themselves can choose which of these available services to call on. This architectural pattern was chosen because it is built around the principles of decoupling modules. Service objects must be decoupled from one another and can be distributed on different machines and implemented using different technologies, but implement a single interface, and communicate with one another using well defined interfaces, either locally or over a network. This also lends itself well to system reliability and scalability. More than one system provider may be used, enabling the system to switch to another service provider should one fail, or instantiating more service providers if system load increases.
-		\item \textbf{Client-Server Architectural Pattern:}\\
-		A network technology in which each computer connected on the network is either a server or client is called a client server architecture.
-		\begin{enumerate}
-			\item Servers: are powerful computers which are used to process the client requests.
-			\item Client: is simply a computer connected on the network which is used to send request for some resources to the server.
-		\end{enumerate}
-		Requirement of client server: it models work in a networked environment therefore the processing of an application distributed between the client and the server.
-		Function of client server: An interface/form is provided by the client to allow a user to request services of the user and to display the results the server returns.
-
 	\end{itemize}
 
 \section{Functional requirements and application design}
