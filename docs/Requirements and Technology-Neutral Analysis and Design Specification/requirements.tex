@@ -109,7 +109,7 @@ This project was commissioned based on the following three problems faced by the
 
 \item Monitoring and management of funding
 	\begin{itemize}
-	\item Currently the department receives funding based on research produced. The funding model, and hence the amount, is based on various factors pertaining to the research publications, such as whether it is published, presented at a conference and so on. Therefore, having access to projections of the number and type of publications that are to be produced in coming years is very important to strategic departmental planning, as is monitoring historical performance of research groups and individual researchers.
+	\item Currently the department receives funding based on research produced. The funding model, and hence, the amount, is based on various factors pertaining to the research publications, such as whether it is published, presented at a conference and so on. Therefore, having access to projections of the number and type of publications that are to be produced in coming years is very important for strategic departmental planning, as is monitoring historical performance of research groups and individual researchers.
 	\end{itemize}
 \end{itemize}
 
@@ -120,7 +120,7 @@ The human access component must allow for both a desktop web client and an Andro
 
 The web client will be the primary contact point for users of the system as most research papers are created, edited and maintained on personal computers that either owned by the contributor in question or the University of Pretoria. The web client will be based on an MVC based SPA architectural pattern. 
 
-The Android application will be made available in the Android App Store to allow contributors from outside the University of Pretoria to easily gain access to the system. The Android application should be accessible by all mobile devices running Android version 4.2 and upwards.
+The Android application will be made available in the Android App Store to allow contributors to the system from outside the University of Pretoria to easily gain access to the system. The Android application should be accessible by all mobile devices running Android version 4.2 and upwards.
 
 \subsubsection{System Access Channels}
 All system access will be made over a uniform interface which will assist in faster development time, ease of maintenance and lower overall cost associated with the system. The common interface that will be used, will be a RESTful API based on the dissertation Architectural Styles and
@@ -142,7 +142,7 @@ Application performance can be defined as the amount of work that can be accompl
 	
 	The aim for this system, is to increase the throughput and decrease the latency. As the developer has no control over the network medium used, he/she must aim for a minimal request and response payload as to decrease the data transmission time.
 \item \textbf{Justification} \\
-The current system suffers from performance issues, and hence it is important for this new system to address these issues adequately. Our aim for this system is to increase throughput, decrease latency and data transmission time. This will ensure we have a system that is responsive at all times, including peak times and delivers an excellent user experience.
+The current system suffers from performance issues, and hence, it is important for this new system to address these issues adequately. Our aim for this system is to increase throughput, decrease latency and data transmission time. This will ensure we have a system that is responsive at all times, including peak times and delivers an excellent user experience.
 \item \textbf{Requirements}
 	\begin{itemize}
 		\item Network requests must be benchmarked, monitored and aggregate statistics about network requests must be made available.
@@ -169,7 +169,7 @@ The current system is largely unreliable in that it crashes under large workload
 \subsubsection{Scalability}
 \begin{enumerate}
 \item \textbf{Description} \\
-Scalability refers to the application in question's ability to handle an above normal workload for extended time periods and the mechanisms employed to facilitate this. The client has specified minimum conditions under which the system needs to function. However the client has indicated that due to the business requirements, the system will experience higher workloads during the end of the month.
+Scalability refers to the application in question's ability to handle an above normal workload for extended time periods and the mechanisms employed to facilitate this. The client has specified minimum conditions under which the system needs to function. However, the client has indicated that due to the business requirements, the system will experience higher workloads during the end of the month.
 \item \textbf{Justification} \\
 The system needs Scalability because it needs to support 10 research groups, with 100 members each working with 50 concurrent users. But these requirements may increase in future and hence the system should be able to handle additional loads.
 \item \textbf{Requirements}
@@ -195,7 +195,7 @@ Finally, as this system is used to measure performance, it is important that non
 	\begin{itemize}
 		\item System should be resistant to SQL injections.
 		\item A user group hierarchy system should be used to manage user access rights.
-		\item Authentication credentials such username and password should not be stored on Android user device. A token based authentication approach should be utilized so that only tokens are stored on end user device, allowing for the easy revocation of device access if a device is lost. Available technologies, such as OAuth, should be utilized.
+		\item Authentication credentials such as username and password should not be stored on Android user device. A token based authentication approach should be utilized so that only tokens are stored on end user device, allowing for the easy revocation of device access if a device is lost. Available technologies, such as OAuth, should be utilized.
 		\item Password hosting with a unique salt for each user should be used.
 		\item A key derivation function should be used with passwords. 
 		\item After N invalid attempts, account should be locked for M min, where N and M would be agreed upon customer and developer based on current best practices.
@@ -240,7 +240,7 @@ The system is to be designed to be verbose and transparent in its workings, and 
 This is an important process in Software Engineering, where all the informations must be correct so requiring all the developers to see who made changes and when so that consistency must be kept in order to keep the database accurate and reliable.
 \item \textbf{Requirements}
 	\begin{itemize}
-		\item Data in database should be always be consistent. This implies that all data should adhere to constraints placed on the data by the data model, such as regex patterns, minimum and maximum length, non nullable fields, etc.
+		\item Data in database should always be consistent. This implies that all data should adhere to constraints placed on the data by the data model, such as regex patterns, minimum and maximum length, non nullable fields, etc.
 		\item No data should ever be deleted.
 		\item It should always be possible to see which user created which objects at what time.
 		\item It should always be possible to see which user last changed objects and at what time.
@@ -326,7 +326,7 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 				\item Servers: are powerful computers which are used to process the client requests.
 				\item Client: is simply a computer connected on the network which is used to send request for some resources to the server.
 			\end{enumerate}
-			Requirement of client server: it models work in a networked environment therefore the processing of an application distributed between the client and the server.
+			Requirement of client server: It models work in a networked environment therefore the processing of an application distributed between the client and the server.
 			Function of client server: An interface/form is provided by the client to allow a user to request services of the user and to display the results the server returns.
 	
 		\item \textbf{Layered Architectural Pattern:}\\
@@ -362,8 +362,8 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 		\item \textbf{Services Orientated Architecture/ Microservices Architecture:}\\
 		An architectural pattern in software design in which system use cases are divided into one or more service operations, and these service operations are then implemented, either individually or combined with other service operations, by a reusable SOA service. The SOA architecture itself comprises five layers:
 		\begin{enumerate}
-			\item Consumer interface: the GUI for end users accessing application services
-			\item Business process: the representation of system use cases
+			\item Consumer interface: The GUI for end users accessing application services
+			\item Business process: The representation of system use cases
 			\item Services: The consolidated inventory of all available services.
 			\item Service components: The reusable components used to build the services, such as functional libraries.
 			\item Operational system: Contains data repository, technological platforms, etc.
@@ -417,14 +417,14 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 		This use case will be used by the REST clients, specifically the web client and Android app, to initiate user login via the back-end service. 
 		\item Pre-Conditions
 			\begin{enumerate}
-				\item The user is already registered with the back-end service.
-				\item User account is not locked.
-				\item User currently does not have required tokens.
+				\item The user is already registered with the back-end service
+				\item User account is not locked
+				\item User currently does not have required tokens
 			\end{enumerate}
 		\item Post-Conditions
 			\begin{enumerate}
-				\item The user will be logged in.
-				\item The user will be issued with an access and refresh token.			
+				\item The user will be logged in
+				\item The user will be issued with an access and refresh token	
 			\end{enumerate}
 		\item Service Contract
 			\begin{figure}[H]
@@ -439,14 +439,14 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 		This use case will be used by the REST clients, specifically the Android app, to achieve safe long term login without storing user credentials on device. 
 		\item Pre-Conditions
 			\begin{enumerate}
-				\item The user is already registered with the back-end service.
-				\item User account is not locked.
-				\item User currently has access and refresh tokens.
+				\item The user is already registered with the back-end service
+				\item User account is not locked
+				\item User currently has access and refresh tokens
 			\end{enumerate}
 		\item Post-Conditions
 			\begin{enumerate}
-				\item The user will be logged in.
-				\item The user access token will be updated using the refresh token.
+				\item The user will be logged in
+				\item The user access token will be updated using the refresh token
 			\end{enumerate}
 		\item Service Contract
 			\begin{figure}[H]
@@ -461,7 +461,7 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 \subsubsection{Log Out User}
 	\begin{itemize}
 		\item Description\\
-			This use case will be used by the REST clients, specifically the web client and Android app, to log a user out of the system
+			This use case will be used by the REST clients, specifically the web client and Android app, to log a user out of the system.
 		\item Pre-Conditions
 			\begin{enumerate}
 				\item The user is currently logged into the system
@@ -481,7 +481,7 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 \subsubsection{Register User}
 	\begin{itemize}
 		\item Description\\
-			This use case will be used by the REST clients, specifically the web client and Android app, to Create a user of the system
+			This use case will be used by the REST clients, specifically the web client and Android app, to Create a user of the system.
 		\item Pre-Conditions
 			\begin{enumerate}
 				\item The user does not exist in the system
@@ -502,7 +502,7 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 \subsubsection{View/Edit User}
 	\begin{itemize}
 		\item Description\\
-			This use case will be used by the REST clients, specifically the web client and Android app, to View and Edit the currently logged in User
+			This use case will be used by the REST clients, specifically the web client and Android app, to View and Edit the currently logged in User.
 		\item Pre-Conditions
 			\begin{enumerate}
 				\item The user is successfully logged in to the system
@@ -525,7 +525,7 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 \subsubsection{Create Paper}
 	\begin{itemize}
 		\item Description\\
-			This use case will be used by the REST clients, specifically the web client and Android app, to Create a Research Paper
+			This use case will be used by the REST clients, specifically the web client and Android app, to Create a Research Paper.
 		\item Pre-Conditions
 			\begin{enumerate}
 				\item The user is successfully logged in to the system
@@ -551,7 +551,7 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 \subsubsection{Edit Paper}
 	\begin{itemize}
 		\item Description\\
-			This use case will be used by the REST clients, specifically the web client and Android app, to Edit a Research Paper
+			This use case will be used by the REST clients, specifically the web client and Android app, to Edit a Research Paper.
 		\item Pre-Conditions
 			\begin{enumerate}
 				\item The user is successfully logged in to the system
@@ -578,7 +578,7 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 \subsubsection{View Paper}
 	\begin{itemize}
 		\item Description\\
-			This use case will be used by the REST clients, specifically the web client and Android app, to View a Research Paper
+			This use case will be used by the REST clients, specifically the web client and Android app, to View a Research Paper.
 		\item Pre-Conditions
 			\begin{enumerate}
 				\item The user is successfully logged in to the system
@@ -601,7 +601,7 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 \subsubsection{Create Author}
 	\begin{itemize}
 		\item Description\\
-			This use case will be used by the REST clients, specifically the web client and Android app, to Create Authors
+			This use case will be used by the REST clients, specifically the web client and Android app, to Create Authors.
 		\item Pre-Conditions
 			\begin{enumerate}
 				\item The user is successfully logged in to the system
@@ -618,7 +618,7 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 \subsubsection{View Author}
 	\begin{itemize}
 		\item Description\\
-			This use case will be used by the REST clients, specifically the web client and Android app, to View an Author
+			This use case will be used by the REST clients, specifically the web client and Android app, to View an Author.
 		\item Pre-Conditions
 			\begin{enumerate}
 				\item The user is successfully logged in to the system
@@ -638,7 +638,7 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 \subsubsection{Edit Author}
 	\begin{itemize}
 		\item Description\\
-		This use case will be used by the REST clients, specifically the web client and Android app, to Edit an Author
+		This use case will be used by the REST clients, specifically the web client and Android app, to Edit an Author.
 		\item Pre-Conditions
 		\begin{enumerate}
 			\item The user is successfully logged in to the system
@@ -661,7 +661,7 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 \subsubsection{Add/Remove Author to Research Paper}
 	\begin{itemize}
 		\item Description\\
-			This use case will be used by the REST clients, specifically the web client and Android app, to Add and Remove Authors of a Research Paper
+			This use case will be used by the REST clients, specifically the web client and Android app, to Add and Remove Authors of a Research Paper.
 		\item Pre-Conditions
 			\begin{enumerate}
 				\item The user is successfully logged in to the system
@@ -687,7 +687,7 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 \subsubsection{Create Research Group}
 	\begin{itemize}
 		\item Description\\
-			This use case will be used by the REST clients, specifically the web client and Android app, to Create a Research Group
+			This use case will be used by the REST clients, specifically the web client and Android app, to Create a Research Group.
 		\item Pre-Conditions
 			\begin{enumerate}
 				\item The user is successfully logged in to the system
@@ -708,7 +708,7 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 	\subsubsection{View Research Groups}
 	\begin{itemize}
 		\item Description\\
-		This use case will be used by the REST clients, specifically the web client and Android app, to View a Research Group
+		This use case will be used by the REST clients, specifically the web client and Android app, to View a Research Group.
 		\item Pre-Conditions
 		\begin{enumerate}
 			\item The user is successfully logged in to the system
@@ -729,7 +729,7 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 \subsubsection{Edit Research Groups}
 	\begin{itemize}
 		\item Description\\
-			This use case will be used by the REST clients, specifically the web client and Android app, to Edit a Research Group
+			This use case will be used by the REST clients, specifically the web client and Android app, to Edit a Research Group.
 		\item Pre-Conditions
 			\begin{enumerate}
 				\item The user is successfully logged in to the system
@@ -751,7 +751,7 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 \subsubsection{Add/Remove Users to Research Groups}
 	\begin{itemize}
 		\item Description\\
-			This use case will be used by the REST clients, specifically the web client and Android app, to Add/Remove Users to a  Research Group
+			This use case will be used by the REST clients, specifically the web client and Android app, to Add/Remove Users to a  Research Group.
 		\item Pre-Conditions
 			\begin{enumerate}
 				\item The user is successfully logged in to the system
@@ -769,7 +769,7 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 \subsubsection{Import Historical Paper}
 	\begin{itemize}
 		\item Description\\
-			This use case will be used by the REST clients, specifically the web client and Android app, to Import a Historical Paper
+			This use case will be used by the REST clients, specifically the web client and Android app, to Import a Historical Paper.
 		\item Pre-Conditions
 			\begin{enumerate}
 				\item The user is successfully logged in to the system
@@ -790,7 +790,7 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 \subsubsection{Generate Bibliography}
 	\begin{itemize}
 		\item Description\\
-			This use case will be used by the REST clients, specifically the web client and Android app, to Generate a Bibliography for a User
+			This use case will be used by the REST clients, specifically the web client and Android app, to Generate a Bibliography for a User.
 		\item Pre-Conditions
 			\begin{enumerate}
 				\item The user is successfully logged in to the system
@@ -811,7 +811,7 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 \subsubsection{Create Venue}
 	\begin{itemize}
 		\item Description\\
-			This use case will be used by the REST clients, specifically the web client and Android app, to Create a Venue
+			This use case will be used by the REST clients, specifically the web client and Android app, to Create a Venue.
 		\item Pre-Conditions
 			\begin{enumerate}
 				\item The user is successfully logged in to the system
@@ -828,7 +828,7 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 \subsubsection{View/Edit Venue}
 	\begin{itemize}
 		\item Description\\
-			This use case will be used by the REST clients, specifically the web client and Android app, to View/Edit a Venue
+			This use case will be used by the REST clients, specifically the web client and Android app, to View/Edit a Venue.
 		\item Pre-Conditions
 			\begin{enumerate}
 				\item The user is successfully logged in to the system
@@ -846,7 +846,7 @@ The RESTful API will be implemented using the HTTP protocol as a high level prot
 \subsubsection{View Log}
 	\begin{itemize}
 		\item Description\\
-			This use case will be used by the REST clients, specifically the web client and Android app, to view a system log
+			This use case will be used by the REST clients, specifically the web client and Android app, to view a system log.
 		\item Pre-Conditions
 			\begin{enumerate}
 				\item The user is successfully logged in to the system
