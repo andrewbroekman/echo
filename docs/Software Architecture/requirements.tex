@@ -258,6 +258,14 @@ in = {In},
 				Requirement of client server: It models work in a networked environment therefore the processing of an application distributed between the client and the server.
 
 				Function of client server: An interface/form is provided by the client to allow a user to request services of the user and to display the results the server returns.
+
+		\item \textbf{Secure Data Logger Pattern} \\
+				A requirement stated by the client is that the proposed system should contain a full audit trail functionality, which would allow administrators to view any action that executed by users, as well as the modification that execution had on the data.
+
+				For this requirement the Secure Data Logger Security Pattern can be utilized. This pattern aims to log application system log to a secure tamper-proof log system, which would prevent users from modifying the audit trail. This pattern also goes further by ensuring the integrity of the log message, which can be achieved by various means, such as cryptographically signing the message, or encrypting the message before it is sent to the store.
+
+				This pattern provides two important security features, depending on how the logging system, as well as the message are secured in the system.  The first protection, is that should a malicious user gain access to the logging system, they will be unable to use the data to plan further attacks on the system.  The second protection provided by this pattern, is that any modification of the log data will be detectable by administrators.
+
 	\end{itemize}
 \section{Architectural tactics or strategies}
  
