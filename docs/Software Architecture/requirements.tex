@@ -337,6 +337,16 @@ in = {In},
 	\end{itemize}
 
 \subsubsection{Database System}
+	\begin{itemize}
+		\item PostgreSQL\\
+			PostgreSQL is an open source RDMS that is used to manage relational databases. As we will be using a NoSQL database for the backend, a big performance penalty is that traditional SQL queries are not available, which lowers performance in certain instances and can make retrieving certain data very difficult.  For this reason a modern approach is overlay one's NoSQL database with a SQL database system, allowing to gain the performace of NoSQL databases, but also allowing one to perform traditional based SQL statements on the data. 
+
+			PostgreSQL provides this ability with its Forgein Data Wrappers, which we will be using, as we gain the benefit of mobile device synchronization with the performance increase of using a NoSQL database, while retaining the ability to query the data using traditional SQL statamenets based on user based queries.
+		\item Couchbase Server\\
+			Couchbase Server is an open source, distributed, enterprise NoSQL document based database system, powering mission critical systems of some of the largest technology companies today. Couchbase has excellant performance and scalability options and for these reasons was selected as the backend database. Further as the Couchbase product line support native mobile client synchronization, we selected Couchbase as this will allow us to provide the client  with mobile offline access and speeding up development, as a synchronization framework doesn't need to be built.
+		\item Couchbase Sync Gateway\\
+			Couchbase Sync Gateway is the internet facing intermediate server providing and enabling the synchronization framework of the Couchbase product line, and as such is not a traditional database management system.  However it is needed as part of the backend system and hence included under the database system section.
+	\end{itemize}
 \subsubsection{Operating System}
 \subsubsection{Dependency Management and Build Tools}
 
