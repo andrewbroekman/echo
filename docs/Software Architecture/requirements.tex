@@ -129,6 +129,16 @@ in = {In},
 	\end{itemize}
 
 \subsubsection{Database System}
+	\begin{itemize}
+		\item Since we are utilizing a token based authenication mechanism, we need to store the access and refresh tokens on the client side, as the access token should accompany each request to the backend system.  The refresh token is also needed to refresh the access token, should the client continue to work longer than the period for which the access token is valid. We need to consider both newer and older client browsers, and hence we will utlize the following two persistance technologies:
+		\begin{itemize}
+			\item HTML5 Local Storage\\
+				For clients who are utilizing an HTML 5 capable browser with local storage we will be using the newer and safer local storage ability provided by the be browser to store the token temporary. Upon logout of the backend system, these token will be earsed on the client side.
+			\item Cookies\\
+				To allow clients who are using and older browser to still use the system, we will store the token in cookies on the client system, which will be erased upon logout from the backend system, in order to increase security,
+		\end{itemize}
+	\end{itemize}
+
 \subsubsection{Operating System}
 \subsubsection{Dependency Management and Build Tools}
 
