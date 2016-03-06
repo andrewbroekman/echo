@@ -87,6 +87,18 @@ in = {In},
 	\subsubsection{Performance}
 		\begin{enumerate}
 			\item \textbf{Description} \\
+				Application performance can be defined as the amount of work that can be accomplished by an application in question in a measured time interval. The time interval is normally measured in seconds, where the amount of work can be defined as the throughput, latency or data transmission time.
+				\begin{itemize}
+					\item \textbf{Throughput} \\
+					The number of requests and responses which can be processed by the system in a given time interval.
+					\item \textbf{Latency} \\
+					A time interval measured as the time it takes to service a request.
+					\item \textbf{Data transmission time} \\
+					The time it takes to transmit a request to the server from a client or a response from the server to the client. This is heavily influenced by the size of the request, as well as the quality of the network medium.
+				\end{itemize}
+
+				The aim for this system, is to increase the throughput and decrease the latency. As the developer has no control over the network medium used, he/she must aim for a minimal request and response payload as to decrease the data transmission time.
+
 			\item \textbf{Justification} \\
 			\item \textbf{Requirements}\\
 		\end{enumerate}
@@ -94,6 +106,8 @@ in = {In},
 	\subsubsection{Reliability}
 		\begin{enumerate}
 			\item \textbf{Description} \\
+				The design of this system is largely based on the fact that the current system used by the client is not reliable and suffers from system crashes and data loss. The newly designed system needs to be accessible from both inside University of Pretoria campuses as well as from other networks, especially on other campuses on the TENET network. The system should be reliable in both its accessibility and in the data that the system will use to calculate contributor metrics. 
+
 			\item \textbf{Justification} \\
 			\item \textbf{Requirements}\\
 		\end{enumerate}
@@ -101,6 +115,8 @@ in = {In},
 	\subsubsection{Scalability}
 		\begin{enumerate}
 			\item \textbf{Description} \\
+				Scalability refers to the application in question's ability to handle an above normal workload for extended time periods and the mechanisms employed to facilitate this. The client has specified minimum conditions under which the system needs to function. However, the client has indicated that due to the business requirements, the system will experience higher workloads during the end of the month.
+
 			\item \textbf{Justification} \\
 			\item \textbf{Requirements}\\
 		\end{enumerate}
@@ -108,6 +124,8 @@ in = {In},
 	\subsubsection{Security}
 		\begin{enumerate}
 			\item \textbf{Description} \\
+				Security in application software refers to authentication, authorization, data security and accounting. Authentication refers to the systems' ability to provide a way of identifying a user, normally with a combination of a user name and password, or by using access tokens. Authorization refers to the systems' ability to determine whether the user in question has the required authority to execute certain commands or tasks. Data security refers to data only being accessible through authorised channels. Finally if the user has been authenticated and has the required authorization then accounting needs to be done to be able to determine how the users action has changed the system.  
+
 			\item \textbf{Justification} \\
 			\item \textbf{Requirements}\\
 		\end{enumerate}
@@ -115,6 +133,8 @@ in = {In},
 	\subsubsection{Flexibility}
 		\begin{enumerate}
 			\item \textbf{Description} \\
+				Flexibility refers to the ability of the system to be changed dynamically either by hot swapping certain components in a live system or by extending the system with some kind of plugin. 
+
 			\item \textbf{Justification} \\
 			\item \textbf{Requirements}\\
 		\end{enumerate}
@@ -122,6 +142,8 @@ in = {In},
 	\subsubsection{Maintainability}
 		\begin{enumerate}
 			\item \textbf{Description} \\
+				The system is to be designed in such a way that it is easily updated, modified or extended by the client in the future. In order to achieve these requirements, design patterns and best practices such as coding style guides are normally used to ensure uniformity and modularity across the system.
+
 			\item \textbf{Justification} \\
 			\item \textbf{Requirements}\\
 		\end{enumerate}
@@ -136,6 +158,8 @@ in = {In},
 	\subsubsection{Integrability}
 		\begin{enumerate}
 			\item \textbf{Description} \\
+				The system should allow for future external integration with other platforms such as security authentication providers, other external research meta-data databases etc.
+
 			\item \textbf{Justification} \\
 			\item \textbf{Requirements}\\
 		\end{enumerate}
@@ -143,6 +167,8 @@ in = {In},
 	\subsubsection{Cost}
 		\begin{enumerate}
 			\item \textbf{Description} \\
+				The cost of the system entails any initial expenses as well as any ongoing expenses which the client may incur at some point. Such expenses arise from software licenses, external computing resources required as well as future maintenance of the system in terms of time.
+
 			\item \textbf{Justification} \\
 			\item \textbf{Requirements}\\
 		\end{enumerate}
@@ -150,6 +176,8 @@ in = {In},
 	\subsubsection{Usability}
 		\begin{enumerate}
 			\item \textbf{Description} \\
+				Usability refers to ease with which humans, and to a lesser extent, servers, interact with the system in question. Usability can be measured in various ways such as using quantifiable scientific measures or more subjective measures with a key question point being if the API follows conventions and so on.
+
 			\item \textbf{Justification} \\
 			\item \textbf{Requirements}\\
 		\end{enumerate}
