@@ -144,6 +144,9 @@ in = {In},
 				Finally, as this system is used to measure performance, it is important that non-repudiation of information is available, as researchers must be accountable for any information changes they make.
 
 			\item \textbf{Requirements}\\
+				\item System should be resistant to SQL injections.
+				\item A user group hierarchy system should be used to manage user access rights.
+				\item Authentication credentials such as username and password should not be stored on Android user device. A token based authentication approach should be utilized so that only tokens are stored on end user device, allowing for the easy revocation of device access if a device is lost. Available technologies, such as OAuth, should be utilized.
 		\end{enumerate}
 
 	\subsubsection{Flexibility}
