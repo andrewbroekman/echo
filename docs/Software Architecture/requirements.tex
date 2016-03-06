@@ -297,6 +297,38 @@ in = {In},
 \subsection{Backend System}
 \subsubsection{Programming Languages}
 \subsubsection{Frameworks}
+		\begin{itemize}
+			\item Spring Framework
+				The Spring framework is an open source application and dependency injection framework, often used in favour or in addition to the Java Enterprise Edition system.
+				
+				The Spring framework, which is part of the larger Spring Project consists of several project which will be used in our application, namely
+					\begin{itemize}
+						\item Spring Boot
+						\item Spring Cloud
+						\item Spring Data
+						\item Spring Security
+						\item Spring Social
+					\end{itemize}
+			\item Hibernate ORM\\
+				Hibernate ORM is an object relational mapper framework for Java, which allows the mapping of Java classes onto relational database tables. Hibernate provides various features, such as SQL generation, transaction management with cascade operations which can be used to ensure  referential integrity.
+			\item Liquibase\\
+				Liquibase is an open-source library which allows one to track, manage and apply database schema changes to relational object databases. In the way that git is used for source code, Liquibase is used for database schemas.  Liquibase supports a variety of database systems, allows for the tracking of database schema changes, rollback of database schama changes, database schema document generation as well as the ablity to confirm that the current database schema is consistent, by performing SQL and preconditions checks on existing live database systems.
+
+				As part of software engineering best-practices of self documenting code, it is very difficult to achieve in database schemas, as the only indication of a schema change, is a possible change in source code version control system of a Plain Old Java Object (POJO). Further Liquibase has excellent integration with the chosen build system, namely Maven, and the reference architecture, namely the Spring framework. 
+			\item SLF4J\\
+				The Simple Logging Facade for Java aims to provide a language neutral Java Logging API with the help of a Facade design pattern, allowing the logging backend to be chosen at run-time by inspecting the Java classpath.
+				
+				Using SLF4J will allow us to deploy the application with a chosen logging framework, but will fulfill the quality requirements of flexability and extendability by allowing the client to change the logging framework to a more appropriate framework, if desired by the client.
+			\item Apache Log4J\\
+				We will be using the Apache Log4J logging framework as it allows full control over what log statements are output at arbitrary granularity.  Configuration of the system is available at run-time using external configuration files, fulfulling the quality requirements of flexability and auditability.
+			\item Java Jersey\\
+			Java Jersey provides RESTful web services for Java and is also a JAX-RS(JSR 311 \& JSR-339) reference implementation. Java Jersey as a reference implementation provides for fast and efficeint marshalling and unmarshalling of Plain Old Java Objects (POJOs) to JavaScript Object Notation (JSON) and eXtensible Markup Language representations which can be sent over the wire to RESTful clients, such as the to be implemented web and Android mobile client. 
+
+			\item Swagger\\
+				Swagger aims to provide a language neutral standard interface to assist both developers and machines to discover and interact with REST API's. 
+				
+				As part of self documenting code, Swagger uses JAX-RS annotations to generate the specification for the API and with various library plugins available, allows one to produce a standardised HTTP API documentation set, which is included with the Java deployment of the application.
+		\end{itemize}
 \subsubsection{Libraries}
 \subsubsection{Database System}
 \subsubsection{Operating System}
