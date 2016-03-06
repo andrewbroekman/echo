@@ -114,6 +114,24 @@ in = {In},
 
 \subsection{Android Client}
 \subsubsection{Programming Languages}
+	\begin{itemize}
+		\item Java\\
+			We will be writing a native Android application and hence we are required by the constraints of the Android system to utilize the Java programming language. In terms of Android using Java, Android relies heavy on the following Java concepts:
+			\begin{itemize}
+				\item Platform Independence\\
+					After the developers have developed there applications in a selected programming language, the programmer often needs to compile there source code. The process of compiling source code is the conversion of the code written by the developer into a language that a certain device can understand. 
+					
+					It is important to note that different devices, understand different machine level langauges, and as such the developer is often forced to recompile the application for different devices understanding different machine languages. Using Java, Java source code is converted into a language called "bytecode", which is then interpreted and exectued by the Java Virtual Machine (JVM), which operates much like a physical CPU does.
+					
+					Using this ability of Java, it allows developers to compile there application once, and have it available on multiple different devices, by not needing to worry what machine language powers the given device. This gives developers the ability for the application to run on Android phones, tablets to even the latest toaster, car or water-bottle powered by Android.
+					
+				\item Secure Virtual Machines\\
+					Since Java execute in a virtual machine, Android has taken advantage of this ability, and runs each application in its own virtual machine as seperate Linux users. In this way Android abstracts the execution of machine language away from the physical hardware, into a virtual machine which encapsulates and contains the bytecode and which can be more easily managed should applications not fulfill certain constraints, such as consuming too much power.
+				\end{itemize}
+		\item eXtensible Markup Language (XML)\\
+			Android makes extensive use of XML to assist it in creating user screens in a process called inflation, storing string literals which allows for internationalization based on user preferences, and the selection of media such as image, video and audio based on the devices capablities, such as screen resolution, avaible decoders etc.
+	\end{itemize}
+	
 \subsubsection{Frameworks}
 \subsubsection{Libraries}
 \subsubsection{Database System}
