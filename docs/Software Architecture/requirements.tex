@@ -155,6 +155,25 @@ in = {In},
 	\end{itemize}
 
 \subsubsection{Dependency Management and Build Tools}
+	\begin{itemize}
+		\item Bower\\
+			Bower is a package manager for frontend developement, allowing developers to manage HTML, JS, CSS and font 3rd party libraries.  It further allows for the installation of the correct versions of libraries with their corresponding dependencies. This allows developers to more cleanly determine on what libraries there projects depend and allows for better repository management. The reason is that most modern frontend libraries are already found in source version control repositories, and to add library source code to your own repository, not only inflates the repository size but doesn't allow for clean trakcing of the how the ibrary code itself has evolved over time.
+
+		\item Grunt\\
+			Grunt is a a JavaScript build tool that assist developers in automating reptitve tasks. Grunt being written in JavaScript makes the build system extremely flexable and allows the system to be adapted for any task required by developers, which has lead to the large amount of plugins being written for the build system.
+
+			The reason for using grunt for the web development build is we require the following repetive tasks to be completed each time the web frontend needs deployment:
+			\begin{itemize}
+				\item Minification of CSS and JS source files.
+				\item Concatenation and versioning in the filename of CSS and JS files.
+				\item Removing of unneed CSS styles to decrease page loading time.
+				\item Autowiring of Bower dependency libraries into the web frontend.
+				\item Running of CSSLint and JSLint utilities on corresponding CSS and JS file to ensure the files are correct.
+				\item Running of Karma JS unit tests to ensure JS functions are correct.
+				\item Minification and compression on image files to ensure we decrease page loading time and increase user expierence.
+				\item Running of Gatling stress testing to ensure changes made to frontend doesn't impact on the quality requirement for scalability and system performance.
+			\end{itemize}
+	\end{itemize}
 
 \subsection{Android Client}
 \subsubsection{Programming Languages}
