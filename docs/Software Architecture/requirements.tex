@@ -103,6 +103,12 @@ in = {In},
 				The current system suffers from performance issues, and hence, it is important for this new system to address these issues adequately. Our aim for this system is to increase throughput, decrease latency and data transmission time. This will ensure we have a system that is responsive at all times, including peak times and delivers an excellent user experience.
 
 			\item \textbf{Requirements}\\
+				\begin{itemize}
+					\item Network requests must be benchmarked, monitored and aggregate statistics about network requests must be made available.
+					\item Function calls must be timed and benchmarked and this data should be logged.
+					\item Precompiled SQL must be used in statements.
+					\item Network responses should be cached on server side to lighten the load on database as well as decreasing the round trip time of request - response.
+				\end{itemize}
 		\end{enumerate}
 
 	\subsubsection{Reliability}
