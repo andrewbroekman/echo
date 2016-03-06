@@ -329,7 +329,13 @@ in = {In},
 				
 				As part of self documenting code, Swagger uses JAX-RS annotations to generate the specification for the API and with various library plugins available, allows one to produce a standardised HTTP API documentation set, which is included with the Java deployment of the application.
 		\end{itemize}
+
 \subsubsection{Libraries}
+	\begin{itemize}
+		\item Apache FOP\\
+			Apache FOP is an XSL-FO driven printer which can output to various file formats.  The client has indicated that they would like to produce PDF reports based on custom criterias, hence the use of an XSL-FO driven printer will allow for this. The reason that a lower level PDF print library was not used, is that the design of documents gets very complicated, which will hinder future flexability.
+	\end{itemize}
+
 \subsubsection{Database System}
 \subsubsection{Operating System}
 \subsubsection{Dependency Management and Build Tools}
