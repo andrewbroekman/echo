@@ -256,6 +256,16 @@ in = {In},
 		\item \textbf{Authorization Enforcer} \\
 				Similar to the authentication enforcer pattern, this pattern provides a centralized managed authorization mechanism, thereby abstracting authorization code away from application code.  With this pattern, it assists the system in authorizing users, i.e. to determine whether the current user has the required roles or privileges to perform a certain action. All of the benefits referred to in the authentication enforcer pattern are also applicable here.
 
+		\item \textbf{Client-Server Architectural Pattern}\\
+				A network technology in which each computer connected on the network is either a server or client is called a client server architecture.
+				\begin{enumerate}
+					\item Servers: are powerful computers which are used to process the client requests.
+					\item Client: is simply a computer connected on the network which is used to send request for some resources to the server.
+				\end{enumerate}
+				Requirement of client server: It models work in a networked environment therefore the processing of an application distributed between the client and the server.
+
+				Function of client server: An interface/form is provided by the client to allow a user to request services of the user and to display the results the server returns.
+
 		\item \textbf{Representational State Transfer (REST) Architectural Pattern}\\
 				REST is an architecture pattern for designing networked applications. The idea is instead of using complex mechanisms such as SOAP, CORBA or RPC to connect between machines or to make calls between machines, simple HTTP is used.
 
@@ -268,16 +278,6 @@ in = {In},
 					\item Platform-independent (MAC, Windows, UNIX) and,
 					\item Standards-based (runs on top of HTTP)
 				\end{enumerate}
-
-		\item \textbf{Client-Server Architectural Pattern}\\
-				A network technology in which each computer connected on the network is either a server or client is called a client server architecture.
-				\begin{enumerate}
-					\item Servers: are powerful computers which are used to process the client requests.
-					\item Client: is simply a computer connected on the network which is used to send request for some resources to the server.
-				\end{enumerate}
-				Requirement of client server: It models work in a networked environment therefore the processing of an application distributed between the client and the server.
-
-				Function of client server: An interface/form is provided by the client to allow a user to request services of the user and to display the results the server returns.
 
 		\item \textbf{Secure Data Logger Pattern} \\
 				A requirement stated by the client is that the proposed system should contain a full audit trail functionality, which would allow administrators to view any action that executed by users, as well as the modification that execution had on the data.
