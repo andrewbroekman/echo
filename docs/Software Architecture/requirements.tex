@@ -233,6 +233,9 @@ in = {In},
 
 		Further, since authentication is centralized, this pattern further allows changes to be easily implemented in terms of the authentication procedure, such as using a different authentication flow, or even mechanism, such as authenticating the user against an external provider.
 
+		\item \textbf{Authorization Enforcer} \\
+				Similar to the authentication enforcer pattern, this pattern provides a centralized managed authorization mechanism, thereby abstracting authorization code away from application code.  With this pattern, it assists the system in authorizing users, i.e. to determine whether the current user has the required roles or privileges to perform a certain action. All of the benefits referred to in the authentication enforcer pattern are also applicable here.
+
 		\item \textbf{Representational State Transfer (REST) Architectural Pattern}\\
 				REST is an architecture pattern for designing networked applications. The idea is instead of using complex mechanisms such as SOAP, CORBA or RPC to connect between machines or to make calls between machines, simple HTTP is used.
 
