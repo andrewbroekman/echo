@@ -115,6 +115,19 @@ in = {In},
 	\end{itemize}
 
 \subsubsection{Libraries}
+	\begin{itemize}
+		\item Modernizr\\
+			Modernizr is a JavaScript(JS) library to provide developers a stable, consistent and standardized manner of feature detecion in browers. Based on the fact we will be targeting our application to modern HTML5 based browser, we need to utilize a feature detection toolkit in order to be able to gracefully degrade the website for users of older browsers.
+		\item Karma\\
+			Karma is a test runner for JavaScript development and being framework agnostic allows developers to select there own framework to be used with the testing. As we need to ensure that the system remains stable, we will be using Karma with Jasmine as the test framework for the frontend JavaScript unit testing.
+		\item Jasmine\\
+			Jasmine is a behavious driven testing framework for JavaScript with the advantage of not requiring further 3rd party libraries or needing a fully functional DOM to do the testing against.
+		\item Gatling\\
+			Gatling is a load testing framework used to test, measure, analyze and report on the performance of web services, allow one to ensure that a given project would be able to scale under increased load pressure.
+
+			As scability is a requirement for this project, especially during month end peak load times, it is of the utmost importance to ensure that the system is scalable under this increased load. By using a testing framework like Gatling one will be able to measure quantitatively how scalable the system is.
+	\end{itemize}
+
 \subsubsection{Database System}
 \subsubsection{Operating System}
 \subsubsection{Dependency Management and Build Tools}
