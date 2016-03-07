@@ -244,6 +244,17 @@ in = {In},
 		\end{enumerate}
 
 \subsection{Integration and access channel requirements}
+\subsubsection{Human Access Channels}
+The human access component must allow for both a desktop web client and an Android mobile client allowing the user to manage the metadata associated with research papers they are involved in.
+
+The web client will be the primary contact point for users of the system as most research papers are created, edited and maintained on personal computers that either owned by the contributor in question or the University of Pretoria. The web client will be based on an MVC based SPA architectural pattern. 
+
+The Android application will be made available in the Android App Store to allow contributors to the system from outside the University of Pretoria to easily gain access to the system. The Android application should be accessible by all mobile devices running Android version 4.2 and upwards.
+
+\subsubsection{System Access Channels}
+All system access will be made over a uniform interface which will assist in faster development time, ease of maintenance and lower overall cost associated with the system. The common interface that will be used, will be a RESTful API based on the dissertation Architectural Styles and
+the Design of Network-based Software Architectures of \textcite{fielding}.  All client side interaction will be done via the web client or Android application which will in turn use the RESTful API set of the system to accomplish the given task.
+
 \subsection{Architectural constraints}
 
 \section{Architectural patterns or styles}
