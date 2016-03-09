@@ -114,6 +114,34 @@ This project was commissioned based on the following three problems faced by the
 \end{itemize}
 
 \section{Architecture requirements}
+\subsection{Architectural scope}
+At the very least, the software architecture should address the following responsibilities:
+\begin{enumerate}
+	\item Supply a persistence framework which
+	\begin{enumerate}
+		\item Relies mainly on databases.
+		\item Supports integration with multiple databases and database technologies.
+		\item Provides secure access to persistent data.
+		\item Allows for importing and exporting of persistent data.
+		\item Supports concurrent access.
+	\end{enumerate} 
+	\item Provide a reporting infrastructure, which is:
+	\begin{itemize}
+		\item Centralised.
+		\item Independent of the rest of the functionality of the system.
+		\item Consistent and accurate.
+		\item Timely and reliable.
+	\end{itemize}
+	\item Allow for external access channels, which:
+	\begin{enumerate}
+		\item Supports system integration with front-end clients, the bare minimum of which should be a desktop web client and an Android mobile client.
+		\item Work over a web protocol.
+	\end{enumerate}
+	\item Provide functionality benchmarking infrastructure.
+	\item Provide integration with authentication frameworks.
+	\item Cater for concurrent stateless access to services to at least fifty clients.
+	\item Support system flexibility in adding or removing existing modules without necessitating system shutdown.
+\end{enumerate}
 \subsection{Access channel requirements}
 \subsubsection{Human Access Channels}
 The human access component must allow for both a desktop web client and an Android mobile client allowing the user to manage the metadata associated with research papers they are involved in. 
@@ -302,19 +330,24 @@ The Android application will be built to work on all Android version 4.2 and upw
 The RESTful API will be implemented using the HTTP protocol as a high level protocol. The reason that HTTP is chosen is that it is a widely supported and deployed protocol, allowing a lot of flexibility. Furthermore, most JavaScript libraries, and the Android platform itself, have excellent support for RESTful APIs over HTTP.
 
 \subsection{Architecture constraints}
-The archicterural constarints are used to improve the architectural analyses of quality characteristics of the software to be developed. Our system architecture will be based on the following technologies which will be used:
-	\subsubsection{Representational State Transfer  (REST)}
+The architectural constraints are used to improve the architectural analyses of quality characteristics of the software to be developed. Our system architecture will be based on the following system architecture and technologies which will be used:
+
+\begin{enumerate}
+
+	\item \textbf{Representational State Transfer  (REST)}
 	REST which depends on stateless client server and communications protocols, and uses the HTTP protocol in most cases. It is an architectural style used to design networked applications. All the four CRUD operations are used in REST. 
 
-	\subsubsection{Service Oriented Architecture (SOA)}
+	\item \textbf{Service Oriented Architecture (SOA)}
 	SOA makes it easier for software components on computers that are connected on a network to work together with no need to make changes to the underlying program itself. The concept of service is what SOA is based on.
 
-	\subsubsection{Framework} 
+	\item \textbf{Frameworks} 
+	Frameworks are a special case of software libraries in that they are reusable abstractions of code wrapped in a well-defined API. Here are a few that our system will use:
+	
 	  \begin{itemize}
 		  \item The Spring framework: is a technology that is associated with developing secure websites and interacting with databases in conjunction with Hibernate. Spring is simply a usable API, with the idea being for the developer to represent Java objects with Spring Beans.
-		  The Spring Framework is an inversion of control container which is just a configuration of application components and lifecycle management of Java objects, it is usaully done though dependency injection. Spring is especially an application framework for the Java platform. 
+		  It is an inversion of control container which is just a configuration of application components and life-cycle management of Java objects, it is usually done though dependency injection. Spring is especially an application framework for the Java platform. 
 		  \item Liquibase: allows tracking, management of database schema changes to relational object databases.
-		  \item Apache Log4: allows total control over log statements that are output. The system's configuration is available at run-time using external configuration files, fulfulling the quality requirements of flexibility and auditability.
+		  \item Apache Log4: allows total control over log statements that are output. The system's configuration is available at run-time using external configuration files, fulfilling the quality requirements of flexibility and auditability.
 		  \item Hibernate ORM: provides various a feature such as SQL generation and is an object relational mapper framework for Java, which allows the mapping of Java classes onto relational database tables.
 		  \item Java Jersey: provides RESTful web services for Java.
 	  \end{itemize}
@@ -322,21 +355,30 @@ The archicterural constarints are used to improve the architectural analyses of 
 	Any Java application can use the framework's core features , but for building web applications on top of a Java Enterprise Edition platform some extensions exists. Even though, the framework does not impose any specific programming model. 
 	Therefore, spring can helps us achieve integrability and maintainability by using design patterns and any programming model to ensure uniformity across the system.
 	
-	\subsubsection{Dependency Injection (DI)}
+	\item \textbf{Dependency Injection (DI)}
 	DI will eases software testing and re-usability of software by using a design based on independent classes/components thus achieving the usability requirement.
 
-	\subsubsection{Unit Testing}
+	\item \textbf{Unit Testing}
 	Unit Testing to automate the following tasks: compilation of Java source code, running test cases and generating project documentation. It will be used as well because it gives us the following benefits
 		\begin{itemize}
 			\item Reduced system failure risk,
 			\item Rapid feedback on developed components,
 			\item Improved Maintainability due to unit testing,
-			\item Improved Reusability leading to less code being developed and maintained.
+			\item Improved Re-usability leading to less code being developed and maintained.
 		\end{itemize}
-	
-The Java programming language will be used to build this system.
-The system will be deployable on Windows operating systems and later on Android devices.
-
+		
+	\item \textbf{Programming language}
+		\begin{itemize}
+		\item HTML
+		We will build a browser based SPA.
+		\item JavaScript\\
+		JavaScript will make out the core of the SPA.
+		\item CSS\\
+		We will use this to implement the styling of the application.
+	\end{itemize}
+	\item \textbf{Operating system}
+	The system will be deployable on Windows, MAC and UNIX operating systems as well as Android devices.
+\end{enumerate}
 \subsubsection{Architectural Patterns}
 	\begin{itemize}
 		\item \textbf{Authentication Enforcer Pattern} \\
@@ -404,7 +446,409 @@ The system will be deployable on Windows operating systems and later on Android 
 
 \section{Architectural tactics or strategies}
 
+
+
+
 \section{Reference architectures and frameworks}
+\subsection{Backend System}
+\subsubsection{Programming Languages}
+	\begin{itemize}
+		\item Java
+			\subparagraph{Description}
+			Java in this instance refers to the programming language. Java is an object-oriented language that supports concurrency and classes. 		\subparagraph{Performance}
+			The reader may note that historically, Java has been considered to have worse performance than languages such as C and C++. Primarily, this is due to the fact that Java programs run on the Java Virtual Machine as opposed to the computer's processor. However, to assay those fears, the performance of Java in recent versions has improved dramatically by the use of the Just-in-Time compilation. Combine this with the ability to compile Java code once and then run the program without recompilation on a different computer, means that Java is still an ideal contender for a programming language for use in the system.
+					\subparagraph{Scalability}
+			When referring to the Scalability requirement, Java has relatively high performance when used for High Performance Computing, HPC, and is similar to Fortran on the more intensive benchmarks. However, there does exist a scalability issue for the Java Virtual Machines to perform intensive communication on grid networks. To again assay fears of viability in this system, much of the scalability issue with Java Virtual Machines lies in the hardware setup and not on the software side.		
+				
+			\subparagraph{Flexibility}
+			For the Flexibility requirement, Java excels as it operates on the WORA or Write Once, Run Anywhere principle. Java code can run on all platforms that support Java without the need for a recompliation. This is accomplished via the fact that Java applications are compiled to bytecode. This bytecode can run on any Java virtual machine and is totally independent of the computer architecture. This means that Java code, once writtten, can be easily and quickly ported and deployed throughout the various system components.
+
+
+			\subparagraph{Cost}
+			The latest version of Java is Java 8 which is supported for free by Oracle meaning that its use in this system does not contribute towards system cost.
+			\subparagraph{Usability}
+			From a programming perspective, Java offers a number of features that make it an adaptable and useful language for programming. One of the core features is that Java provides an automatic memory management service or automatic garbage collector. This means that the programmers are freed from the concerns and complexities of memory management, and the contiguous issues associated therein.
+
+			From a syntactical perspective, Java offers a similar syntax to 
+			Frameworks C and C++ meaning that learnability of Java is typically much lower, especially with the use of IDEs such as Netbeans or Eclipse.
+\end{itemize}
+\subsubsection{Frameworks}
+	\begin{itemize}
+		\item Spring Framework
+			\subparagraph{Description}
+				The Spring framework is an application framework and inversion of control for the Java platform, built on top of Java EE
+			\subparagraph{Performance}
+				Performance of a framework cannot be quantified with a number, but rather in respect to its components. Spring framework is a widely used framework that is seen as a replacement for Java EE. Therefore we can say that Springs performance is at a high level.
+			\subparagraph{Reliability}
+				The Spring framework is reliable in the sense that it makes the programmer code less, and do more. Thus having less logic errors the system will be more reliable
+			\subparagraph{Scalability}
+				Spring framework is designed for scalability and with Java as the language of choice, its scalability is increased.
+			\subparagraph{Security}
+				Spring framework has Authentication and Authorization modules which provide good security of data.
+			\subparagraph{Flexibility}
+				Spring framework provides many independant modules which are hotswappable, thus it is is flexible.
+			\subparagraph{Maintainability}
+				There are many package/dependancy managers that are available for Spring that keeps all code the latest.
+			\subparagraph{Auditablility/Monitorability}		
+				Spring audits all events and one can view these stats.
+			\subparagraph{Integrability}
+				Spring has its own integration framework that provides reusable functions.
+			\subparagraph{Cost}
+				Spring is opensource.
+		\item Spring Boot
+			\subparagraph{Description}
+				Spring boot is a convention-over-configuration solution for creating stand-alone, production grade Spring based applications that you can just "run"
+		\item Spring Cloud
+			\subparagraph{Description}
+				Spring Cloud provides tools for developers to quickly build some of the common patterns in distributed systems.			
+			\subparagraph{Scalability}
+				Spring Cloud is capable of handling multiple users.
+			\subparagraph{Security}
+				Spring clouds provides authentication and authorization
+			\subparagraph{Cost}
+				Spring Cloud is open source
+		\item Spring Data
+			\subparagraph{Description}
+				Spring Data's mission is to provide a familiar and consistent, Spring-based programming model for data access while still retaining the special traits of the underlying data store.
+
+				It makes it easy to use data access technologies, relational and non-relational databases, map-reduce frameworks, and cloud-based data services.
+			\subparagraph{Performance}
+				Spring Data performance within the system is good. It has a powerful repository and custom object-mapping abstractions.		
+			
+			\subparagraph{Cost}
+				Spring Data is open source
+		\item Spring Security
+			\subparagraph{Description}
+				Spring Security is a powerful and highly customizable authentication and access-control framework. 
+			\subparagraph{Security}
+				Spring Security is core feature is to provide security, therefore it fufils this quality requirement.
+			\subparagraph{Flexibility}
+				Spring Security is highly customizable for most situations.
+			\subparagraph{Cost}
+				Spring Security is open source
+		\item Spring Social
+			\subparagraph{Description}
+				Spring Social is an extension of the Spring framework that allows you to connect your applications with Software-as-a-Service(SaaS) API providers such as Facebook, Twitter and LinkedIn.
+			\subparagraph{Performance}
+				There is a connect controller that handles the authorization flow between your Spring web application, a service provider ans the user.
+			
+			\subparagraph{Security}
+				Connections are secure and data is encrypted. A sign-in controller that enables users to authenticate with the SaaS.
+			
+			\subparagraph{Cost}
+				Spring Social is open source.
+		\item Hibernate ORM
+			\subparagraph{Description}
+				Hibernate ORM is a ORM framework that provides persitent data storage.
+			\subparagraph{Performance}
+				Hibernate supports lazy initialization, numerous fetching strategies and optimistic locking with automatic versioning and time stamping. Hibernate requires no special database tables or fields and generates much of the SQL at system initialization time instead of at runtime.
+			\subparagraph{Reliability}
+				Hibernate is well known for its excellent stability and quality, proven by the acceptance and use by tens of thousands of Java developers.
+			\subparagraph{Scalability}
+				Hibernate was designed to work in an application server cluster and deliver a highly scalable architecture. Hibernate scales well in any environment: Use it to drive your in-house Intranet that serves hundreds of users or for mission-critical applications that serve hundreds of thousands.
+			\subparagraph{Security}
+			
+			\subparagraph{Flexibility}
+				Hibernate is highly configurable and extensible.			
+			\subparagraph{Cost}
+				Hibernate ORM is under the LGPL v2.1 license.
+		\item Liquibase
+			\subparagraph{Description}
+			Liquibase is an open source, database independent library that makes provisions for tracking, managing and applying any database schema changes. Liquibase will be invaluable in ensuring that we can track and manage the growth and use of whichever database we choose to use.
+			\subparagraph{Scalability}
+			Liquibase supports over 10 database systems which provides our system with a lot of potential growing space in terms of database systems that it will use. 
+			\subparagraph{Maintainability}
+			In terms of Maintainability, Liquibase supports a variety of functions that allow for developers to maintain databases. These functions include rollback x changes to the database or even to a particular time. This means that even over time, should reverting to an earlier database state be needed, it can be done allowing for easier maintenance in the long term.
+			\subparagraph{Auditablility/Monitorability}
+			With Liquibase, we are able to perform a number of functions that provide for necessary monitoring/auditing functions. These include database difference reports, the ability to generate documention for database change, and the ability to split change logs into multiple files, enabling easier management of changelogs for auditing purposes.
+			\subparagraph{Cost}
+			Liquibase is open source and that means that using it contributes nothing to software costs of the system. 
+			\subparagraph{Usability}
+			Liquibase does indeed support the Usability requirement because it can be executed via a variety of means such as command line, Apache Ant and Maven or the Spring framework.
+
+		\item SLF4J
+			\subparagraph{Description}
+				The Simple Logging Facade for Java (SLF4J) serves as a simple facade or abstraction for various logging frameworks (e.g. java.util.logging, logback, log4j) allowing the end user to plug in the desired logging framework at deployment time. 
+			
+			\subparagraph{Flexibility}
+				SLF4J provides an abstract interface for pluggin in any desired logging framework 			
+			\subparagraph{Cost}
+			SLF4J is under the MIT License
+		\item Apache Log4J
+			\subparagraph{Description}
+				Apache log4j is a Java-based logging utility.
+			\subparagraph{Performance}
+				On an AMD Duron clocked at 800Mhz running JDK 1.3.1, it costs about 5 nanoseconds to determine if a logging statement should be logged or not. Actual logging is also quite fast, ranging from 21 microseconds using the SimpleLayout, 37 microseconds using the TTCCLayout. The performance of the PatternLayout is almost as good as the dedicated layouts, except that it is much more flexible.
+			\subparagraph{Cost}
+				Apache License 2.0
+		\item Java Jersey
+			\subparagraph{Description}
+			The Jersey RESTful Web Services framework or Java Jersey for brevity, is an open source framework for developing RESTful Web services in java. It provides its own API that extends the existing JAX-RS toolkit as well. This framework is considerably useful in our situation as we are using both Java and a RESTful API approach to making the system.
+			\subparagraph{Flexibility}
+			In terms of the Flexibility of Java Jersey, as the underlying language of the system will be Java, Java Jersey will contribute to the Flexibility requirement as the latest version, 2.7, Java Jersey can compile and run applications using at least Java 7. Java Jersey is built and installed using Apache Maven. This means that applications that use Jersey, or depend on Jersey modules also need the application dependencies of the 3rd party modules that Jersey itself depends on.
+
+			However, since Jersey is designed as a pluggable component, this means that it can be plugged into different component architectures but at the cost of requiring that external Jersey dependencies needed will have to be included in the application dependencies as a whole.
+			\subparagraph{Cost}
+			The Jersey framework is open source so no additional project costs will be incurred by its use.
+			\subparagraph{Usability}
+			A core, and vital feature, of Swagger is the ability to generate specifications that describe REST APIs in a format that can be read by both machines and humans. This ease of use, especially between human and computer is a vital service that needs to be in play as this system will be based on a REST API.		
+		\item Swagger
+			\subparagraph{Description}
+			Swagger is a framework that is used for describing and visualizing RESTFul APIS. It defines a standard, language-agnostic or language independent, interface for REST APIS. This enables users, both human and computer, to find and discover service capabilities without requiring source code access or by network traffic inspection. This is useful because it means that we will have a means both computers and developers can find service capabilities without violating access to certain code components or contributing unnecessarily to network traffic.
+			\subparagraph{Maintainability}
+			The documentation generated by, and using, Swagger is integral towards the Maintainability requirement of the system. This documentation that is both machine and human readable will ensure that future machines and computers, as well as future developers, will be able to read the system documentation and maintain the system as a result.
+			\subparagraph{Cost}
+			Swagger is an open source specification  whose use is freely available.Hence it will not contribute towards the cost of the system as it can be freely used with commercial license provisions.
+			\subparagraph{Usability}
+			A core, and vital feature, of Swagger is the ability to generate specifications that describe REST APIs in a format that can be read by both machines and humans. This ease of use, especially between human and computer is a vital service that needs to be in play as this system will be based on a REST API
+	\end{itemize}
+
+\subsubsection{Libraries}
+	\begin{itemize}
+		\item Apache FOP
+				\subparagraph{Description}
+				Apache FOP or Formatting Objects Processor is a Java application that converts XSL formatting objects to printable formats such as PDF. The system will likely generate a vast amount of documentation and a program that allows us to convert this documentation into a format optimised for printing would save us hassles from getting the physical system documentation stored properly.
+				\subparagraph{Flexibility}
+				Apache FOP is an output independent formatter which means it is able to support a wide variety of output formats, or printable formats, such as PDF, PS,PCL and AFP. Furthermore, the input for FOP is a standard XSL-FO file which is useful as the XSL-FO is also an XML file and that can be created from a variety of sources, adding greatly to its flexibility as a program.
+				\subparagraph{Cost}
+				Apache FOP is open source software and is freely available.
+				Usability
+
+	\end{itemize}
+
+\subsubsection{Database System}
+	\begin{itemize}
+		\item PostgreSQL
+			\subparagraph{Description}
+			PostgreSQL or Postgres is an object-relational database management system. It supports the SQL standard and serves to store data securely.
+			As it has high utility and functionality, it will be ideal for the database management system to handle the database needs of our system.
+			\subparagraph{Scalability}
+			PostgreSQL satistifies the Scalability requirement rather nicely. It can handle a variety of different workloads, from single machine applications to much larger web applications with many concurrent users. This means that the program can be easily used to ensure that our sysstem can scale to the workload that is required of it.
+			\subparagraph{Security}
+			Security in postgreSQL is handled internally on a per-role basis, to individuals or groups. This means that roles, essentially users, can be applied and revoked dynamically and on any object, down to a column level. This provides it with a dynamic and flexible security service that allows us to make use of various levels of security for the various roles that exist in our system in terms of user base.
+
+			Furthermore, PostgreSQL supports a wide variety of external authentification mechanisms such as LDAP or SSPI. It gives us further control on which users can connect to which of our databases as well as where they can connect from, IP address/domain socket and whether the connection must use Transport Layer Security or TLS.
+			\subparagraph{Flexibility}
+			PostgreSQL has several interfaces as well as wide programming language libraru support. It has both internal and external interfaces that allow it to be used in a variety of applications using a variety of languages.
+
+			Additionally, PostgreSQL supports a large variety of native data types from Boolean types all the way to JSON.
+
+			Adding to this is the use of the Foreign Data Wrapper that increases the flexibility of our system as using postgreSQL, our system can use regular database queries to join external data sources like normal tables.
+			\subparagraph{Integrability}
+			PostgreSQL supports Foreign Data Wrappers or FDWs. This means PostgreSWL can link to other systems and retrieve data on those systems via the FDWs This FDW can take a variety of forms in terms of data source such as file system, another Relational Database Management System or even a web service. This allows our RDBMS to integrate with a variety of platforms and applications. 
+			\subparagraph{Cost}
+			PostgreSQL is freely available, open soure software that cocntributes no cost towards the system.
+		\item Couchbase Server
+			\subparagraph{Description}
+			Couchbase Server is a distributed multi-model NoSQL database optimised for interactive applications. In contrast to PostgreSQL, Couchbase is is document orientated database that makes use of no SQL standards.
+
+			There are a number of reasons to want to consider a NoSQL database and specifically with Couchbase Server, it is optimised for concurrent users and interactive applications. If the system does develop into one where concurrent access and interactivity are the primary functionality points, Couchbase Server would be an ideal database management system.
+			\subparagraph{Performance}
+			Couchbase Server makes use of a cluster manager to supervise the behaviour and configruation of servers that comprise a Couchbase cluster. One of the services offered by this is high-speed failover which improves the system performance as it will automatically and quickly transfer control to a duplicate server on the cluster to replicated items as per requests.
+			\subparagraph{Reliability}
+			Couchbase Server makes use of a "tail-append" storage design that is proof against data corruption, sudden loss of power and OOM killers or out of Memory Killers. This claim has the caveat that a sudden lose of power can still lose data if the power loss occurred in the middle of the disk transfer.
+
+			However, this aside, Couchbase Server provides great assurance that the data that we store will be protected and stored safely.
+			\subparagraph{Scalability}
+			As mentioned above, Couchbase Server has great utility in supported concurrent user access and this means that the service will scale well when under heavy workload.
+			\subparagraph{Cost}
+			Couchbase is licenced under the Apache Licence (Open source edition) and can be used without incurring additional system costs.
+
+
+		\item Couchbase Sync Gateway
+			\subparagraph{Description}
+			Couchbase Sync Gateway enables Couchbase database to reflect changes in an application's data in both directions. Bu this, it is mean that Sync Gateway stores data from the applications' on-device data in storage unit stored on the existing and scalable Couchbase Server technology.
+
+			It provides a number of useful features that when coordinated with Couchbase Server, extends much functionality towards web-based applications such as logging and user authentication. Of note is the ability to determine which data records in the database are relevant for which user.
+			\subparagraph{Reliability}
+			The sync function provided by Sync Gateway is the core of the API. It provides a number of services that greatly contribute to the Reliablity requirement such as document validation or change authorisation.		\subparagraph{Scalability}
+			Sync Gate is scalable as it makes use of the existing and scalable Couchbase Server technology.
+			\subparagraph{Security}
+			In terms of the Security requirement, Sync Gate has one issue of contention. The sync function is not only able to do validation of data but it also authorises read/write access. This means that it needs to be highly monitored to ensure it prevents unauthorised access and threats. This will increase system complexity in terms of ensuring that authorisation protocols are in place but the usability that comes from using Sync Gateway with Couchbase Server may be worth the added cost.
+			\subparagraph{Flexibility}
+			Sync Gateway is designed to be used by a variety of platforms like Swift and Android and Java. This means that we can use it for the Android application as well as the underlying system.
+			\subparagraph{Cost}
+			As Sync Gateway is provided under an  open source licence and as such, does not contribute to system costs.
+
+	\end{itemize}
+
+\subsubsection{Operating System}
+	\begin{itemize}
+		\item Linux
+	\end{itemize}
+
+\subsubsection{Dependency Management and Build Tools}
+	\begin{itemize}
+		\item Maven
+			\subparagraph{Description}
+				Apache Maven is a software project management and comprehension tool. Based on the concept of a project object model (POM), Maven can manage a project's build, reporting and documentation from a central piece of information. 
+			\subparagraph{Performance}
+				Instant access to new features with little or no extra configuration
+			
+			\subparagraph{Scalability}
+				Able to easily work with multiple projects at the same time
+			
+			\subparagraph{Security}
+			
+			\subparagraph{Flexibility}
+				Extensible, with the ability to easily write plugins in Java or scripting languages
+			
+			\subparagraph{Cost}
+				Apache License 2.0
+	\end{itemize}
+
+\subsection{Web Interface}
+\subsubsection{Programming Languages}
+	\begin{itemize}
+		\item HTML			
+		\item JavaScript			
+		\item CSS			
+	\end{itemize}
+
+\subsubsection{Frameworks}
+	\begin{itemize}
+		\item AngularJS
+	\end{itemize}
+
+\subsubsection{Libraries}
+	\begin{itemize}
+		\item Modernizr
+			\subparagraph{Description}
+			Modernizr is a JavaScript library which is designed to detect HTML5 and CSS, specifically CCS3 in various browers. The use of this so as to prevent JavaScript from using features that have not yet been implemented yet or, where available, use workarounds to emulate them.
+			Modernizr is chosen here for its ability to determine if features/functions are supported in web browsers to save on time when designing or improving the web interface.
+			\subparagraph{Performance}
+			In terms of performance, which is defined as work done in a time interval, a library like Modernizr will improve our system performance because the library will prevent our system from using features and functions that are not implemented yet. By knowing, and thus preventing that use, our system will benefit from improved efficiency and thus provide better performance.
+			\subparagraph{Reliability}
+			Reliability is the big quality requirement that Modernizr aims to satisfy. The ability to know which features the underlying languages in browsers have and do not have, and the ability to potentially make use of workarounds, means that the development team will always know the limits of what their JavaScript based components can and cannot do and this will also mean that they can develop workarounds and fall back functions for the functionality they require but are not yet developed.
+			\subparagraph{Scalability}
+			Scability in this context is the ability of the application to handle above average workloads for an extended period of time. Modernizr is again useful because the ability to know what can be relied upon, in terms of functions provided by browsers, will enable the development team, to design using known functions, applications that can scale properly without having to rely on unknown or unreliable functions or components.
+			\subparagraph{Security}
+			Security is an important component of any application, especially an application that is meant to be used to access highly sensisitive material. Security is aided by Modernizer in this regard because it allows the development team to see whichc functions their JavaScript components will have to rely on in HTML5 and CSS3 and this will enable them to plan their security features accordingly as they will know which functions will be supported and which functions will not be supported.
+			\subparagraph{Flexibility}
+			Modernizr is important for the Flexibility quality requirement. If the system is meant to be dynamically flexible, it is important to be able to determine, quickly and accurately, which of the functions in our web system are available and which are not. In this way, Modernizr allows us to increase our flexibility because we are then able to design our system to expand around what functions are already supported and what functions will require fallbacks or workarounds.
+			\subparagraph{Maintainability}
+			Modernizr enables the Maintainability of the system. It does so because our system, as it being maintained, will have a utility to determine if new functions, components or services offered make use of other functions that are not offered, implemented or available. In this way, we can ensure that system maintenance does not introduce additional system instability.
+			\subparagraph{Auditablility/Monitorability}
+			Modernizr is essentially a colletion of tests to determine what a browser can and cannot do. These tests can be logged and included alongside system logs so that future development teams can trace the development of the web interface. Additionally, as Modernizr is itself a tool for testing, it allows the developers to monitor their system in terms of functions they have and functions they do not have.
+
+			\subparagraph{Integrability}
+			Since Modernizr is used to determine what HTML5 and CSS3 functions are supported by a browser, it can be used by the development team to design a web interface that can integrate into additional platforms by providing the team with the ability to test for the functions supported by that platform and how much integration needs to be done to bridge the gap between the new platform and the existing one.
+			\subparagraph{Cost}
+			Modernizr does not contribute towards the cost of the system as it is an open source JavaScript library.
+
+		\item Karma
+			\subparagraph{Description}
+			Karma is an information integration tool. It is designed to enable rapid and easy data integration, from a multitude of sources like databases, XML, JSON and so on. This information is integrated by modelling it according to an ontology, selected by the user, and facilitated by a graphical user interface. This model can then be interacted with to transform the data into a needed format.
+
+			Karma was chosen here for its great utility as an integration tool. It can integrate data quickly and easily from a variety of sources and this will mean that we can develop a web interface that is not so tightly bound to any one specific data format.
+
+			\subparagraph{Flexibility}
+			Karma helps the system achieve the requirement of Flexibility because it enables the system to make use of any data source as Karma can be used to transform that source of the data into one that can be used by the system. This would mean, since users can define data transformation scripts, the system can be expanded to make use of any kind of data source that can be transformed with Karma.
+
+			\subparagraph{Integrability}
+			Karma achieves the requirement of Integrability because it allows the users to transform data from a variety of sources into one specific format. This makes the system independent on any one specific source of data and means that it can integrate with a variety of data storage types as well as transform existing data for the purposes of exporting it from the system.
+			\subparagraph{Cost}
+			Karma is open source software and as such, does not contribute towards the cost of the system.
+			\subparagraph{Usability}
+			Karma is achieves the requirement of usability very easily. The interface is an easily manipulatable GUI that can store the transformed data in a database or in a RDF. This ease of use certainly means that should data transformation be needed for data capturing purposes, it can be done quickly and easily.
+
+		\item Jasmine
+			\subparagraph{Description}
+			Jasmine is an open source testing framework for JavaScript. Specifically, it is testing frame that is designed for performing unit tests. For reference, unit tests are when individual units of source code are tested.
+
+			\subparagraph{Flexibility}
+			Jasmine achieves the requirement of Flexibility because, as indicated by one of its core development aims, it will run on any JavaScript-enabled platform. This capacity to run on any platform means that Jasmine, as a testing platform, it will enable programmers to perform unit tests free from specific testing environments or operating systems as it is cross-platform.
+
+			\subparagraph{Cost}
+			As Jasmine is an open source framework, it will have no effect on the cost of the system.
+			\subparagraph{Usability}
+			One of the core design focuses of Jasmine is that it must not intrude on the application or IDE, if present. From a Usability standpoint, Jasmine provides a simple and logical syntax for creating test suites, making it a boon for developers to use for testing.
+		\item Gatling
+			\subparagraph{Description}
+			Gatling is an open source load testing framework based on Scala, Akka and Netty. The software serves as a tool that can be use for loading testing for the purposes of  analysis and measurement of performance of a variety of services, specifically in the case of web applications.
+
+			Gatling was chosen because of its utility as a performance analysis tool. This tool will enable the developers to have a quick and easy way to measure the optimality of their implementation of the web interface.
+			\subparagraph{Performance}
+			Gatling supports, officially, the HTTP, WebSockets, Server-Sent events and JMS protocols. Gatling was built with high performance in mind and its ability to help determine the performance of our web application will make great strides towards ensuring that the application meets the Performance quality requirement in this regard.
+			\subparagraph{Auditablility/Monitorability}
+			Gatling provides the functionality of creating "Ready-to-Present" HTML reports meaning that once it has performed its work of analysing the performance of the web application, it will then generate an HTML report containing its results. As this document is generated in HTML and also "Ready-to-Present" this enables us to have a high degree of auditability on our performance tests as these reports can be archived and reviewed like other system logs.
+
+			\subparagraph{Cost}
+			Gatling does not contribute to the cost of the system as it is an open source load testing framework based on the scala, Akka and Netty languages.
+	\end{itemize}
+
+\subsubsection{Database System}
+	\begin{itemize}
+		\item HTML5 Local Storage
+		\item Cookies
+	\end{itemize}
+
+\subsubsection{Operating System}
+	\begin{itemize}
+		\item Device Operating System Independent
+		\item Web Browser
+		\begin{itemize}
+			\item Google Chrome
+			\item Mozilla Firefox
+			\item Microsoft Internet Explorer 8,9 \& 10
+			\item Microsoft Edge
+			\item Apple Safari
+		\end{itemize}
+	\end{itemize}
+
+\subsubsection{Dependency Management and Build Tools}
+	\begin{itemize}
+		\item Bower
+			\subparagraph{Description}
+				Bower is a package management system for client-side programming on the World Wide Web. It depends on Node.js and npm. It works with git and GitHub repositories.
+		\item Grunt
+			\subparagraph{Description}
+				Grunt is a Javascript task runner.
+	\end{itemize}
+
+\subsection{Android Client}
+\subsubsection{Programming Languages}
+	\begin{itemize}
+		\item Java
+		\item eXtensible Markup Language (XML)
+	\end{itemize}
+
+\subsubsection{Frameworks}
+	\begin{itemize}
+		\item Spring for Android
+	\end{itemize}
+
+\subsubsection{Libraries}
+	\begin{itemize}
+		\item Android Butterknife
+	\end{itemize}
+
+\subsubsection{Database System}
+	\begin{itemize}
+		\item Couchbase Mobile which consists of:
+		\begin{itemize}
+			\item Couchbase Lite
+			\item Couchbase Sync Gateway
+			\item Couchbase Server
+		\end{itemize}
+	\end{itemize}
+
+\subsubsection{Operating System}
+	\begin{itemize}
+		\item Android 4.2 Devices
+	\end{itemize}
+
+\subsubsection{Dependency Management and Build Tools}
+	\begin{itemize}
+		\item Gradle
+	\end{itemize}
+
+
+
+
+
+
+
 
 \section{Access and integration channels}
 
@@ -413,8 +857,7 @@ The system will be deployable on Windows operating systems and later on Android 
 \subsubsection{Programming Languages}
 	\begin{itemize}
 		\item Java
-	\end{itemize}
-
+\end{itemize}
 \subsubsection{Frameworks}
 	\begin{itemize}
 		\item Spring Framework
@@ -427,13 +870,14 @@ The system will be deployable on Windows operating systems and later on Android 
 		\item Liquibase
 		\item SLF4J
 		\item Apache Log4J
-		\item Java Jersey
+		\item Java Jersey		
 		\item Swagger
 	\end{itemize}
 
 \subsubsection{Libraries}
 	\begin{itemize}
 		\item Apache FOP
+
 	\end{itemize}
 
 \subsubsection{Database System}
@@ -469,9 +913,8 @@ The system will be deployable on Windows operating systems and later on Android 
 \subsubsection{Libraries}
 	\begin{itemize}
 		\item Modernizr
-		\item Karma
+
 		\item Jasmine
-		\item Gatling
 	\end{itemize}
 
 \subsubsection{Database System}
@@ -482,7 +925,7 @@ The system will be deployable on Windows operating systems and later on Android 
 
 \subsubsection{Operating System}
 	\begin{itemize}
-		\item Device Operating System Independant
+		\item Device Operating System Independent
 		\item Web Browser
 		\begin{itemize}
 			\item Google Chrome
@@ -727,7 +1170,7 @@ The system will be deployable on Windows operating systems and later on Android 
 			\end{enumerate}
 		\item Post-Conditions
 			\begin{enumerate}
-				\item The papers details will be edited
+				\item The paper's details will be edited
 				\item The paper details will be displayed
 						
 			\end{enumerate}
@@ -781,7 +1224,7 @@ The system will be deployable on Windows operating systems and later on Android 
 		\item Service Contract
 			\begin{figure}[H]
 				\includegraphics[scale=0.5]{CreateAuthor}
-				\caption{Creat Author}
+				\caption{Create Author}
 			\end{figure}
 	\end{itemize}
 
