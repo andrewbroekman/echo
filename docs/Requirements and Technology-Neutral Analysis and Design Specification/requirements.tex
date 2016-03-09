@@ -302,17 +302,22 @@ The Android application will be built to work on all Android version 4.2 and upw
 The RESTful API will be implemented using the HTTP protocol as a high level protocol. The reason that HTTP is chosen is that it is a widely supported and deployed protocol, allowing a lot of flexibility. Furthermore, most JavaScript libraries, and the Android platform itself, have excellent support for RESTful APIs over HTTP.
 
 \subsection{Architecture constraints}
-The archicterural constarints are used to improve the architectural analyses of quality characteristics of the software to be developed. Our system architecture will be based on the following technologies which will be used:
-	\subsubsection{Representational State Transfer  (REST)}
+The archicterural constarints are used to improve the architectural analyses of quality characteristics of the software to be developed. Our system architecture will be based on the following system architecture and technologies which will be used:
+
+\begin{enumerate}
+
+	\item \textbf{Representational State Transfer  (REST)}
 	REST which depends on stateless client server and communications protocols, and uses the HTTP protocol in most cases. It is an architectural style used to design networked applications. All the four CRUD operations are used in REST. 
 
-	\subsubsection{Service Oriented Architecture (SOA)}
+	\item \textbf{Service Oriented Architecture (SOA)}
 	SOA makes it easier for software components on computers that are connected on a network to work together with no need to make changes to the underlying program itself. The concept of service is what SOA is based on.
 
-	\subsubsection{Framework} 
+	\item \textbf{Frameworks} 
+	Frameworks are a special case of software libraries in that they are reusable abstractions of code wrapped in a well-defined API. Here are a few that our system will use:
+	
 	  \begin{itemize}
 		  \item The Spring framework: is a technology that is associated with developing secure websites and interacting with databases in conjunction with Hibernate. Spring is simply a usable API, with the idea being for the developer to represent Java objects with Spring Beans.
-		  The Spring Framework is an inversion of control container which is just a configuration of application components and lifecycle management of Java objects, it is usaully done though dependency injection. Spring is especially an application framework for the Java platform. 
+		  It is an inversion of control container which is just a configuration of application components and lifecycle management of Java objects, it is usaully done though dependency injection. Spring is especially an application framework for the Java platform. 
 		  \item Liquibase: allows tracking, management of database schema changes to relational object databases.
 		  \item Apache Log4: allows total control over log statements that are output. The system's configuration is available at run-time using external configuration files, fulfulling the quality requirements of flexibility and auditability.
 		  \item Hibernate ORM: provides various a feature such as SQL generation and is an object relational mapper framework for Java, which allows the mapping of Java classes onto relational database tables.
@@ -322,10 +327,10 @@ The archicterural constarints are used to improve the architectural analyses of 
 	Any Java application can use the framework's core features , but for building web applications on top of a Java Enterprise Edition platform some extensions exists. Even though, the framework does not impose any specific programming model. 
 	Therefore, spring can helps us achieve integrability and maintainability by using design patterns and any programming model to ensure uniformity across the system.
 	
-	\subsubsection{Dependency Injection (DI)}
+	\item \textbf{Dependency Injection (DI)}
 	DI will eases software testing and re-usability of software by using a design based on independent classes/components thus achieving the usability requirement.
 
-	\subsubsection{Unit Testing}
+	\item \textbf{Unit Testing}
 	Unit Testing to automate the following tasks: compilation of Java source code, running test cases and generating project documentation. It will be used as well because it gives us the following benefits
 		\begin{itemize}
 			\item Reduced system failure risk,
@@ -333,10 +338,19 @@ The archicterural constarints are used to improve the architectural analyses of 
 			\item Improved Maintainability due to unit testing,
 			\item Improved Reusability leading to less code being developed and maintained.
 		\end{itemize}
-	
-The Java programming language will be used to build this system.
-The system will be deployable on Windows operating systems and later on Android devices.
-
+		
+	\item \textbf{Programming language}
+		\begin{itemize}
+		\item HTML
+		We will build a browser based SPA.
+		\item JavaScript\\
+		JavaScript will make out the core of the SPA.
+		\item CSS\\
+		We will use this to implement the styling of the application.
+	\end{itemize}
+	\item \textbf{Operating system}
+	The system will be deployable on Windows, MAC and UNIX operating systems as well as Android devices.
+\end{enumerate}
 \subsubsection{Architectural Patterns}
 	\begin{itemize}
 		\item \textbf{Authentication Enforcer Pattern} \\
