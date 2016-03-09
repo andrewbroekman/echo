@@ -713,7 +713,6 @@ The architectural constraints are used to improve the architectural analyses of 
 \subsubsection{Libraries}
 	\begin{itemize}
 		\item Modernizr
-<<<<<<< HEAD
 			\subparagraph{Description}
 			Modernizr is a JavaScript library which is designed to detect HTML5 and CSS, specifically CCS3 in various browers. The use of this so as to prevent JavaScript from using features that have not yet been implemented yet or, where available, use workarounds to emulate them.
 			Modernizr is chosen here for its ability to determine if features/functions are supported in web browsers to save on time when designing or improving the web interface.
@@ -736,30 +735,7 @@ The architectural constraints are used to improve the architectural analyses of 
 			Since Modernizr is used to determine what HTML5 and CSS3 functions are supported by a browser, it can be used by the development team to design a web interface that can integrate into additional platforms by providing the team with the ability to test for the functions supported by that platform and how much integration needs to be done to bridge the gap between the new platform and the existing one.
 			\subparagraph{Cost}
 			Modernizr does not contribute towards the cost of the system as it is an open source JavaScript library.
-=======
-		\subparagraph{Description}
-		Modernizr is a JavaScript library which is designed to detect HTML5 and CSS, specifically CCS3 in various browsers. The use of this so as to prevent JavaScript from using features that have not yet been implemented yet or, where available, use workarounds to emulate them.
-Modernizr is chosen here for its ability to determine if features/functions are supported in web browsers to save on time when designing or improving the web interface.
-		\subparagraph{Performance}
-		In terms of performance, which is defined as work done in a time interval, a library like Modernizr will improve our system performance because the library will prevent our system from using features and functions that are not implemented yet. By knowing, and thus preventing that use, our system will benefit from improved efficiency and thus provide better performance.
-		\subparagraph{Reliability}
-		Reliability is the big quality requirement that Modernizr aims to satisfy. The ability to know which features the underlying languages in browsers have and do not have, and the ability to potentially make use of workarounds, means that the development team will always know the limits of what their JavaScript based components can and cannot do and this will also mean that they can develop workarounds and fall back functions for the functionality they require but are not yet developed.
-		\subparagraph{Scalability}
-		Scability in this context is the ability of the application to handle above average workloads for an extended period of time. Modernizr is again useful because the ability to know what can be relied upon, in terms of functions provided by browsers, will enable the development team, to design using known functions, applications that can scale properly without having to rely on unknown or unreliable functions or components.
-		\subparagraph{Security}
-		Security is an important component of any application, especially an application that is meant to be used to access highly sensitive material. Security is aided by Modernizr in this regard because it allows the development team to see which functions their JavaScript components will have to rely on in HTML5 and CSS3 and this will enable them to plan their security features accordingly as they will know which functions will be supported and which functions will not be supported.
-		\subparagraph{Flexibility}
-		Modernizr is important for the Flexibility quality requirement. If the system is meant to be dynamically flexible, it is important to be able to determine, quickly and accurately, which of the functions in our web system are available and which are not. In this way, Modernizr allows us to increase our flexibility because we are then able to design our system to expand around what functions are already supported and what functions will require fallbacks or workarounds.
-		\subparagraph{Maintainability}
-		Modernizr enables the Maintainability of the system. It does so because our system, as it being maintained, will have a utility to determine if new functions, components or services offered make use of other functions that are not offered, implemented or available. In this way, we can ensure that system maintenance does not introduce additional system instability.
-		\subparagraph{Auditablility/Monitorability}
-		Modernizr is essentially a collection of tests to determine what a browser can and cannot do. These tests can be logged and included alongside system logs so that future development teams can trace the development of the web interface. Additionally, as Modernizr is itself a tool for testing, it allows the developers to monitor their system in terms of functions they have and functions they do not have.
 
-		\subparagraph{Integrability}
-		Since Modernizr is used to determine what HTML5 and CSS3 functions are supported by a browser, it can be used by the development team to design a web interface that can integrate into additional platforms by providing the team with the ability to test for the functions supported by that platform and how much integration needs to be done to bridge the gap between the new platform and the existing one.
-		\subparagraph{Cost}
-		Modernizr does not contribute towards the cost of the system as it is an open source JavaScript library.
->>>>>>> cdf53875ebc4cd09d5cbff0bc11b4e80f68bb36a
 		\item Karma
 			\subparagraph{Description}
 			Karma is an information integration tool. It is designed to enable rapid and easy data integration, from a multitude of sources like databases, XML, JSON and so on. This information is integrated by modelling it according to an ontology, selected by the user, and facilitated by a graphical user interface. This model can then be interacted with to transform the data into a needed format.
