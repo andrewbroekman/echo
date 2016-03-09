@@ -114,6 +114,34 @@ This project was commissioned based on the following three problems faced by the
 \end{itemize}
 
 \section{Architecture requirements}
+\subsection{Architectural scope}
+At the very least, the software architecture should address the following responsibilities:
+\begin{enumerate}
+	\item Supply a persistence framework which
+	\begin{enumerate}
+		\item Relies mainly on databases.
+		\item Supports integration with multiple databases and database technologies.
+		\item Provides secure access to persistent data.
+		\item Allows for importing and exporting of persistent data.
+		\item Supports concurrent access.
+	\end{enumerate} 
+	\item Provide a reporting infrastructure, which is:
+	\begin{itemize}
+		\item Centralised.
+		\item Independent of the rest of the functionality of the system.
+		\item Consistent and accurate.
+		\item Timely and reliable.
+	\end{itemize}
+	\item Allow for external access channels, which:
+	\begin{enumerate}
+		\item Supports system integration with front-end clients, the bare minimum of which should be a desktop web client and an Android mobile client.
+		\item Work over a web protocol.
+	\end{enumerate}
+	\item Provide functionality benchmarking infrastructure.
+	\item Provide integration with authentication frameworks.
+	\item Cater for concurrent stateless access to services to at least fifty clients.
+	\item Support system flexibility in adding or removing existing modules without necessitating system shutdown.
+\end{enumerate}
 \subsection{Access channel requirements}
 \subsubsection{Human Access Channels}
 The human access component must allow for both a desktop web client and an Android mobile client allowing the user to manage the metadata associated with research papers they are involved in. 
