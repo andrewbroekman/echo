@@ -470,7 +470,33 @@ Achitectural tactics is concerend with achieving coherence between  a design dec
 				\subparagraph
 					- The server will log metadata pertaining to each function call and network request, and in further development of the system, developers will use this information to tweak the efficiency of requests and thus, improve the systems current performance. 
 		\end{itemize}
-		
+
+\subsection{Reliability Tactics}
+	\subparagraph
+				Reliability of the system refers to amongst other things, the coherence of information stored within the system and presented to users(concurrent). This can be achieved through the use of a duplication scheme which can be saught after using Passive Redundancy, which simply means that the system is designed to store the same information multiple times in multiple independent locations. 
+
+				System reliability also refers to the systems automatic fault detection. 
+
+	\subsubsection{In context of the system :} 
+		\begin{itemize}
+			\item To enable offline activity and access of data from the Android app, data synced must be made differentiable with timestamps."
+				\subparagraph
+					- This will be achieved by providing persistent data storage services with state information, ensuring that the results obtained - either using the Android application or the website is still valid.  
+					- A variation of the Blackboard Architectural pattern will be used to define checkpoints which allow for roll back functionality. All inputs into the system will be logged in order, in this way, should an inconsistency occur, one could reconstruct the sequence of events. 
+			\item The system must resolve synchronization conflicts using timestamps.
+				\subparagraph 
+					- The Ping/Echo Achitectural tactic will be used to achieve this requirement. 
+					- It has two major components ; the one issuing the ping and keeping time and the components responding to the ping with an echo. 
+					- The sequence of actions is controlled by a clock, independent of all the other actions in the system. 
+					- Another way this requirement will be fulfilled is through the use synchronization locks (which ensure that only one process at a time can make use of a shared resource) on all critical sections of the system, processes must attempt to acquire a lock before they can use a shared resource and release the lock once they are done using the resource.
+					-Voting tactic will be used for conflict resolution here : different components work on the same problem, their results are compared and the voting scheme is used in cases where results differ.
+			\item Hot swapping of system modules should not affect system service reliability.
+				\subparagraph
+					- The Broker Achictectural Pattern will be used here because it maintains communication with the server. Since it adds timing behaviour, it can be used to roll back events to repaire the system should it be affected by hot swapping of system modules. 
+					- The system will not suffer much strain since it is designed using the MVC model, only some modules would be affected but detection and repaire is made easy because the system will be made up of seperate individual modules. 
+					- Hiding information : modules of the system will have their responsibilities divided into two categories - public and private. This will limit responsibility as well as dependency so one module failing will not affect the others by a huge margin. 
+		\end{itemize}
+
 
 \section{Reference architectures and frameworks}
 \subsection{Backend System}
