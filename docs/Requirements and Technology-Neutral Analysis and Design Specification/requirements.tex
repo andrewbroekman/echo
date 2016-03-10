@@ -595,6 +595,24 @@ Achitectural tactics is concerend with achieving coherence between  a design dec
 					- Spring also supports transaction management which unifies several transaction management APIs and co-ordinates transactions for Java objects.
 		\end{itemize}
 
+\subsection{Auditability Tactics}
+	\subparagraph 
+		These tactics are used to ensure that information about the performance of the system is always available, and to provide a log of which user provided which input at which point in time. 
+	\subsubsection{In context of the system :}
+		\begin{itemize}
+			\item Data in database should always be consistent. This implies that all data should adhere to constraints placed on the data by the data model, such as regex patterns, minimum and maximum length, non-nullable fields, etc.
+				\subparagraph
+					-  Data validation will be enforced by the developer on the client side, this will ensure that only valid data will be entered into any database associated with the system. 
+ 					- RegEx(Regular Expressions) Patterns will be used to ensure that any input into the system is of the right format. 
+ 			\item No data should ever be deleted.
+ 				\subparagraph
+				 - This will be accomplished by not adding any functionality that gives regular users to remove records from the system. The only way to 'delete' information from the system is to render it unusable - by disabling access to it - a feature which must be enforced by the developer.
+			\item The rest of the quality requirements pertain to logging of system actions.
+				\subparagraph
+				- This requirement will be succeeded by externally logging all inputs and actions by the user by having the system write them to a text file. 
+				- Logging system data will not be a user function. Logging happens automatically by the system, without the user being aware or able to intercept the process.
+		\end{itemize}
+
 
 
 \section{Reference architectures and frameworks}
