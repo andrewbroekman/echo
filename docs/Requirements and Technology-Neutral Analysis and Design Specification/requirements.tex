@@ -445,9 +445,32 @@ The architectural constraints are used to improve the architectural analyses of 
 	\end{itemize}
 
 \section{Architectural tactics or strategies}
+\subsection{Software Engineering Context : Achitectural Tactics}
+Achitectural tactics is concerend with achieving coherence between  a design decision and a quality response/promise. So by definition, Achitectural Tactics are points of leverage for achieving quality attributes previously stated in the requirements section - simply put, this referes to how we plan to keep our promise of the level of quality stated previously. 
 
 
+\subsection{Performance Tactics}
+	\subsubsection{Performance Tactics can be divided into 3 groups}
+		\begin{enumerate}
+			\item Tactics for managing resource demand : these tactics contol execution and transfer times by controlling the allocation of resources
+			\item Tactics for managing conflict resolution : these tactics control premeption and waiting times when competing requests execute concurrently. 
+			\item Tactics for managing multiple resources : these tactics enable multiple resources to be used efficiently to ensure that available resources are allocated upon request. 
+		\end{enumerate}
 
+	\subsubsection{In context of the system :}
+		\begin{itemize}
+			\item Precompiled SQL must be used in statements.
+				\subparagraph 
+					- The system is designed to handle concurrent requests. The use of threads will be crucial in the precompilation of SQL statements to increase performance. During compilation, multiple threads will run ahead and compile the SQL statements, and as threads complete their execution, the process will be ready to handle the request from the user(s) and provide a timely response. 
+
+			\item Network responses should be cached on server side to lighten the load on database as well as decreasing the round trip time of request-response.
+				\subparagraph
+					- This will increase the number of requests and responses the system handle in an interval of time. This will rely on a server that is designed to store data and information likely to be requested next. This will also obviously drastically reduce computational overhead during executions. 
+			\item Function calls must be timed and benchmarked and this data should be logged."+ "Function calls must be timed and benchmarked and this data should be logged.
+				\subparagraph
+					- The server will log metadata pertaining to each function call and network request, and in further development of the system, developers will use this information to tweak the efficiency of requests and thus, improve the systems current performance. 
+		\end{itemize}
+		
 
 \section{Reference architectures and frameworks}
 \subsection{Backend System}
