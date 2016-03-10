@@ -522,6 +522,38 @@ Achitectural tactics is concerend with achieving coherence between  a design dec
 
 
 
+\subsection{Security Tactics} 
+	\subparagraph
+		Security refers to ensuring that only permitted people are allowed to access and modify the system in any way. Access needs to be controlled and monitored, and levels of access need to predetermined such that a normal user has more restrictions than a super user. 
+
+	\subsubsection{In context of the system :} 
+		\begin{itemize}
+			\item System should be resistant to SQL injections.
+				\subparagraph
+					- Encrypting data is one measure which will be used to prevent SQL injections. SQL injections rely on knowing what type of data is expected, if this data is encrypted when it gets to server and turned into something only the system will understand, then a SQL injection attack can be avoided. 
+					-The system never stores authentication information as simple text. 
+			\item A user group hierarchy system should be used to manage user access rights.
+				\subparagraph
+					- The different types of actors on the system will have different access rights, this will be accomplished by disabling some functionality and modules depending on the level of user that logged in. 
+			\item Authentication credentials such as username and password should not be stored on Android user device. A token based authentication approach should be utilized so that only tokens are stored on end user device, allowing for the easy revocation of device access if a device is lost. Available technologies, such as OAuth, should be utilized.
+				\subparagraph
+					- OAuth will be used to achieve this requirement. 
+					- OAuth is an authorization framework which enables a third-party application to obtain limited access to an HTTP service. 
+					- OAuth is serves as a simple mechanism to publish and interact with protected data. 
+			\item Password hosting with a unique salt for each user should be used.
+				\subparagraph
+					- This security feature will be implemented using hashing. When the user creates their account, their password will automatically be hashed and stored in the database in its hashed version, it is never stored in plain-text. Each time the user logs on, the hashed version of the password will be queried, instead of the plain text version. 
+			\item A key derivation function should be used with passwords.
+				\subparagraph
+					- This functionality will happen during hashing of the password before it is stored persistently. 
+			\item Database access must require authentication.
+				\subparagraph
+					- The level of access and ability to view or modify any database linked to the system will be determined by the type of user logged into the system. 
+					- User authentication will be performed using Access Tokens, which will be checked for validity every time a database is queried. 
+		\end{itemize}
+
+
+
 \section{Reference architectures and frameworks}
 \subsection{Backend System}
 \subsubsection{Programming Languages}
