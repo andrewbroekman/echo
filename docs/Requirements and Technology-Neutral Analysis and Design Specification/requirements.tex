@@ -553,6 +553,23 @@ Achitectural tactics is concerend with achieving coherence between  a design dec
 		\end{itemize}
 
 
+\subsection{Flexibility Tactics}
+	\subparagraph
+		The following Flexibility tactics will be used to ensure that the system can handle dynamic, run-time changes. The tactics used also for allow for plugability which can be used to extend the functionality of the system. 
+	\subsection{In context of the system :}
+		\begin{itemize}
+			\item The system should allow unregistered users to use existing third party web service login credentials to register or log in to the service.
+				\subparagraph
+					- StrongLoop (An IBM product) is an API framework which will be used to allow users to register and login to the system using their credentials from their Facebook, Google, Twitter or Github accounts.
+			\item The system should be decoupled from the database technology it uses and allow the client to select and change the database it uses in future.
+				\subparagraph
+					- This functionality will be achived by converting database tables to XML. As long the structure and data of the database is maintained, the XML version can be converted back into a database - this allows the information to be preserved in the new database too. 
+					- IBM DB2 XML Extender will be used in this regard to store  XML documents as BLOB-like objects or as a decomposed set of tables. 
+			\item Authentication mechanisms used should be decoupled from the system, allowing them to be interchangeable.
+				\subparagraph
+					-This quality requiremet will be achieved using The Pluggable Authentication Modules(PAM) library, which is a generalised API for authentiction-related services. This API allows the system developer to add new authentication methods by simply installing new PAM modules. This will give the system the ability to add and remove authenication mechanisms. 
+		\end{itemize}
+
 
 \section{Reference architectures and frameworks}
 \subsection{Backend System}
