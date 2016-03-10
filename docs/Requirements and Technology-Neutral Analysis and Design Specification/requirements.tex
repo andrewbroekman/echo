@@ -1048,14 +1048,18 @@ Achitectural tactics is concerend with achieving coherence between  a design dec
 		\item Gradle
 	\end{itemize}
 
-
-
-
-
-
-
-
-\section{Access and integration channels}
+\section{Access and Integration Channels}
+\subsection{Access Channels}
+		The user will be able to access the system by both a Web interface and an Android interface with underlying web-services. Users will be able to access the Android interface by downloading the application from the Google Play Store and installing it onto their device. The Web interface can be accessed through the user’s preferred web browser. The AngularJS framework using HTML, JavaScript and CSS will be implemented for the Web interface in order to provide a modern, dynamic and attractive user experience. Cookies will also be implemented for the Web interface in order to store the client’s usage data to provide an overall better user experience.
+	
+\subsection{Integration Channels}
+		The Web interface and the Android interface will both be implemented using the RESTful API architecture. However, the Web interface will be implemented using a MVC-based SPA architectural pattern whereas the Android interface will be implemented using the standard MVC architectural pattern. Java will be used to code the back-end of the application as it is widely supported, it has a multitude of features, it has support for cross-platform desktop applications and the language can be easily converted to another language. This is related to the potential need for a multi-platform desktop application in the future and Java can be used for both the back-end of the system and the Android interface.
+		
+		The technologies and frameworks for the back-end system will now be discussed in more detail. The Spring Framework will be implemented as the system’s back-end framework as it integrates easily with Java. The RESTful API will be used with HTTP as a high level protocol as HTTP is widely supported and the RESTful API is supported greatly by the Java and Android libraries. The Java Jersey framework will be implemented along with the Swagger API as they support development using RESTful API. Spring Social will be incorporated as it is an extension of the Spring Framework which provides an access channel to Software-as-a-Service providers, for example LinkedIn. Spring Boot will be implemented to handle the bootstrapping and development of the Spring application.
+		
+		The development complexity of this distributed system will be decreased by the implementation of Spring Cloud. Spring Data and Liquibase along with Hibernate ORM will be incorporated into the system to handle all the CRUD actions for the PostgreSQL database. PostgreSQL will be used for the database as it provides several external authentication tools and it provides support for the use of JSON, which will assist with the integration of the server-side communication. These CRUD functions are built into Spring Data so they won’t need to be coded manually. The framework which Hibernate provides will enable mapping of the object-oriented domain model to the relational database. Spring Security will provide thorough security for the system as it enables easy authentication and access control to the data stored in the database, which is always an important requirement for any system. The SOA will be implemented to ensure seamless integration channels as it doesn’t require the code to be changed drastically in order for the software to work together. Simple Logging Façade for Java and Apache Log4J will handle the appropriate binding and API logging required by the system.
+		
+		PHP with HTML will be implemented for the Web interface and web services to handle all the server-side communication. The Android interface will be coded in Java with XML using the Spring for Android framework, for the same reasons as stated above regarding the Spring Framework for the back-end of the application.
 
 \section{Technologies}
 \subsection{Backend System}
