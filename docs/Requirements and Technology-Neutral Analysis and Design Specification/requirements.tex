@@ -571,6 +571,32 @@ Achitectural tactics is concerend with achieving coherence between  a design dec
 		\end{itemize}
 
 
+\subsection{Maintainability Tactics}
+	\subparagraph
+		Maintainability Tactics allow the existing software/ system to be modified while preserving its integrity. 
+	\subparagraph
+		There are four categories of Software Maintainance
+		- Adaptive : changes in the software environment 
+		- Perfective : new user requirements 
+		- Corrective : fixing errors 
+		- Preventitive : preventing future problems
+
+	\subsubsection{In context of the system :} 
+		\begin{itemize}
+			\item All code should be documented in the applicable language documentation framework, such as JavaDocs for a Java based system, DOxygen for a C/C++ based system, etc.
+				\subparagraph
+					- Doxygen will be used for code documentation since it supports a variety of programming languages such as Java, C#, and PHP. 
+			\item A coding style guide/manual should be set up and associated with the project, such that all developers use similar coding styles and conventions, to allow for more readable code that is easier to maintain.
+				\subparagraph
+					- Simple good coding practices known by all system developers should be used. These include camel casing and giving descriptive names to variables, functions and classes. 
+			\item System should be separated in distinct, concise and independent modules relating to separate concerns, to allow for easier maintenance.
+				\subparagraph
+					- The Spring framework is used for this quality requirement because it supports seperating the different modules of the system so that they can be tested as independent modules. 
+					- Spring also supports transaction management which unifies several transaction management APIs and co-ordinates transactions for Java objects.
+		\end{itemize}
+
+
+
 \section{Reference architectures and frameworks}
 \subsection{Backend System}
 \subsubsection{Programming Languages}
