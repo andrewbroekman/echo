@@ -498,6 +498,30 @@ Achitectural tactics is concerend with achieving coherence between  a design dec
 		\end{itemize}
 
 
+\subsection{Scalability Tactics}
+	\subsubsection{Definition of Scalability}
+		\subparagraph
+		- Scalability refers to the ability to handle increased workload without adding more resources to the system.
+		- One way to achieve scalability is to perform a regualar SWOT analysis on the system: 
+		--Strengths : the kinds of growth the system is designed to handle 
+		--Weaknesses : the kinds of growth the system will have trouble handling
+		--Opportunities : possible changes in the system which could be exploited to increase performance 
+		--Threats : possible changes in the workload that the system will not be able to handle
+
+	\subsubsection{In context of the system :}
+		\begin{itemize}
+			\item The system should be able to handle 10 research groups with each research group containing 100 members.
+				\subparagraph
+					- Developers need to be aware of the systems abilities at all times, this will be achieved through regular Scalability Audits. 
+					- If demand never reaches a critical level, the incremental cost for scalability will be wasted because designing a system to be scalable may entail upfront costs that are higher than those of a less scalable version of the same system. 
+			\item The system should be able to facilitate 50 concurrent user sessions at any time.
+				\subparagraph
+					- Centralized control leads to resource bottlenecks, which is unfavoured especially since 50 concurrent users should be able to use the system concurrently.  
+					- Decentralising control to allow multiple users to act on the system at a time, more especially if their processes are not executing critical regions is an Achitectural tactic which will allow multiple users to act independently on the system. 
+		\end{itemize}
+
+
+
 \section{Reference architectures and frameworks}
 \subsection{Backend System}
 \subsubsection{Programming Languages}
