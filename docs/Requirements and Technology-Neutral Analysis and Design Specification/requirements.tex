@@ -613,6 +613,21 @@ Achitectural tactics is concerend with achieving coherence between  a design dec
 				- Logging system data will not be a user function. Logging happens automatically by the system, without the user being aware or able to intercept the process.
 		\end{itemize}
 
+\subsection{Integrability and Extensibility Tactics}
+	\subparagraph
+		- Integrability evealuation refers to testing whether seperately developed components work together correctly.  Extensibility evaluation focuses on how new features can be added without losing existing features
+
+\subsubsection{In context of the system} 
+		\begin{itemize}
+			\item The system should allow technology neutral importing and exporting of data.
+				\subparagraph
+					- The design of the database will allow the information stored to be easily converted to XML format, this makes it easy to export the information stored in the tables to be used by another technology. 
+			\item The back-end system should integrate with a desktop web client and Android mobile app clients.
+				\subparagraph
+					- This requirment will be fulfilled through the use of Hybrid. Hybrid has two main components, native code (Java and Android frameworks) and web code (HTML/CSS/JavaScript). This will give us a web interface which can easily be bundled as an Android Application. 
+		\end{itemize}
+
+		
 
 
 \section{Reference architectures and frameworks}
