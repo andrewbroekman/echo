@@ -445,15 +445,15 @@ The architectural constraints are used to improve the architectural analyses of 
 	\end{itemize}
 
 \section{Architectural tactics or strategies}
-\subsection{Software Engineering Context : Achitectural Tactics}
-Achitectural tactics is concerend with achieving coherence between  a design decision and a quality response/promise. So by definition, Achitectural Tactics are points of leverage for achieving quality attributes previously stated in the requirements section - simply put, this referes to how we plan to keep our promise of the level of quality stated previously. 
+\subsection{Software Engineering Context : Architectural Tactics}
+Achitectural tactics is concerned with achieving coherence between  a design decision and a quality response/promise. So by definition, Architectural Tactics are points of leverage for achieving quality attributes previously stated in the requirements section - simply put, this referes to how we plan to keep our promise of the level of quality stated previously. 
 
 
 \subsection{Performance Tactics}
 	\subsubsection{Performance Tactics can be divided into 3 groups}
 		\begin{enumerate}
-			\item Tactics for managing resource demand : these tactics contol execution and transfer times by controlling the allocation of resources
-			\item Tactics for managing conflict resolution : these tactics control premeption and waiting times when competing requests execute concurrently. 
+			\item Tactics for managing resource demand : these tactics control execution and transfer times by controlling the allocation of resources
+			\item Tactics for managing conflict resolution : these tactics control pre-emeption and waiting times when competing requests execute concurrently. 
 			\item Tactics for managing multiple resources : these tactics enable multiple resources to be used efficiently to ensure that available resources are allocated upon request. 
 		\end{enumerate}
 
@@ -461,7 +461,7 @@ Achitectural tactics is concerend with achieving coherence between  a design dec
 		\begin{itemize}
 			\item Precompiled SQL must be used in statements.
 				\subparagraph 
-					- The system is designed to handle concurrent requests. The use of threads will be crucial in the precompilation of SQL statements to increase performance. During compilation, multiple threads will run ahead and compile the SQL statements, and as threads complete their execution, the process will be ready to handle the request from the user(s) and provide a timely response. 
+					- The system is designed to handle concurrent requests. The use of threads will be crucial in the pre-compilation of SQL statements to increase performance. During compilation, multiple threads will run ahead and compile the SQL statements, and as threads complete their execution, the process will be ready to handle the request from the user(s) and provide a timely response. 
 
 			\item Network responses should be cached on server side to lighten the load on database as well as decreasing the round trip time of request-response.
 				\subparagraph
@@ -473,7 +473,7 @@ Achitectural tactics is concerend with achieving coherence between  a design dec
 
 \subsection{Reliability Tactics}
 	\subparagraph
-				Reliability of the system refers to amongst other things, the coherence of information stored within the system and presented to users(concurrent). This can be achieved through the use of a duplication scheme which can be saught after using Passive Redundancy, which simply means that the system is designed to store the same information multiple times in multiple independent locations. 
+				Reliability of the system refers to amongst other things, the coherence of information stored within the system and presented to users(concurrent). This can be achieved through the use of a duplication scheme which can be sought after using Passive Redundancy, which simply means that the system is designed to store the same information multiple times in multiple independent locations. 
 
 				System reliability also refers to the systems automatic fault detection. 
 
@@ -485,15 +485,15 @@ Achitectural tactics is concerend with achieving coherence between  a design dec
 					- A variation of the Blackboard Architectural pattern will be used to define checkpoints which allow for roll back functionality. All inputs into the system will be logged in order, in this way, should an inconsistency occur, one could reconstruct the sequence of events. 
 			\item The system must resolve synchronization conflicts using timestamps.
 				\subparagraph 
-					- The Ping/Echo Achitectural tactic will be used to achieve this requirement. 
+					- The Ping/Echo Architectural tactic will be used to achieve this requirement. 
 					- It has two major components ; the one issuing the ping and keeping time and the components responding to the ping with an echo. 
 					- The sequence of actions is controlled by a clock, independent of all the other actions in the system. 
 					- Another way this requirement will be fulfilled is through the use synchronization locks (which ensure that only one process at a time can make use of a shared resource) on all critical sections of the system, processes must attempt to acquire a lock before they can use a shared resource and release the lock once they are done using the resource.
 					-Voting tactic will be used for conflict resolution here : different components work on the same problem, their results are compared and the voting scheme is used in cases where results differ.
 			\item Hot swapping of system modules should not affect system service reliability.
 				\subparagraph
-					- The Broker Achictectural Pattern will be used here because it maintains communication with the server. Since it adds timing behaviour, it can be used to roll back events to repaire the system should it be affected by hot swapping of system modules. 
-					- The system will not suffer much strain since it is designed using the MVC model, only some modules would be affected but detection and repaire is made easy because the system will be made up of seperate individual modules. 
+					- The Broker Archictectural Pattern will be used here because it maintains communication with the server. Since it adds timing behaviour, it can be used to roll back events to repaire the system should it be affected by hot swapping of system modules. 
+					- The system will not suffer much strain since it is designed using the MVC model, only some modules would be affected but detection and repair is made easy because the system will be made up of separate individual modules. 
 					- Hiding information : modules of the system will have their responsibilities divided into two categories - public and private. This will limit responsibility as well as dependency so one module failing will not affect the others by a huge margin. 
 		\end{itemize}
 
@@ -502,7 +502,7 @@ Achitectural tactics is concerend with achieving coherence between  a design dec
 	\subsubsection{Definition of Scalability}
 		\subparagraph
 		- Scalability refers to the ability to handle increased workload without adding more resources to the system.
-		- One way to achieve scalability is to perform a regualar SWOT analysis on the system: 
+		- One way to achieve scalability is to perform a regular SWOT analysis on the system: 
 		--Strengths : the kinds of growth the system is designed to handle 
 		--Weaknesses : the kinds of growth the system will have trouble handling
 		--Opportunities : possible changes in the system which could be exploited to increase performance 
@@ -516,8 +516,8 @@ Achitectural tactics is concerend with achieving coherence between  a design dec
 					- If demand never reaches a critical level, the incremental cost for scalability will be wasted because designing a system to be scalable may entail upfront costs that are higher than those of a less scalable version of the same system. 
 			\item The system should be able to facilitate 50 concurrent user sessions at any time.
 				\subparagraph
-					- Centralized control leads to resource bottlenecks, which is unfavoured especially since 50 concurrent users should be able to use the system concurrently.  
-					- Decentralising control to allow multiple users to act on the system at a time, more especially if their processes are not executing critical regions is an Achitectural tactic which will allow multiple users to act independently on the system. 
+					- Centralized control leads to resource bottlenecks, which is not favoured favoured especially since 50 concurrent users should be able to use the system concurrently.  
+					- Decentralising control to allow multiple users to act on the system at a time, more especially if their processes are not executing critical regions is an Architectural tactic which will allow multiple users to act independently on the system. 
 		\end{itemize}
 
 
@@ -563,11 +563,11 @@ Achitectural tactics is concerend with achieving coherence between  a design dec
 					- StrongLoop (An IBM product) is an API framework which will be used to allow users to register and login to the system using their credentials from their Facebook, Google, Twitter or Github accounts.
 			\item The system should be decoupled from the database technology it uses and allow the client to select and change the database it uses in future.
 				\subparagraph
-					- This functionality will be achived by converting database tables to XML. As long the structure and data of the database is maintained, the XML version can be converted back into a database - this allows the information to be preserved in the new database too. 
+					- This functionality will be achieved by converting database tables to XML. As long the structure and data of the database is maintained, the XML version can be converted back into a database - this allows the information to be preserved in the new database too. 
 					- IBM DB2 XML Extender will be used in this regard to store  XML documents as BLOB-like objects or as a decomposed set of tables. 
 			\item Authentication mechanisms used should be decoupled from the system, allowing them to be interchangeable.
 				\subparagraph
-					-This quality requiremet will be achieved using The Pluggable Authentication Modules(PAM) library, which is a generalised API for authentiction-related services. This API allows the system developer to add new authentication methods by simply installing new PAM modules. This will give the system the ability to add and remove authenication mechanisms. 
+					-This quality requirement will be achieved using The Pluggable Authentication Modules(PAM) library, which is a generalised API for authentication-related services. This API allows the system developer to add new authentication methods by simply installing new PAM modules. This will give the system the ability to add and remove authentication mechanisms. 
 		\end{itemize}
 
 
@@ -575,11 +575,11 @@ Achitectural tactics is concerend with achieving coherence between  a design dec
 	\subparagraph
 		Maintainability Tactics allow the existing software/ system to be modified while preserving its integrity. 
 	\subparagraph
-		There are four categories of Software Maintainance
+		There are four categories of Software Maintenance
 		- Adaptive : changes in the software environment 
 		- Perfective : new user requirements 
 		- Corrective : fixing errors 
-		- Preventitive : preventing future problems
+		- Preventative : preventing future problems
 
 	\subsubsection{In context of the system :} 
 		\begin{itemize}
@@ -615,7 +615,7 @@ Achitectural tactics is concerend with achieving coherence between  a design dec
 
 \subsection{Integrability and Extensibility Tactics}
 	\subparagraph
-		- Integrability evealuation refers to testing whether seperately developed components work together correctly.  Extensibility evaluation focuses on how new features can be added without losing existing features
+		- Integrability evaluation refers to testing whether separately developed components work together correctly.  Extensibility evaluation focuses on how new features can be added without losing existing features
 
 \subsubsection{In context of the system :} 
 		\begin{itemize}
@@ -624,7 +624,7 @@ Achitectural tactics is concerend with achieving coherence between  a design dec
 					- The design of the database will allow the information stored to be easily converted to XML format, this makes it easy to export the information stored in the tables to be used by another technology. 
 			\item The back-end system should integrate with a desktop web client and Android mobile app clients.
 				\subparagraph
-					- This requirment will be fulfilled through the use of Hybrid. Hybrid has two main components, native code (Java and Android frameworks) and web code (HTML/CSS/JavaScript). This will give us a web interface which can easily be bundled as an Android Application. 
+					- This requirement will be fulfilled through the use of Hybrid. Hybrid has two main components, native code (Java and Android frameworks) and web code (HTML/CSS/JavaScript). This will give us a web interface which can easily be bundled as an Android Application. 
 		\end{itemize}
 
 
