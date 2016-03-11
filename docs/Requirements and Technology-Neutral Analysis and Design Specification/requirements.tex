@@ -1010,68 +1010,77 @@ Achitectural tactics is concerned with achieving coherence between  a design dec
 \subsubsection{Libraries}
 	\begin{itemize}
 		\item Modernizr
-			\subparagraph{Description}
-			Modernizr is a JavaScript library which is designed to detect HTML5 and CSS, specifically CCS3 in various browers. The use of this so as to prevent JavaScript from using features that have not yet been implemented yet or, where available, use workarounds to emulate them.
-			Modernizr is chosen here for its ability to determine if features/functions are supported in web browsers to save on time when designing or improving the web interface.
-			\subparagraph{Performance}
-			In terms of performance, which is defined as work done in a time interval, a library like Modernizr will improve our system performance because the library will prevent our system from using features and functions that are not implemented yet. By knowing, and thus preventing that use, our system will benefit from improved efficiency and thus provide better performance.
-			\subparagraph{Reliability}
-			Reliability is the big quality requirement that Modernizr aims to satisfy. The ability to know which features the underlying languages in browsers have and do not have, and the ability to potentially make use of workarounds, means that the development team will always know the limits of what their JavaScript based components can and cannot do and this will also mean that they can develop workarounds and fall back functions for the functionality they require but are not yet developed.
-			\subparagraph{Scalability}
-			Scability in this context is the ability of the application to handle above average workloads for an extended period of time. Modernizr is again useful because the ability to know what can be relied upon, in terms of functions provided by browsers, will enable the development team, to design using known functions, applications that can scale properly without having to rely on unknown or unreliable functions or components.
-			\subparagraph{Security}
-			Security is an important component of any application, especially an application that is meant to be used to access highly sensisitive material. Security is aided by Modernizer in this regard because it allows the development team to see whichc functions their JavaScript components will have to rely on in HTML5 and CSS3 and this will enable them to plan their security features accordingly as they will know which functions will be supported and which functions will not be supported.
-			\subparagraph{Flexibility}
-			Modernizr is important for the Flexibility quality requirement. If the system is meant to be dynamically flexible, it is important to be able to determine, quickly and accurately, which of the functions in our web system are available and which are not. In this way, Modernizr allows us to increase our flexibility because we are then able to design our system to expand around what functions are already supported and what functions will require fallbacks or workarounds.
-			\subparagraph{Maintainability}
-			Modernizr enables the Maintainability of the system. It does so because our system, as it being maintained, will have a utility to determine if new functions, components or services offered make use of other functions that are not offered, implemented or available. In this way, we can ensure that system maintenance does not introduce additional system instability.
-			\subparagraph{Auditablility/Monitorability}
-			Modernizr is essentially a colletion of tests to determine what a browser can and cannot do. These tests can be logged and included alongside system logs so that future development teams can trace the development of the web interface. Additionally, as Modernizr is itself a tool for testing, it allows the developers to monitor their system in terms of functions they have and functions they do not have.
+			\begin{itemize}
+				\item \textbf{Description}\\
+				Modernizr is a JavaScript library which is designed to detect HTML5 and CSS, specifically CCS3 in various browers. The use of this so as to prevent JavaScript from using features that have not yet been implemented yet or, where available, use workarounds to emulate them.
+				Modernizr is chosen here for its ability to determine if features/functions are supported in web browsers to save on time when designing or improving the web interface.
+				\item \textbf{Performance}\\
+				In terms of performance, which is defined as work done in a time interval, a library like Modernizr will improve our system performance because the library will prevent our system from using features and functions that are not implemented yet. By knowing, and thus preventing that use, our system will benefit from improved efficiency and thus provide better performance.
+				\item \textbf{Reliability}\\
+				Reliability is the big quality requirement that Modernizr aims to satisfy. The ability to know which features the underlying languages in browsers have and do not have, and the ability to potentially make use of workarounds, means that the development team will always know the limits of what their JavaScript based components can and cannot do and this will also mean that they can develop workarounds and fall back functions for the functionality they require but are not yet developed.
+				\item \textbf{Scalability}\\
+				Scability in this context is the ability of the application to handle above average workloads for an extended period of time. Modernizr is again useful because the ability to know what can be relied upon, in terms of functions provided by browsers, will enable the development team, to design using known functions, applications that can scale properly without having to rely on unknown or unreliable functions or components.
+				\item \textbf{Security}\\
+				Security is an important component of any application, especially an application that is meant to be used to access highly sensisitive material. Security is aided by Modernizer in this regard because it allows the development team to see whichc functions their JavaScript components will have to rely on in HTML5 and CSS3 and this will enable them to plan their security features accordingly as they will know which functions will be supported and which functions will not be supported.
+				\item \textbf{Flexibility}\\
+				Modernizr is important for the Flexibility quality requirement. If the system is meant to be dynamically flexible, it is important to be able to determine, quickly and accurately, which of the functions in our web system are available and which are not. In this way, Modernizr allows us to increase our flexibility because we are then able to design our system to expand around what functions are already supported and what functions will require fallbacks or workarounds.
+				\item \textbf{Maintainability}\\
+				Modernizr enables the Maintainability of the system. It does so because our system, as it being maintained, will have a utility to determine if new functions, components or services offered make use of other functions that are not offered, implemented or available. In this way, we can ensure that system maintenance does not introduce additional system instability.
+				\item \textbf{Auditablility/Monitorability}\\
+				Modernizr is essentially a colletion of tests to determine what a browser can and cannot do. These tests can be logged and included alongside system logs so that future development teams can trace the development of the web interface. Additionally, as Modernizr is itself a tool for testing, it allows the developers to monitor their system in terms of functions they have and functions they do not have.
 
-			\subparagraph{Integrability}
-			Since Modernizr is used to determine what HTML5 and CSS3 functions are supported by a browser, it can be used by the development team to design a web interface that can integrate into additional platforms by providing the team with the ability to test for the functions supported by that platform and how much integration needs to be done to bridge the gap between the new platform and the existing one.
-			\subparagraph{Cost}
-			Modernizr does not contribute towards the cost of the system as it is an open source JavaScript library.
-
+				\item \textbf{Integrability}\\
+				Since Modernizr is used to determine what HTML5 and CSS3 functions are supported by a browser, it can be used by the development team to design a web interface that can integrate into additional platforms by providing the team with the ability to test for the functions supported by that platform and how much integration needs to be done to bridge the gap between the new platform and the existing one.
+				\item \textbf{Cost}\\
+				Modernizr does not contribute towards the cost of the system as it is an open source JavaScript library.
+			\end{itemize}
+			
 		\item Karma
-			\subparagraph{Description}
-			Karma is an information integration tool. It is designed to enable rapid and easy data integration, from a multitude of sources like databases, XML, JSON and so on. This information is integrated by modelling it according to an ontology, selected by the user, and facilitated by a graphical user interface. This model can then be interacted with to transform the data into a needed format.
+			\begin{itemize}
+				\item \textbf{Description}\\
+				Karma is an information integration tool. It is designed to enable rapid and easy data integration, from a multitude of sources like databases, XML, JSON and so on. This information is integrated by modelling it according to an ontology, selected by the user, and facilitated by a graphical user interface. This model can then be interacted with to transform the data into a needed format.
 
-			Karma was chosen here for its great utility as an integration tool. It can integrate data quickly and easily from a variety of sources and this will mean that we can develop a web interface that is not so tightly bound to any one specific data format.
+				Karma was chosen here for its great utility as an integration tool. It can integrate data quickly and easily from a variety of sources and this will mean that we can develop a web interface that is not so tightly bound to any one specific data format.
 
-			\subparagraph{Flexibility}
-			Karma helps the system achieve the requirement of Flexibility because it enables the system to make use of any data source as Karma can be used to transform that source of the data into one that can be used by the system. This would mean, since users can define data transformation scripts, the system can be expanded to make use of any kind of data source that can be transformed with Karma.
+				\item \textbf{Flexibility}\\
+				Karma helps the system achieve the requirement of Flexibility because it enables the system to make use of any data source as Karma can be used to transform that source of the data into one that can be used by the system. This would mean, since users can define data transformation scripts, the system can be expanded to make use of any kind of data source that can be transformed with Karma.
 
-			\subparagraph{Integrability}
-			Karma achieves the requirement of Integrability because it allows the users to transform data from a variety of sources into one specific format. This makes the system independent on any one specific source of data and means that it can integrate with a variety of data storage types as well as transform existing data for the purposes of exporting it from the system.
-			\subparagraph{Cost}
-			Karma is open source software and as such, does not contribute towards the cost of the system.
-			\subparagraph{Usability}
-			Karma is achieves the requirement of usability very easily. The interface is an easily manipulatable GUI that can store the transformed data in a database or in a RDF. This ease of use certainly means that should data transformation be needed for data capturing purposes, it can be done quickly and easily.
-
+				\item \textbf{Integrability}\\
+				Karma achieves the requirement of Integrability because it allows the users to transform data from a variety of sources into one specific format. This makes the system independent on any one specific source of data and means that it can integrate with a variety of data storage types as well as transform existing data for the purposes of exporting it from the system.
+				\item \textbf{Cost}\\
+				Karma is open source software and as such, does not contribute towards the cost of the system.
+				\item \textbf{Usability}\\
+				Karma is achieves the requirement of usability very easily. The interface is an easily manipulatable GUI that can store the transformed data in a database or in a RDF. This ease of use certainly means that should data transformation be needed for data capturing purposes, it can be done quickly and easily.
+			\end{itemize}
+			
 		\item Jasmine
-			\subparagraph{Description}
-			Jasmine is an open source testing framework for JavaScript. Specifically, it is testing frame that is designed for performing unit tests. For reference, unit tests are when individual units of source code are tested.
+			\begin{itemize}
+				\item \textbf{Description}\\
+				Jasmine is an open source testing framework for JavaScript. Specifically, it is testing frame that is designed for performing unit tests. For reference, unit tests are when individual units of source code are tested.
 
-			\subparagraph{Flexibility}
-			Jasmine achieves the requirement of Flexibility because, as indicated by one of its core development aims, it will run on any JavaScript-enabled platform. This capacity to run on any platform means that Jasmine, as a testing platform, it will enable programmers to perform unit tests free from specific testing environments or operating systems as it is cross-platform.
+				\item \textbf{Flexibility}\\
+				Jasmine achieves the requirement of Flexibility because, as indicated by one of its core development aims, it will run on any JavaScript-enabled platform. This capacity to run on any platform means that Jasmine, as a testing platform, it will enable programmers to perform unit tests free from specific testing environments or operating systems as it is cross-platform.
 
-			\subparagraph{Cost}
-			As Jasmine is an open source framework, it will have no effect on the cost of the system.
-			\subparagraph{Usability}
-			One of the core design focuses of Jasmine is that it must not intrude on the application or IDE, if present. From a Usability standpoint, Jasmine provides a simple and logical syntax for creating test suites, making it a boon for developers to use for testing.
+				\item \textbf{Cost}\\
+				As Jasmine is an open source framework, it will have no effect on the cost of the system.
+				\item \textbf{Usability}\\
+				One of the core design focuses of Jasmine is that it must not intrude on the application or IDE, if present. From a Usability standpoint, Jasmine provides a simple and logical syntax for creating test suites, making it a boon for developers to use for testing.
+			\end{itemize}
+			
 		\item Gatling
-			\subparagraph{Description}
-			Gatling is an open source load testing framework based on Scala, Akka and Netty. The software serves as a tool that can be use for loading testing for the purposes of  analysis and measurement of performance of a variety of services, specifically in the case of web applications.
+			\begin{itemize}
+				\item \textbf{Description}\\
+				Gatling is an open source load testing framework based on Scala, Akka and Netty. The software serves as a tool that can be use for loading testing for the purposes of  analysis and measurement of performance of a variety of services, specifically in the case of web applications.
 
-			Gatling was chosen because of its utility as a performance analysis tool. This tool will enable the developers to have a quick and easy way to measure the optimality of their implementation of the web interface.
-			\subparagraph{Performance}
-			Gatling supports, officially, the HTTP, WebSockets, Server-Sent events and JMS protocols. Gatling was built with high performance in mind and its ability to help determine the performance of our web application will make great strides towards ensuring that the application meets the Performance quality requirement in this regard.
-			\subparagraph{Auditablility/Monitorability}
-			Gatling provides the functionality of creating "Ready-to-Present" HTML reports meaning that once it has performed its work of analysing the performance of the web application, it will then generate an HTML report containing its results. As this document is generated in HTML and also "Ready-to-Present" this enables us to have a high degree of auditability on our performance tests as these reports can be archived and reviewed like other system logs.
+				Gatling was chosen because of its utility as a performance analysis tool. This tool will enable the developers to have a quick and easy way to measure the optimality of their implementation of the web interface.
+				\item \textbf{Performance}\\
+				Gatling supports, officially, the HTTP, WebSockets, Server-Sent events and JMS protocols. Gatling was built with high performance in mind and its ability to help determine the performance of our web application will make great strides towards ensuring that the application meets the Performance quality requirement in this regard.
+				\item \textbf{Auditablility/Monitorability}\\
+				Gatling provides the functionality of creating "Ready-to-Present" HTML reports meaning that once it has performed its work of analysing the performance of the web application, it will then generate an HTML report containing its results. As this document is generated in HTML and also "Ready-to-Present" this enables us to have a high degree of auditability on our performance tests as these reports can be archived and reviewed like other system logs.
 
-			\subparagraph{Cost}
-			Gatling does not contribute to the cost of the system as it is an open source load testing framework based on the scala, Akka and Netty languages.
+				\item \textbf{Cost}\\
+				Gatling does not contribute to the cost of the system as it is an open source load testing framework based on the scala, Akka and Netty languages.	
+			\end{itemize}
 	\end{itemize}
 
 \subsubsection{Database System}
@@ -1096,11 +1105,15 @@ Achitectural tactics is concerned with achieving coherence between  a design dec
 \subsubsection{Dependency Management and Build Tools}
 	\begin{itemize}
 		\item Bower
-			\subparagraph{Description}
-				Bower is a package management system for client-side programming on the World Wide Web. It depends on Node.js and npm. It works with git and GitHub repositories.
+			\begin{itemize}
+				\item \textbf{Description}\\
+					Bower is a package management system for client-side programming on the World Wide Web. It depends on Node.js and npm. It works with git and GitHub repositories.
+			\end{itemize}
 		\item Grunt
-			\subparagraph{Description}
-				Grunt is a Javascript task runner.
+			\begin{itemize}
+				\item \textbf{Description}\\
+					Grunt is a Javascript task runner.
+			\end{itemize}
 	\end{itemize}
 
 \subsection{Android Client}
