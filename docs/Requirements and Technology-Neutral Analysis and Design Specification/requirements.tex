@@ -444,8 +444,14 @@ The architectural constraints are used to improve the architectural analyses of 
 			\item Standards-based (runs on top of HTTP)
 		\end{enumerate}
 		
-		Representational State Transfer Architectural Pattern can be used because we need flexibility on our system like to be platform independent.
-
+		\subitem \textbf{Reasons for selecting this pattern:}
+		\begin{itemize}
+			\item Using the REST pattern allows for system flexibility since it enables platform independent communication between business logic- and human adapter modules.
+			\item The pattern satisfies maintainability- and cost quality requirements, since it being language independent allows easy migration of services to different technologies while keeping communication methods well defined.
+			\item It enables the integrability quality requirement to integrate the service with an Android mobile client and a desktop web client, by defining a communication mechanism between the clients and the server.
+			\item REST network responses can be cached, satisfying the performance quality requirement.
+		\end{itemize}
+		
 		\item \textbf{Secure Data Logger Pattern} \\
 		A requirement stated by the client is that the proposed system should contain a full audit trail functionality, which would allow administrators to view any action that executed by users, as well as the modification that execution had on the data.
 		
