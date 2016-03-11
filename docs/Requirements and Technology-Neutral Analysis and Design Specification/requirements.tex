@@ -385,6 +385,13 @@ The architectural constraints are used to improve the architectural analyses of 
 		The authentication enforcer pattern is focused to provide a centralized managed authentication mechanism, to verify the identity of users and encapsulating the details of authentication. This patterns assist in removing security checks from business logic code, thereby providing cleaner, more robust and easier to maintain code.
 		
 		Further, since authentication is centralized, this pattern further allows changes to be easily implemented in terms of the authentication procedure, such as using a different authentication flow, or even mechanism, such as authenticating the user against an external provider.
+		
+		\subitem \textbf{Reasons for selecting this pattern:}
+		\begin{itemize}
+			\item Since this pattern enforces separating security modules from business logic modules, it contributes to the reliability of the system by making it easier for system modules to be swapped without affecting system reliability. As long as the authentication mechanism provides the same service to the system, it can be easily exchanged with or upgraded to a different module which provides a similar service.
+			\item This pattern lends itself well to integrating separate existing technologies into the system. This allows the developer to choose an existing technology which supports token based authentication as per the requirements.
+			\item A pattern requiring a separate security module satisfies the flexibility requirement that authentication mechanisms must be decoupled and interchangeable, and this lends itself well to system maintainability, as well as system integrability.
+		\end{itemize}
 	
 		\item \textbf{Authorization Enforcer} \\
 		Similar to the authentication enforcer pattern, this pattern provides a centralized managed authorization mechanism, thereby abstracting authorization code away from application code.  With this pattern, it assists the system in authorizing users, i.e. to determine whether the current user has the required roles or privileges to perform a certain action. All of the benefits referred to in the authentication enforcer pattern are also applicable here.
