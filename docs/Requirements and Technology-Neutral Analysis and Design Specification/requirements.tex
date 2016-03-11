@@ -482,7 +482,6 @@ The architectural constraints are used to improve the architectural analyses of 
 \subsection{Software Engineering Context : Architectural Tactics}
 Achitectural tactics is concerned with achieving coherence between  a design decision and a quality response/promise. So by definition, Architectural Tactics are points of leverage for achieving quality attributes previously stated in the requirements section - simply put, this referes to how we plan to keep our promise of the level of quality stated previously. 
 
-
 \subsection{Performance Tactics}
 	\subsubsection{Performance Tactics can be divided into 3 groups}
 		\begin{enumerate}
@@ -491,44 +490,43 @@ Achitectural tactics is concerned with achieving coherence between  a design dec
 			\item Tactics for managing multiple resources : these tactics enable multiple resources to be used efficiently to ensure that available resources are allocated upon request. 
 		\end{enumerate}
 
-	\subsubsection{In context of the system :}
+	\subsubsection{In context of the system}
 		\begin{itemize}
-			\item Precompiled SQL must be used in statements.
-				\subparagraph 
-					- The system is designed to handle concurrent requests. The use of threads will be crucial in the pre-compilation of SQL statements to increase performance. During compilation, multiple threads will run ahead and compile the SQL statements, and as threads complete their execution, the process will be ready to handle the request from the user(s) and provide a timely response. 
+			\item Precompiled SQL must be used in statements.\\
+				The system is designed to handle concurrent requests. The use of threads will be crucial in the pre-compilation of SQL statements to increase performance. During compilation, multiple threads will run ahead and compile the SQL statements, and as threads complete their execution, the process will be ready to handle the request from the user(s) and provide a timely response. 
 
-			\item Network responses should be cached on server side to lighten the load on database as well as decreasing the round trip time of request-response.
-				\subparagraph
-					- This will increase the number of requests and responses the system handle in an interval of time. This will rely on a server that is designed to store data and information likely to be requested next. This will also obviously drastically reduce computational overhead during executions. 
-			\item Function calls must be timed and benchmarked and this data should be logged."+ "Function calls must be timed and benchmarked and this data should be logged.
-				\subparagraph
-					- The server will log metadata pertaining to each function call and network request, and in further development of the system, developers will use this information to tweak the efficiency of requests and thus, improve the systems current performance. 
+			\item Network responses should be cached on server side to lighten the load on database as well as decreasing the round trip time of request-response.\\
+				This will increase the number of requests and responses the system handle in an interval of time. This will rely on a server that is designed to store data and information likely to be requested next. This will also obviously drastically reduce computational overhead during executions. 
+			\item Function calls must be timed and benchmarked and this data should be logged."+ "Function calls must be timed and benchmarked and this data should be logged.\\
+				The server will log metadata pertaining to each function call and network request, and in further development of the system, developers will use this information to tweak the efficiency of requests and thus, improve the systems current performance. 
 		\end{itemize}
 
 \subsection{Reliability Tactics}
-	\subparagraph
-				Reliability of the system refers to amongst other things, the coherence of information stored within the system and presented to users(concurrent). This can be achieved through the use of a duplication scheme which can be sought after using Passive Redundancy, which simply means that the system is designed to store the same information multiple times in multiple independent locations. 
+	Reliability of the system refers to amongst other things, the coherence of information stored within the system and presented to users(concurrent). This can be achieved through the use of a duplication scheme which can be sought after using Passive Redundancy, which simply means that the system is designed to store the same information multiple times in multiple independent locations. 
 
-				System reliability also refers to the systems automatic fault detection. 
+	System reliability also refers to the systems automatic fault detection. 
 
-	\subsubsection{In context of the system :} 
+	\subsubsection{In context of the system} 
 		\begin{itemize}
-			\item To enable offline activity and access of data from the Android app, data synced must be made differentiable with timestamps."
-				\subparagraph
-					- This will be achieved by providing persistent data storage services with state information, ensuring that the results obtained - either using the Android application or the website is still valid.  
-					- A variation of the Blackboard Architectural pattern will be used to define checkpoints which allow for roll back functionality. All inputs into the system will be logged in order, in this way, should an inconsistency occur, one could reconstruct the sequence of events. 
+			\item To enable offline activity and access of data from the Android app, data synced must be made differentiable with timestamps."\\
+				\begin{itemize}
+					\item This will be achieved by providing persistent data storage services with state information, ensuring that the results obtained - either using the Android application or the website is still valid.  
+					\item A variation of the Blackboard Architectural pattern will be used to define checkpoints which allow for roll back functionality. All inputs into the system will be logged in order, in this way, should an inconsistency occur, one could reconstruct the sequence of events. 
+				\end{itemize}
 			\item The system must resolve synchronization conflicts using timestamps.
-				\subparagraph 
-					- The Ping/Echo Architectural tactic will be used to achieve this requirement. 
-					- It has two major components ; the one issuing the ping and keeping time and the components responding to the ping with an echo. 
-					- The sequence of actions is controlled by a clock, independent of all the other actions in the system. 
-					- Another way this requirement will be fulfilled is through the use synchronization locks (which ensure that only one process at a time can make use of a shared resource) on all critical sections of the system, processes must attempt to acquire a lock before they can use a shared resource and release the lock once they are done using the resource.
-					-Voting tactic will be used for conflict resolution here : different components work on the same problem, their results are compared and the voting scheme is used in cases where results differ.
+				\begin{itemize}
+					\item The Ping/Echo Architectural tactic will be used to achieve this requirement. 
+					\item It has two major components ; the one issuing the ping and keeping time and the components responding to the ping with an echo. 
+					\item The sequence of actions is controlled by a clock, independent of all the other actions in the system. 
+					\item Another way this requirement will be fulfilled is through the use synchronization locks (which ensure that only one process at a time can make use of a shared resource) on all critical sections of the system, processes must attempt to acquire a lock before they can use a shared resource and release the lock once they are done using the resource.
+					\item Voting tactic will be used for conflict resolution here : different components work on the same problem, their results are compared and the voting scheme is used in cases where results differ.
+				\end{itemize}
 			\item Hot swapping of system modules should not affect system service reliability.
-				\subparagraph
-					- The Broker Archictectural Pattern will be used here because it maintains communication with the server. Since it adds timing behaviour, it can be used to roll back events to repaire the system should it be affected by hot swapping of system modules. 
-					- The system will not suffer much strain since it is designed using the MVC model, only some modules would be affected but detection and repair is made easy because the system will be made up of separate individual modules. 
-					- Hiding information : modules of the system will have their responsibilities divided into two categories - public and private. This will limit responsibility as well as dependency so one module failing will not affect the others by a huge margin. 
+				\begin{itemize}
+					\item The Broker Archictectural Pattern will be used here because it maintains communication with the server. Since it adds timing behaviour, it can be used to roll back events to repaire the system should it be affected by hot swapping of system modules. 
+					\item The system will not suffer much strain since it is designed using the MVC model, only some modules would be affected but detection and repair is made easy because the system will be made up of separate individual modules. 
+					\item Hiding information : modules of the system will have their responsibilities divided into two categories - public and private. This will limit responsibility as well as dependency so one module failing will not affect the others by a huge margin. 
+				\end{itemize}
 		\end{itemize}
 
 
@@ -542,55 +540,60 @@ Achitectural tactics is concerned with achieving coherence between  a design dec
 		--Opportunities : possible changes in the system which could be exploited to increase performance 
 		--Threats : possible changes in the workload that the system will not be able to handle
 
-	\subsubsection{In context of the system :}
+	\subsubsection{In context of the system}
 		\begin{itemize}
 			\item The system should be able to handle 10 research groups with each research group containing 100 members.
-				\subparagraph
-					- Developers need to be aware of the systems abilities at all times, this will be achieved through regular Scalability Audits. 
-					- If demand never reaches a critical level, the incremental cost for scalability will be wasted because designing a system to be scalable may entail upfront costs that are higher than those of a less scalable version of the same system. 
+				\begin{itemize}
+					\item Developers need to be aware of the systems abilities at all times, this will be achieved through regular Scalability Audits. 
+					\item If demand never reaches a critical level, the incremental cost for scalability will be wasted because designing a system to be scalable may entail upfront costs that are higher than those of a less scalable version of the same system. 
+				\end{itemize}
 			\item The system should be able to facilitate 50 concurrent user sessions at any time.
-				\subparagraph
-					- Centralized control leads to resource bottlenecks, which is not favoured favoured especially since 50 concurrent users should be able to use the system concurrently.  
-					- Decentralising control to allow multiple users to act on the system at a time, more especially if their processes are not executing critical regions is an Architectural tactic which will allow multiple users to act independently on the system. 
+				\begin{itemize}
+					\item Centralized control leads to resource bottlenecks, which is not favoured favoured especially since 50 concurrent users should be able to use the system concurrently.  
+					\item Decentralising control to allow multiple users to act on the system at a time, more especially if their processes are not executing critical regions is an Architectural tactic which will allow multiple users to act independently on the system. 
+			\end{itemize}
 		\end{itemize}
 
-
-
 \subsection{Security Tactics} 
-	\subparagraph
-		Security refers to ensuring that only permitted people are allowed to access and modify the system in any way. Access needs to be controlled and monitored, and levels of access need to predetermined such that a normal user has more restrictions than a super user. 
+	Security refers to ensuring that only permitted people are allowed to access and modify the system in any way. Access needs to be controlled and monitored, and levels of access need to predetermined such that a normal user has more restrictions than a super user. 
 
 	\subsubsection{In context of the system :} 
 		\begin{itemize}
 			\item System should be resistant to SQL injections.
-				\subparagraph
-					- Encrypting data is one measure which will be used to prevent SQL injections. SQL injections rely on knowing what type of data is expected, if this data is encrypted when it gets to server and turned into something only the system will understand, then a SQL injection attack can be avoided. 
-					-The system never stores authentication information as simple text. 
+				\begin{itemize}
+					\item Encrypting data is one measure which will be used to prevent SQL injections. SQL injections rely on knowing what type of data is expected, if this data is encrypted when it gets to server and turned into something only the system will understand, then a SQL injection attack can be avoided. 
+					\item The system never stores authentication information as simple text. 
+				\end{itemize}
 			\item A user group hierarchy system should be used to manage user access rights.
-				\subparagraph
-					- The different types of actors on the system will have different access rights, this will be accomplished by disabling some functionality and modules depending on the level of user that logged in. 
+				\begin{itemize}
+					\item The different types of actors on the system will have different access rights, this will be accomplished by disabling some functionality and modules depending on the level of user that logged in. 
+				\end{itemize}
 			\item Authentication credentials such as username and password should not be stored on Android user device. A token based authentication approach should be utilized so that only tokens are stored on end user device, allowing for the easy revocation of device access if a device is lost. Available technologies, such as OAuth, should be utilized.
-				\subparagraph
-					- OAuth will be used to achieve this requirement. 
-					- OAuth is an authorization framework which enables a third-party application to obtain limited access to an HTTP service. 
-					- OAuth is serves as a simple mechanism to publish and interact with protected data. 
+				\begin{itemize}
+					\item OAuth will be used to achieve this requirement. 
+					\item OAuth is an authorization framework which enables a third-party application to obtain limited access to an HTTP service. 
+					\item OAuth is serves as a simple mechanism to publish and interact with protected data. 
+				\end{itemize}
 			\item Password hosting with a unique salt for each user should be used.
-				\subparagraph
-					- This security feature will be implemented using hashing. When the user creates their account, their password will automatically be hashed and stored in the database in its hashed version, it is never stored in plain-text. Each time the user logs on, the hashed version of the password will be queried, instead of the plain text version. 
+				\begin{itemize}
+					\item This security feature will be implemented using hashing. When the user creates their account, their password will automatically be hashed and stored in the database in its hashed version, it is never stored in plain-text. Each time the user logs on, the hashed version of the password will be queried, instead of the plain text version. 
+				\end{itemize}
 			\item A key derivation function should be used with passwords.
-				\subparagraph
-					- This functionality will happen during hashing of the password before it is stored persistently. 
+				\begin{itemize}
+					\item This functionality will happen during hashing of the password before it is stored persistently. 
+				\end{itemize}
 			\item Database access must require authentication.
-				\subparagraph
-					- The level of access and ability to view or modify any database linked to the system will be determined by the type of user logged into the system. 
-					- User authentication will be performed using Access Tokens, which will be checked for validity every time a database is queried. 
+				\begin{itemize}
+					\item The level of access and ability to view or modify any database linked to the system will be determined by the type of user logged into the system. 
+					\item User authentication will be performed using Access Tokens, which will be checked for validity every time a database is queried. 
+				\end{itemize}
 		\end{itemize}
 
 
 \subsection{Flexibility Tactics}
-	\subparagraph
-		The following Flexibility tactics will be used to ensure that the system can handle dynamic, run-time changes. The tactics used also for allow for plugability which can be used to extend the functionality of the system. 
-	\subsection{In context of the system :}
+	The following Flexibility tactics will be used to ensure that the system can handle dynamic, run-time changes. The tactics used also for allow for plugability which can be used to extend the functionality of the system. 
+	
+	\subsection{In context of the system}
 		\begin{itemize}
 			\item The system should allow unregistered users to use existing third party web service login credentials to register or log in to the service.
 				\subparagraph
@@ -606,85 +609,98 @@ Achitectural tactics is concerned with achieving coherence between  a design dec
 
 
 \subsection{Maintainability Tactics}
-	\subparagraph
-		Maintainability Tactics allow the existing software/ system to be modified while preserving its integrity. 
-	\subparagraph
-		There are four categories of Software Maintenance
-		- Adaptive : changes in the software environment 
-		- Perfective : new user requirements 
-		- Corrective : fixing errors 
-		- Preventative : preventing future problems
-
-	\subsubsection{In context of the system :} 
+	Maintainability Tactics allow the existing software/ system to be modified while preserving its integrity. 
+		
+	There are four categories of Software Maintenance
+	\begin{itemize}
+		\item Adaptive : changes in the software environment 
+		\item Perfective : new user requirements 
+		\item Corrective : fixing errors 
+		\item Preventative : preventing future problems
+	\end{itemize}
+	
+	\subsubsection{In context of the system} 
 		\begin{itemize}
 			\item All code should be documented in the applicable language documentation framework, such as JavaDocs for a Java based system, DOxygen for a C/C++ based system, etc.
-				\subparagraph
-					- Doxygen will be used for code documentation since it supports a variety of programming languages such as Java, C\#, and PHP. 
+				\begin{itemize}
+					\item Doxygen will be used for code documentation since it supports a variety of programming languages such as Java, C\#, and PHP. 
+				\end{itemize}
 			\item A coding style guide/manual should be set up and associated with the project, such that all developers use similar coding styles and conventions, to allow for more readable code that is easier to maintain.
-				\subparagraph
-					- Simple good coding practices known by all system developers should be used. These include camel casing and giving descriptive names to variables, functions and classes. 
+				\begin{itemize}
+					\item Simple good coding practices known by all system developers should be used. These include camel casing and giving descriptive names to variables, functions and classes. 
+				\end{itemize}
 			\item System should be separated in distinct, concise and independent modules relating to separate concerns, to allow for easier maintenance.
-				\subparagraph
-					- The Spring framework is used for this quality requirement because it supports seperating the different modules of the system so that they can be tested as independent modules. 
-					- Spring also supports transaction management which unifies several transaction management APIs and co-ordinates transactions for Java objects.
+				\begin{itemize}
+					\item The Spring framework is used for this quality requirement because it supports seperating the different modules of the system so that they can be tested as independent modules. 
+					\item Spring also supports transaction management which unifies several transaction management APIs and co-ordinates transactions for Java objects.
+				\end{itemize}
 		\end{itemize}
 
 \subsection{Auditability Tactics}
-	\subparagraph 
-		These tactics are used to ensure that information about the performance of the system is always available, and to provide a log of which user provided which input at which point in time. 
-	\subsubsection{In context of the system :}
+	These tactics are used to ensure that information about the performance of the system is always available, and to provide a log of which user provided which input at which point in time. 
+	
+	\subsubsection{In context of the system}
 		\begin{itemize}
 			\item Data in database should always be consistent. This implies that all data should adhere to constraints placed on the data by the data model, such as regex patterns, minimum and maximum length, non-nullable fields, etc.
-				\subparagraph
-					-  Data validation will be enforced by the developer on the client side, this will ensure that only valid data will be entered into any database associated with the system. 
- 					- RegEx(Regular Expressions) Patterns will be used to ensure that any input into the system is of the right format. 
- 			\item No data should ever be deleted.
- 				\subparagraph
-				 - This will be accomplished by not adding any functionality that gives regular users to remove records from the system. The only way to 'delete' information from the system is to render it unusable - by disabling access to it - a feature which must be enforced by the developer.
+				\begin{itemize}
+					\item Data validation will be enforced by the developer on the client side, this will ensure that only valid data will be entered into any database associated with the system. 
+ 					\item RegEx(Regular Expressions) Patterns will be used to ensure that any input into the system is of the right format. 
+				\end{itemize}
+			\item No data should ever be deleted.
+ 				\begin{itemize}
+					\item This will be accomplished by not adding any functionality that gives regular users to remove records from the system. The only way to 'delete' information from the system is to render it unusable - by disabling access to it - a feature which must be enforced by the developer.
+				\end{itemize}
 			\item The rest of the quality requirements pertain to logging of system actions.
-				\subparagraph
-				- This requirement will be succeeded by externally logging all inputs and actions by the user by having the system write them to a text file. 
-				- Logging system data will not be a user function. Logging happens automatically by the system, without the user being aware or able to intercept the process.
+				\begin{itemize}
+					\item his requirement will be succeeded by externally logging all inputs and actions by the user by having the system write them to a text file. 
+					\item Logging system data will not be a user function. Logging happens automatically by the system, without the user being aware or able to intercept the process.
+				\end{itemize}
 		\end{itemize}
 
 \subsection{Integrability and Extensibility Tactics}
 	\subparagraph
 		- Integrability evaluation refers to testing whether separately developed components work together correctly.  Extensibility evaluation focuses on how new features can be added without losing existing features
 
-\subsubsection{In context of the system :} 
+\subsubsection{In context of the system} 
 		\begin{itemize}
 			\item The system should allow technology neutral importing and exporting of data.
-				\subparagraph
-					- The design of the database will allow the information stored to be easily converted to XML format, this makes it easy to export the information stored in the tables to be used by another technology. 
+				\begin{itemize}
+					\item The design of the database will allow the information stored to be easily converted to XML format, this makes it easy to export the information stored in the tables to be used by another technology. 
+				\end{itemize}
 			\item The back-end system should integrate with a desktop web client and Android mobile app clients.
-				\subparagraph
-					- This requirement will be fulfilled through the use of Hybrid. Hybrid has two main components, native code (Java and Android frameworks) and web code (HTML/CSS/JavaScript). This will give us a web interface which can easily be bundled as an Android Application. 
+				\begin{itemize}
+					\item This requirement will be fulfilled through the use of Hybrid. Hybrid has two main components, native code (Java and Android frameworks) and web code (HTML/CSS/JavaScript). This will give us a web interface which can easily be bundled as an Android Application. 
+				\end{itemize}
 		\end{itemize}
 
 
 \subsection{Cost Tactics} 
-	\subsubsection{In context of the system :}
+	\subsubsection{In context of the system}
 		\begin{itemize}
 			\item System should be cheap to operate, maintain and extend. If the quality and maturity of technologies available allow it, technologies used must be freely available/usable.
-				\subparagraph	
-					- As it is, no special technology is required by the user to interact with the system. The user only needs a device to access the system. 
+				\begin{itemize}
+					\item As it is, no special technology is required by the user to interact with the system. The user only needs a device to access the system. 
+				\end{itemize}
 			\item As far as possible, open source compatible, mature technologies should be used, to ensure system stability as far as possible.
-				\subparagraph
-					- Free Open Source software will be used to build the entire system. The only thing required when writing web pages is a text editor and a web browser to view the pages. NetBeans is a free IDE which can easily be acquired and used without a product key. 
+				\begin{itemize}
+					\item Free Open Source software will be used to build the entire system. The only thing required when writing web pages is a text editor and a web browser to view the pages. NetBeans is a free IDE which can easily be acquired and used without a product key. 
+				\end{itemize}
 		\end{itemize}
 
 
 \subsection{Usability Tactics}
-	\subsection{In context of the system :}
+	\subsection{In context of the system}
 		\begin{itemize}
 			\item The web client should render properly and be fully functional in modern web browsers.
-				\subparagraph
-					- One way the system will achieve the optimization of web page rendering is that while running javascript code, browsers cache the changes and apply them in a single pass after the code was run. 
-					- Always use the (\#id) selector for CSS because it is the fastest and will optimize rendering of the Cascading Style Sheets. 
+				\begin{itemize}
+					\item  One way the system will achieve the optimization of web page rendering is that while running javascript code, browsers cache the changes and apply them in a single pass after the code was run. 
+					\item Always use the (\#id) selector for CSS because it is the fastest and will optimize rendering of the Cascading Style Sheets. 
+				\end{itemize}
 			\item Mobile devices running Android 4.2 and upwards should be fully supported.
 			\item Android app and web client should support the full back-end API specifications.
-				\subparagraph
-					- This quality requirement will be taken care of automatically by Hybrid(as mentioned above.
+				\begin{itemize}
+					\item  This quality requirement will be taken care of automatically by Hybrid(as mentioned above.
+				\end{itemize}
 		\end{itemize}
 
 
@@ -714,201 +730,236 @@ Achitectural tactics is concerned with achieving coherence between  a design dec
 \subsubsection{Frameworks}
 	\begin{itemize}
 		\item Spring Framework
-			\subparagraph{Description}
-				The Spring framework is an application framework and inversion of control for the Java platform, built on top of Java EE
-			\subparagraph{Performance}
-				Performance of a framework cannot be quantified with a number, but rather in respect to its components. Spring framework is a widely used framework that is seen as a replacement for Java EE. Therefore we can say that Springs performance is at a high level.
-			\subparagraph{Reliability}
-				The Spring framework is reliable in the sense that it makes the programmer code less, and do more. Thus having less logic errors the system will be more reliable
-			\subparagraph{Scalability}
-				Spring framework is designed for scalability and with Java as the language of choice, its scalability is increased.
-			\subparagraph{Security}
-				Spring framework has Authentication and Authorization modules which provide good security of data.
-			\subparagraph{Flexibility}
-				Spring framework provides many independant modules which are hotswappable, thus it is is flexible.
-			\subparagraph{Maintainability}
-				There are many package/dependancy managers that are available for Spring that keeps all code the latest.
-			\subparagraph{Auditablility/Monitorability}		
-				Spring audits all events and one can view these stats.
-			\subparagraph{Integrability}
-				Spring has its own integration framework that provides reusable functions.
-			\subparagraph{Cost}
-				Spring is opensource.
+			\begin{itemize}
+				\item \textbf{Description}\\
+					The Spring framework is an application framework and inversion of control for the Java platform, built on top of Java EE
+				\item \textbf{Performance}\\
+					Performance of a framework cannot be quantified with a number, but rather in respect to its components. Spring framework is a widely used framework that is seen as a replacement for Java EE. Therefore we can say that Springs performance is at a high level.
+				\item \textbf{Reliability}\\
+					The Spring framework is reliable in the sense that it makes the programmer code less, and do more. Thus having less logic errors the system will be more reliable
+				\item \textbf{Scalability}\\
+					Spring framework is designed for scalability and with Java as the language of choice, its scalability is increased.
+				\item \textbf{Security}\\
+					Spring framework has Authentication and Authorization modules which provide good security of data.
+				\item \textbf{Flexibility}\\
+					Spring framework provides many independant modules which are hotswappable, thus it is is flexible.
+				\item \textbf{Maintainability}\\
+					There are many package/dependancy managers that are available for Spring that keeps all code the latest.
+				\item \textbf{Auditablility/Monitorability}\\		
+					Spring audits all events and one can view these stats.
+				\item \textbf{Integrability}\\
+					Spring has its own integration framework that provides reusable functions.
+				\item \textbf{Cost}\\
+					Spring is opensource.
+			\end{itemize}
+			
 		\item Spring Boot
-			\subparagraph{Description}
+			\begin{itemize}
+				\item \textbf{Description}
 				Spring boot is a convention-over-configuration solution for creating stand-alone, production grade Spring based applications that you can just "run"
+			\end{itemize}
+			
 		\item Spring Cloud
-			\subparagraph{Description}
-				Spring Cloud provides tools for developers to quickly build some of the common patterns in distributed systems.			
-			\subparagraph{Scalability}
-				Spring Cloud is capable of handling multiple users.
-			\subparagraph{Security}
-				Spring clouds provides authentication and authorization
-			\subparagraph{Cost}
-				Spring Cloud is open source
+			\begin{itemize}
+				\item \textbf{Description}\\
+					Spring Cloud provides tools for developers to quickly build some of the common patterns in distributed systems.			
+				\item \textbf{Scalability}\\
+					Spring Cloud is capable of handling multiple users.
+				\item \textbf{Security}\\
+					Spring clouds provides authentication and authorization
+				\item \textbf{Cost}\\
+					Spring Cloud is open source
+			\end{itemize}
+			
 		\item Spring Data
-			\subparagraph{Description}
-				Spring Data's mission is to provide a familiar and consistent, Spring-based programming model for data access while still retaining the special traits of the underlying data store.
+			\begin{itemize}
+				\item \textbf{Description}\\
+					Spring Data's mission is to provide a familiar and consistent, Spring-based programming model for data access while still retaining the special traits of the underlying data store.
 
-				It makes it easy to use data access technologies, relational and non-relational databases, map-reduce frameworks, and cloud-based data services.
-			\subparagraph{Performance}
-				Spring Data performance within the system is good. It has a powerful repository and custom object-mapping abstractions.		
+					It makes it easy to use data access technologies, relational and non-relational databases, map-reduce frameworks, and cloud-based data services.
+				\item \textbf{Performance}\\
+					Spring Data performance within the system is good. It has a powerful repository and custom object-mapping abstractions.		
+				
+				\item \textbf{Cost}\\
+					Spring Data is open source
+			\end{itemize}
 			
-			\subparagraph{Cost}
-				Spring Data is open source
 		\item Spring Security
-			\subparagraph{Description}
-				Spring Security is a powerful and highly customizable authentication and access-control framework. 
-			\subparagraph{Security}
-				Spring Security is core feature is to provide security, therefore it fufils this quality requirement.
-			\subparagraph{Flexibility}
-				Spring Security is highly customizable for most situations.
-			\subparagraph{Cost}
-				Spring Security is open source
+			\begin{itemize}
+				\item \textbf{Description}\\
+					Spring Security is a powerful and highly customizable authentication and access-control framework. 
+				\item \textbf{Security}\\
+					Spring Security is core feature is to provide security, therefore it fufils this quality requirement.
+				\item \textbf{Flexibility}\\
+					Spring Security is highly customizable for most situations.
+				\item \textbf{Cost}\\
+					Spring Security is open source
+			\end{itemize}
+			
 		\item Spring Social
-			\subparagraph{Description}
-				Spring Social is an extension of the Spring framework that allows you to connect your applications with Software-as-a-Service(SaaS) API providers such as Facebook, Twitter and LinkedIn.
-			\subparagraph{Performance}
-				There is a connect controller that handles the authorization flow between your Spring web application, a service provider ans the user.
+			\begin{itemize}
+				\item \textbf{Description}\\
+					Spring Social is an extension of the Spring framework that allows you to connect your applications with Software-as-a-Service(SaaS) API providers such as Facebook, Twitter and LinkedIn.
+				\item \textbf{Performance}\\
+					There is a connect controller that handles the authorization flow between your Spring web application, a service provider ans the user.
+				\item \textbf{Security}\\
+					Connections are secure and data is encrypted. A sign-in controller that enables users to authenticate with the SaaS.
+				\item \textbf{Cost}\\
+					Spring Social is open source.
+			\end{itemize}
 			
-			\subparagraph{Security}
-				Connections are secure and data is encrypted. A sign-in controller that enables users to authenticate with the SaaS.
-			
-			\subparagraph{Cost}
-				Spring Social is open source.
 		\item Hibernate ORM
-			\subparagraph{Description}
-				Hibernate ORM is a ORM framework that provides persitent data storage.
-			\subparagraph{Performance}
-				Hibernate supports lazy initialization, numerous fetching strategies and optimistic locking with automatic versioning and time stamping. Hibernate requires no special database tables or fields and generates much of the SQL at system initialization time instead of at runtime.
-			\subparagraph{Reliability}
-				Hibernate is well known for its excellent stability and quality, proven by the acceptance and use by tens of thousands of Java developers.
-			\subparagraph{Scalability}
-				Hibernate was designed to work in an application server cluster and deliver a highly scalable architecture. Hibernate scales well in any environment: Use it to drive your in-house Intranet that serves hundreds of users or for mission-critical applications that serve hundreds of thousands.
-			\subparagraph{Security}
+			\begin{itemize}
+				\item \textbf{Description}\\
+					Hibernate ORM is a ORM framework that provides persitent data storage.
+				\item \textbf{Performance}\\
+					Hibernate supports lazy initialization, numerous fetching strategies and optimistic locking with automatic versioning and time stamping. Hibernate requires no special database tables or fields and generates much of the SQL at system initialization time instead of at runtime.
+				\item \textbf{Reliability}\\
+					Hibernate is well known for its excellent stability and quality, proven by the acceptance and use by tens of thousands of Java developers.
+				\item \textbf{Scalability}\\
+					Hibernate was designed to work in an application server cluster and deliver a highly scalable architecture. Hibernate scales well in any environment: Use it to drive your in-house Intranet that serves hundreds of users or for mission-critical applications that serve hundreds of thousands.
+				\item \textbf{Flexibility}\\
+					Hibernate is highly configurable and extensible.			
+				\item \textbf{Cost}\\
+					Hibernate ORM is under the LGPL v2.1 license.
+			\end{itemize}
 			
-			\subparagraph{Flexibility}
-				Hibernate is highly configurable and extensible.			
-			\subparagraph{Cost}
-				Hibernate ORM is under the LGPL v2.1 license.
 		\item Liquibase
-			\subparagraph{Description}
-			Liquibase is an open source, database independent library that makes provisions for tracking, managing and applying any database schema changes. Liquibase will be invaluable in ensuring that we can track and manage the growth and use of whichever database we choose to use.
-			\subparagraph{Scalability}
-			Liquibase supports over 10 database systems which provides our system with a lot of potential growing space in terms of database systems that it will use. 
-			\subparagraph{Maintainability}
-			In terms of Maintainability, Liquibase supports a variety of functions that allow for developers to maintain databases. These functions include rollback x changes to the database or even to a particular time. This means that even over time, should reverting to an earlier database state be needed, it can be done allowing for easier maintenance in the long term.
-			\subparagraph{Auditablility/Monitorability}
-			With Liquibase, we are able to perform a number of functions that provide for necessary monitoring/auditing functions. These include database difference reports, the ability to generate documention for database change, and the ability to split change logs into multiple files, enabling easier management of changelogs for auditing purposes.
-			\subparagraph{Cost}
-			Liquibase is open source and that means that using it contributes nothing to software costs of the system. 
-			\subparagraph{Usability}
-			Liquibase does indeed support the Usability requirement because it can be executed via a variety of means such as command line, Apache Ant and Maven or the Spring framework.
+			\begin{itemize}
+				\item \textbf{Description}\\
+				Liquibase is an open source, database independent library that makes provisions for tracking, managing and applying any database schema changes. Liquibase will be invaluable in ensuring that we can track and manage the growth and use of whichever database we choose to use.
+				\item \textbf{Scalability}\\
+				Liquibase supports over 10 database systems which provides our system with a lot of potential growing space in terms of database systems that it will use. 
+				\item \textbf{Maintainability}\\
+				In terms of Maintainability, Liquibase supports a variety of functions that allow for developers to maintain databases. These functions include rollback x changes to the database or even to a particular time. This means that even over time, should reverting to an earlier database state be needed, it can be done allowing for easier maintenance in the long term.
+				\item \textbf{Auditablility/Monitorability}\\
+				With Liquibase, we are able to perform a number of functions that provide for necessary monitoring/auditing functions. These include database difference reports, the ability to generate documention for database change, and the ability to split change logs into multiple files, enabling easier management of changelogs for auditing purposes.
+				\item \textbf{Cost}\\
+				Liquibase is open source and that means that using it contributes nothing to software costs of the system. 
+				\item \textbf{Usability}\\
+				Liquibase does indeed support the Usability requirement because it can be executed via a variety of means such as command line, Apache Ant and Maven or the Spring framework.
+			\end{itemize}
 
 		\item SLF4J
-			\subparagraph{Description}
-				The Simple Logging Facade for Java (SLF4J) serves as a simple facade or abstraction for various logging frameworks (e.g. java.util.logging, logback, log4j) allowing the end user to plug in the desired logging framework at deployment time. 
-			
-			\subparagraph{Flexibility}
-				SLF4J provides an abstract interface for pluggin in any desired logging framework 			
-			\subparagraph{Cost}
-			SLF4J is under the MIT License
-		\item Apache Log4J
-			\subparagraph{Description}
-				Apache log4j is a Java-based logging utility.
-			\subparagraph{Performance}
-				On an AMD Duron clocked at 800Mhz running JDK 1.3.1, it costs about 5 nanoseconds to determine if a logging statement should be logged or not. Actual logging is also quite fast, ranging from 21 microseconds using the SimpleLayout, 37 microseconds using the TTCCLayout. The performance of the PatternLayout is almost as good as the dedicated layouts, except that it is much more flexible.
-			\subparagraph{Cost}
-				Apache License 2.0
-		\item Java Jersey
-			\subparagraph{Description}
-			The Jersey RESTful Web Services framework or Java Jersey for brevity, is an open source framework for developing RESTful Web services in java. It provides its own API that extends the existing JAX-RS toolkit as well. This framework is considerably useful in our situation as we are using both Java and a RESTful API approach to making the system.
-			\subparagraph{Flexibility}
-			In terms of the Flexibility of Java Jersey, as the underlying language of the system will be Java, Java Jersey will contribute to the Flexibility requirement as the latest version, 2.7, Java Jersey can compile and run applications using at least Java 7. Java Jersey is built and installed using Apache Maven. This means that applications that use Jersey, or depend on Jersey modules also need the application dependencies of the 3rd party modules that Jersey itself depends on.
+			\begin{itemize}
+				\item \textbf{Description}\\
+					The Simple Logging Facade for Java (SLF4J) serves as a simple facade or abstraction for various logging frameworks (e.g. java.util.logging, logback, log4j) allowing the end user to plug in the desired logging framework at deployment time. 
+				
+				\item \textbf{Flexibility}\\
+					SLF4J provides an abstract interface for pluggin in any desired logging framework 			
+				\item \textbf{Cost}\\
+				SLF4J is under the MIT License
+			\end{itemize}
 
-			However, since Jersey is designed as a pluggable component, this means that it can be plugged into different component architectures but at the cost of requiring that external Jersey dependencies needed will have to be included in the application dependencies as a whole.
-			\subparagraph{Cost}
-			The Jersey framework is open source so no additional project costs will be incurred by its use.
-			\subparagraph{Usability}
-			A core, and vital feature, of Swagger is the ability to generate specifications that describe REST APIs in a format that can be read by both machines and humans. This ease of use, especially between human and computer is a vital service that needs to be in play as this system will be based on a REST API.		
+		\item Apache Log4J
+			\begin{itemize}
+				\item \textbf{Description}\\
+					Apache log4j is a Java-based logging utility.
+				\item \textbf{Performance}\\
+					On an AMD Duron clocked at 800Mhz running JDK 1.3.1, it costs about 5 nanoseconds to determine if a logging statement should be logged or not. Actual logging is also quite fast, ranging from 21 microseconds using the SimpleLayout, 37 microseconds using the TTCCLayout. The performance of the PatternLayout is almost as good as the dedicated layouts, except that it is much more flexible.
+				\item \textbf{Cost}\\
+					Apache License 2.0
+			\end{itemize}
+
+		\item Java Jersey
+			\begin{itemize}
+				\item \textbf{Description}\\
+				The Jersey RESTful Web Services framework or Java Jersey for brevity, is an open source framework for developing RESTful Web services in java. It provides its own API that extends the existing JAX-RS toolkit as well. This framework is considerably useful in our situation as we are using both Java and a RESTful API approach to making the system.
+				\item \textbf{Flexibility}\\
+				In terms of the Flexibility of Java Jersey, as the underlying language of the system will be Java, Java Jersey will contribute to the Flexibility requirement as the latest version, 2.7, Java Jersey can compile and run applications using at least Java 7. Java Jersey is built and installed using Apache Maven. This means that applications that use Jersey, or depend on Jersey modules also need the application dependencies of the 3rd party modules that Jersey itself depends on.
+
+				However, since Jersey is designed as a pluggable component, this means that it can be plugged into different component architectures but at the cost of requiring that external Jersey dependencies needed will have to be included in the application dependencies as a whole.
+				\item \textbf{Cost}\\
+				The Jersey framework is open source so no additional project costs will be incurred by its use.
+				\item \textbf{Usability}\\
+				A core, and vital feature, of Swagger is the ability to generate specifications that describe REST APIs in a format that can be read by both machines and humans. This ease of use, especially between human and computer is a vital service that needs to be in play as this system will be based on a REST API.		
+			\end{itemize}
+
 		\item Swagger
-			\subparagraph{Description}
-			Swagger is a framework that is used for describing and visualizing RESTFul APIS. It defines a standard, language-agnostic or language independent, interface for REST APIS. This enables users, both human and computer, to find and discover service capabilities without requiring source code access or by network traffic inspection. This is useful because it means that we will have a means both computers and developers can find service capabilities without violating access to certain code components or contributing unnecessarily to network traffic.
-			\subparagraph{Maintainability}
-			The documentation generated by, and using, Swagger is integral towards the Maintainability requirement of the system. This documentation that is both machine and human readable will ensure that future machines and computers, as well as future developers, will be able to read the system documentation and maintain the system as a result.
-			\subparagraph{Cost}
-			Swagger is an open source specification  whose use is freely available.Hence it will not contribute towards the cost of the system as it can be freely used with commercial license provisions.
-			\subparagraph{Usability}
-			A core, and vital feature, of Swagger is the ability to generate specifications that describe REST APIs in a format that can be read by both machines and humans. This ease of use, especially between human and computer is a vital service that needs to be in play as this system will be based on a REST API
+			\begin{itemize}
+				\item \textbf{Description}\\
+				Swagger is a framework that is used for describing and visualizing RESTFul APIS. It defines a standard, language-agnostic or language independent, interface for REST APIS. This enables users, both human and computer, to find and discover service capabilities without requiring source code access or by network traffic inspection. This is useful because it means that we will have a means both computers and developers can find service capabilities without violating access to certain code components or contributing unnecessarily to network traffic.
+				\item \textbf{Maintainability}\\
+				The documentation generated by, and using, Swagger is integral towards the Maintainability requirement of the system. This documentation that is both machine and human readable will ensure that future machines and computers, as well as future developers, will be able to read the system documentation and maintain the system as a result.
+				\item \textbf{Cost}\\
+				Swagger is an open source specification  whose use is freely available.Hence it will not contribute towards the cost of the system as it can be freely used with commercial license provisions.
+				\item \textbf{Usability}\\
+				A core, and vital feature, of Swagger is the ability to generate specifications that describe REST APIs in a format that can be read by both machines and humans. This ease of use, especially between human and computer is a vital service that needs to be in play as this system will be based on a REST API
+			\end{itemize}
 	\end{itemize}
 
 \subsubsection{Libraries}
 	\begin{itemize}
 		\item Apache FOP
-				\subparagraph{Description}
+			\begin{itemize}
+				\item \textbf{Description}\\
 				Apache FOP or Formatting Objects Processor is a Java application that converts XSL formatting objects to printable formats such as PDF. The system will likely generate a vast amount of documentation and a program that allows us to convert this documentation into a format optimised for printing would save us hassles from getting the physical system documentation stored properly.
-				\subparagraph{Flexibility}
+				\item \textbf{Flexibility}\\
 				Apache FOP is an output independent formatter which means it is able to support a wide variety of output formats, or printable formats, such as PDF, PS,PCL and AFP. Furthermore, the input for FOP is a standard XSL-FO file which is useful as the XSL-FO is also an XML file and that can be created from a variety of sources, adding greatly to its flexibility as a program.
-				\subparagraph{Cost}
+				\item \textbf{Cost}\\
 				Apache FOP is open source software and is freely available.
-				Usability
-
+			\end{itemize}
 	\end{itemize}
 
 \subsubsection{Database System}
 	\begin{itemize}
 		\item PostgreSQL
-			\subparagraph{Description}
-			PostgreSQL or Postgres is an object-relational database management system. It supports the SQL standard and serves to store data securely.
-			As it has high utility and functionality, it will be ideal for the database management system to handle the database needs of our system.
-			\subparagraph{Scalability}
-			PostgreSQL satistifies the Scalability requirement rather nicely. It can handle a variety of different workloads, from single machine applications to much larger web applications with many concurrent users. This means that the program can be easily used to ensure that our sysstem can scale to the workload that is required of it.
-			\subparagraph{Security}
-			Security in postgreSQL is handled internally on a per-role basis, to individuals or groups. This means that roles, essentially users, can be applied and revoked dynamically and on any object, down to a column level. This provides it with a dynamic and flexible security service that allows us to make use of various levels of security for the various roles that exist in our system in terms of user base.
+			\begin{itemize}
+				\item \textbf{Description}\\
+				PostgreSQL or Postgres is an object-relational database management system. It supports the SQL standard and serves to store data securely.
+				As it has high utility and functionality, it will be ideal for the database management system to handle the database needs of our system.
+				\item \textbf{Scalability}\\
+				PostgreSQL satistifies the Scalability requirement rather nicely. It can handle a variety of different workloads, from single machine applications to much larger web applications with many concurrent users. This means that the program can be easily used to ensure that our sysstem can scale to the workload that is required of it.
+				\item \textbf{Security}\\
+				Security in postgreSQL is handled internally on a per-role basis, to individuals or groups. This means that roles, essentially users, can be applied and revoked dynamically and on any object, down to a column level. This provides it with a dynamic and flexible security service that allows us to make use of various levels of security for the various roles that exist in our system in terms of user base.
 
-			Furthermore, PostgreSQL supports a wide variety of external authentification mechanisms such as LDAP or SSPI. It gives us further control on which users can connect to which of our databases as well as where they can connect from, IP address/domain socket and whether the connection must use Transport Layer Security or TLS.
-			\subparagraph{Flexibility}
-			PostgreSQL has several interfaces as well as wide programming language libraru support. It has both internal and external interfaces that allow it to be used in a variety of applications using a variety of languages.
+				Furthermore, PostgreSQL supports a wide variety of external authentification mechanisms such as LDAP or SSPI. It gives us further control on which users can connect to which of our databases as well as where they can connect from, IP address/domain socket and whether the connection must use Transport Layer Security or TLS.
+				\item \textbf{Flexibility}\\
+				PostgreSQL has several interfaces as well as wide programming language libraru support. It has both internal and external interfaces that allow it to be used in a variety of applications using a variety of languages.
 
-			Additionally, PostgreSQL supports a large variety of native data types from Boolean types all the way to JSON.
+				Additionally, PostgreSQL supports a large variety of native data types from Boolean types all the way to JSON.
 
-			Adding to this is the use of the Foreign Data Wrapper that increases the flexibility of our system as using postgreSQL, our system can use regular database queries to join external data sources like normal tables.
-			\subparagraph{Integrability}
-			PostgreSQL supports Foreign Data Wrappers or FDWs. This means PostgreSWL can link to other systems and retrieve data on those systems via the FDWs This FDW can take a variety of forms in terms of data source such as file system, another Relational Database Management System or even a web service. This allows our RDBMS to integrate with a variety of platforms and applications. 
-			\subparagraph{Cost}
-			PostgreSQL is freely available, open soure software that cocntributes no cost towards the system.
+				Adding to this is the use of the Foreign Data Wrapper that increases the flexibility of our system as using postgreSQL, our system can use regular database queries to join external data sources like normal tables.
+				\item \textbf{Integrability}\\
+				PostgreSQL supports Foreign Data Wrappers or FDWs. This means PostgreSWL can link to other systems and retrieve data on those systems via the FDWs This FDW can take a variety of forms in terms of data source such as file system, another Relational Database Management System or even a web service. This allows our RDBMS to integrate with a variety of platforms and applications. 
+				\item \textbf{Cost}\\
+				PostgreSQL is freely available, open soure software that cocntributes no cost towards the system.
+			\end{itemize}
+			
 		\item Couchbase Server
-			\subparagraph{Description}
-			Couchbase Server is a distributed multi-model NoSQL database optimised for interactive applications. In contrast to PostgreSQL, Couchbase is is document orientated database that makes use of no SQL standards.
+			\begin{itemize}
+				\item \textbf{Description}\\
+				Couchbase Server is a distributed multi-model NoSQL database optimised for interactive applications. In contrast to PostgreSQL, Couchbase is is document orientated database that makes use of no SQL standards.
 
-			There are a number of reasons to want to consider a NoSQL database and specifically with Couchbase Server, it is optimised for concurrent users and interactive applications. If the system does develop into one where concurrent access and interactivity are the primary functionality points, Couchbase Server would be an ideal database management system.
-			\subparagraph{Performance}
-			Couchbase Server makes use of a cluster manager to supervise the behaviour and configruation of servers that comprise a Couchbase cluster. One of the services offered by this is high-speed failover which improves the system performance as it will automatically and quickly transfer control to a duplicate server on the cluster to replicated items as per requests.
-			\subparagraph{Reliability}
-			Couchbase Server makes use of a "tail-append" storage design that is proof against data corruption, sudden loss of power and OOM killers or out of Memory Killers. This claim has the caveat that a sudden lose of power can still lose data if the power loss occurred in the middle of the disk transfer.
+				There are a number of reasons to want to consider a NoSQL database and specifically with Couchbase Server, it is optimised for concurrent users and interactive applications. If the system does develop into one where concurrent access and interactivity are the primary functionality points, Couchbase Server would be an ideal database management system.
+				\item \textbf{Performance}\\
+				Couchbase Server makes use of a cluster manager to supervise the behaviour and configruation of servers that comprise a Couchbase cluster. One of the services offered by this is high-speed failover which improves the system performance as it will automatically and quickly transfer control to a duplicate server on the cluster to replicated items as per requests.
+				\item \textbf{Reliability}\\
+				Couchbase Server makes use of a "tail-append" storage design that is proof against data corruption, sudden loss of power and OOM killers or out of Memory Killers. This claim has the caveat that a sudden lose of power can still lose data if the power loss occurred in the middle of the disk transfer.
 
-			However, this aside, Couchbase Server provides great assurance that the data that we store will be protected and stored safely.
-			\subparagraph{Scalability}
-			As mentioned above, Couchbase Server has great utility in supported concurrent user access and this means that the service will scale well when under heavy workload.
-			\subparagraph{Cost}
-			Couchbase is licenced under the Apache Licence (Open source edition) and can be used without incurring additional system costs.
-
+				However, this aside, Couchbase Server provides great assurance that the data that we store will be protected and stored safely.
+				\item \textbf{Scalability}\\
+				As mentioned above, Couchbase Server has great utility in supported concurrent user access and this means that the service will scale well when under heavy workload.
+				\item \textbf{Cost}\\
+				Couchbase is licenced under the Apache Licence (Open source edition) and can be used without incurring additional system costs.
+			\end{itemize}
 
 		\item Couchbase Sync Gateway
-			\subparagraph{Description}
-			Couchbase Sync Gateway enables Couchbase database to reflect changes in an application's data in both directions. Bu this, it is mean that Sync Gateway stores data from the applications' on-device data in storage unit stored on the existing and scalable Couchbase Server technology.
+			\begin{itemize}
+				\item \textbf{Description}\\
+				Couchbase Sync Gateway enables Couchbase database to reflect changes in an application's data in both directions. Bu this, it is mean that Sync Gateway stores data from the applications' on-device data in storage unit stored on the existing and scalable Couchbase Server technology.
 
-			It provides a number of useful features that when coordinated with Couchbase Server, extends much functionality towards web-based applications such as logging and user authentication. Of note is the ability to determine which data records in the database are relevant for which user.
-			\subparagraph{Reliability}
-			The sync function provided by Sync Gateway is the core of the API. It provides a number of services that greatly contribute to the Reliablity requirement such as document validation or change authorisation.		\subparagraph{Scalability}
-			Sync Gate is scalable as it makes use of the existing and scalable Couchbase Server technology.
-			\subparagraph{Security}
-			In terms of the Security requirement, Sync Gate has one issue of contention. The sync function is not only able to do validation of data but it also authorises read/write access. This means that it needs to be highly monitored to ensure it prevents unauthorised access and threats. This will increase system complexity in terms of ensuring that authorisation protocols are in place but the usability that comes from using Sync Gateway with Couchbase Server may be worth the added cost.
-			\subparagraph{Flexibility}
-			Sync Gateway is designed to be used by a variety of platforms like Swift and Android and Java. This means that we can use it for the Android application as well as the underlying system.
-			\subparagraph{Cost}
-			As Sync Gateway is provided under an  open source licence and as such, does not contribute to system costs.
-
+				It provides a number of useful features that when coordinated with Couchbase Server, extends much functionality towards web-based applications such as logging and user authentication. Of note is the ability to determine which data records in the database are relevant for which user.
+				\item \textbf{Reliability}\\
+				The sync function provided by Sync Gateway is the core of the API. It provides a number of services that greatly contribute to the Reliablity requirement such as document validation or change authorisation.		\subparagraph{Scalability}
+				Sync Gate is scalable as it makes use of the existing and scalable Couchbase Server technology.
+				\item \textbf{Security}\\
+				In terms of the Security requirement, Sync Gate has one issue of contention. The sync function is not only able to do validation of data but it also authorises read/write access. This means that it needs to be highly monitored to ensure it prevents unauthorised access and threats. This will increase system complexity in terms of ensuring that authorisation protocols are in place but the usability that comes from using Sync Gateway with Couchbase Server may be worth the added cost.
+				\item \textbf{Flexibility}\\
+				Sync Gateway is designed to be used by a variety of platforms like Swift and Android and Java. This means that we can use it for the Android application as well as the underlying system.
+				\item \textbf{Cost}\\
+				As Sync Gateway is provided under an  open source licence and as such, does not contribute to system costs.
+			\end{itemize}
 	\end{itemize}
 
 \subsubsection{Operating System}
@@ -919,21 +970,24 @@ Achitectural tactics is concerned with achieving coherence between  a design dec
 \subsubsection{Dependency Management and Build Tools}
 	\begin{itemize}
 		\item Maven
-			\subparagraph{Description}
-				Apache Maven is a software project management and comprehension tool. Based on the concept of a project object model (POM), Maven can manage a project's build, reporting and documentation from a central piece of information. 
-			\subparagraph{Performance}
-				Instant access to new features with little or no extra configuration
-			
-			\subparagraph{Scalability}
-				Able to easily work with multiple projects at the same time
-			
-			\subparagraph{Security}
-			
-			\subparagraph{Flexibility}
-				Extensible, with the ability to easily write plugins in Java or scripting languages
-			
-			\subparagraph{Cost}
-				Apache License 2.0
+			\begin{itemize}
+				\item \textbf{Description}\\
+					Apache Maven is a software project management and comprehension tool. Based on the concept of a project object model (POM), Maven can manage a project's build, reporting and documentation from a central piece of information. 
+				\item \textbf{Performance}\\
+					Instant access to new features with little or no extra configuration
+				
+				\item \textbf{Scalability}\\
+					Able to easily work with multiple projects at the same time
+				
+				\item \textbf{Security}
+				
+				\item \textbf{Flexibility}\\
+					Extensible, with the ability to easily write plugins in Java or scripting languages
+				
+				\item \textbf{Cost}\\
+					Apache License 2.0
+					
+			\end{itemize}
 	\end{itemize}
 
 \subsection{Web Interface}
