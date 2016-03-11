@@ -425,6 +425,13 @@ The architectural constraints are used to improve the architectural analyses of 
 		
 		This pattern is used because it lends itself well to decoupling software modules from one another, and allows for separation of concerns. At the very least, the view layer is decoupled from the business logic, and the controller layer is decoupled from the data access. Furthermore, when each layer object realises a contract, all layers are completely decoupled from one another, and allows for layer objects of the same layer type to be interchanged without any hassle. 
 		
+		\subitem \textbf{Reasons for selecting this pattern:}
+		\begin{itemize}
+			\item The concern of caching network responses can be separated from the other layers in the pattern.
+			\item The pattern enables trivial swapping of groups of modules which satisfies the reliability, flexibility, integrability and maintainability quality requirements.
+			\item The pattern allows decoupling the database and authentication modules from the rest of the system as per the maintainability requirements.
+		\end{itemize}
+		
 		\item \textbf{Representational State Transfer (REST) Architectural Pattern:}\\
 		REST is an architecture pattern for designing networked applications. The idea is instead of using complex mechanisms such as SOAP, CORBA or RPC to connect between machines or to make calls between machines, simple HTTP is used.
 		
