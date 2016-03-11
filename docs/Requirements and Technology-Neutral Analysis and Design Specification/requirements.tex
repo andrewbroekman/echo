@@ -459,6 +459,13 @@ The architectural constraints are used to improve the architectural analyses of 
 		
 		This pattern provides two important security features, depending on how the logging system, as well as the message are secured in the system.  The first protection, is that should a malicious user gain access to the logging system, they will be unable to use the data to plan further attacks on the system.  The second protection provided by this pattern, is that any modification of the log data will be detectable by administrators.
 		
+		\subitem \textbf{Reasons for selecting this pattern:}
+		\begin{itemize}
+			\item The pattern can be applied in such a manner that timestamps of actions taken using the service might be more auditable, increasing system reliability.
+			\item The pattern satisfies the security quality requirement by making log messages tamper proof and disallowing users to modify the audit trail.
+			\item By keeping a log of actions committed by users, such as creation and modification of objects, and storing these in an immutable log, this pattern satisfies the auditability quality requirement.
+		\end{itemize}
+		
 		\item \textbf{Services Orientated Architecture/ Microservices Architecture:}\\
 		An architectural pattern in software design in which system use cases are divided into one or more service operations, and these service operations are then implemented, either individually or combined with other service operations, by a reusable SOA service. The SOA architecture itself comprises five layers:
 		\begin{enumerate}
