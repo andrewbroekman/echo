@@ -406,7 +406,14 @@ The architectural constraints are used to improve the architectural analyses of 
 			Function of client server: An interface/form is provided by the client to allow a user to request services of the user and to display the results the server returns.
 			
 			Client-Server Architectural Pattern is used because we need to have reliability on the system. Data can be retrieved for further processing from any computer connected on that network.
-	
+		
+		\subitem \textbf{Reasons for selecting this pattern:}
+		\begin{itemize}
+			\item This pattern allows decoupling of business logic- and human adapter modules, adhering to the maintainability and flexibility requirements.
+			\item It enables system usability by not requiring users to incur large downloads to make use of the system.
+			\item The pattern lends itself well to maintainability, since developers are able to upgrade and fix problems in the system module without affecting the front-end, and vice versa.
+		\end{itemize}
+		
 		\item \textbf{Layered Architectural Pattern:}\\
 		A design pattern in which software is divided up into individual layers by functionality. The layers interact with one another via requests and responses, and there are typically four of these layers:
 		\begin{enumerate}
